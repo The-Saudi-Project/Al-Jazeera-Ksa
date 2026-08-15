@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# OS / editor cruft
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+
+# Logs
+npm-debug.log*
+*.log

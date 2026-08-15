@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Counterbalance forklift truck carrying a palletised load">
+  <!-- Equipment illustration — Material handling -->
+  <defs>
+    <linearGradient id="eq3Body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A6C"/><stop offset="1" stop-color="#0C2538"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mast -->
+  <g fill="#0E2C43">
+    <rect x="286" y="52" width="14" height="176" rx="4"/>
+    <rect x="308" y="64" width="12" height="164" rx="4"/>
+  </g>
+  <path d="M293 60h34" stroke="#C8A96A" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Carriage and forks -->
+  <rect x="284" y="150" width="40" height="14" rx="3" fill="#C8A96A"/>
+  <path d="M324 152h68v9h-68Z" fill="#C8A96A"/>
+  <path d="M382 152h10v34h-10Z" fill="#C8A96A"/>
+
+  <!-- Palletised load -->
+  <rect x="326" y="104" width="66" height="46" rx="3" fill="#0B8A6B"/>
+  <g stroke="#06422F" stroke-width="2" opacity=".45"><path d="M326 122h66M359 104v46"/></g>
+  <rect x="322" y="150" width="74" height="8" rx="2" fill="#123B57" opacity=".8"/>
+
+  <!-- Body and operator canopy -->
+  <rect x="92" y="150" width="196" height="60" rx="10" fill="url(#eq3Body)"/>
+  <rect x="92" y="150" width="196" height="9" fill="#C8A96A"/>
+  <g fill="#123B57">
+    <rect x="132" y="64" width="10" height="88" rx="3"/>
+    <rect x="238" y="64" width="10" height="88" rx="3"/>
+    <rect x="124" y="56" width="132" height="12" rx="4"/>
+  </g>
+  <rect x="150" y="112" width="76" height="38" rx="5" fill="#123B57"/>
+  <rect x="158" y="120" width="60" height="22" rx="3" fill="#8FBBD8" opacity=".6"/>
+
+  <!-- Counterweight -->
+  <path d="M78 158h20v52H80a10 10 0 0 1-10-10v-32a10 10 0 0 1 8-10Z" fill="#0E2C43"/>
+
+  <!-- Wheels -->
+  <g fill="#0C2538"><circle cx="132" cy="216" r="28"/><circle cx="262" cy="220" r="20"/></g>
+  <g fill="#4C86AD" opacity=".85"><circle cx="132" cy="216" r="10"/><circle cx="262" cy="220" r="7"/></g>
+</svg>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap — Al Jazeera Service Contracting Co.
+
+  Priorities reflect commercial importance rather than depth: the
+  pages a procurement reader converts on (contact, services) rank
+  above the supporting ones.
+
+  Update <lastmod> when a page's content changes materially. There
+  is no build step, so this file is maintained by hand.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.aljazeeraksa.com/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aljazeeraksa.com/services.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aljazeeraksa.com/contact.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aljazeeraksa.com/projects.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aljazeeraksa.com/about.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- careers.html is hidden for now: removed from the sitemap and
+       serving noindex. Restore this block and flip the robots meta
+       on that page back to "index, follow" to bring it back. -->
+
+  <url>
+    <loc>https://www.aljazeeraksa.com/privacy.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

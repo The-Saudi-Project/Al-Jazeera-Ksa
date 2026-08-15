@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Backhoe loader with a front loading bucket and rear excavator arm">
+  <!-- Equipment illustration: Backhoe loader -->
+  <defs>
+    <linearGradient id="eqBhBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A6C"/><stop offset="1" stop-color="#0C2538"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Front loader arm and bucket -->
+  <path d="M132 150 56 178l6 22 76-28Z" fill="#C8A96A"/>
+  <path d="M50 176q-16 8-16 28l40 6q2-14 12-18Z" fill="#0E2C43"/>
+  <path d="M34 204h44v10H34Z" fill="#C8A96A"/>
+
+  <!-- Rear excavator arm -->
+  <path d="M266 150 288 84l22 8-18 62Z" fill="#C8A96A"/>
+  <path d="M296 88q42 6 58 44l-24 10q-12-26-40-30Z" fill="#D6BC85"/>
+  <path d="M330 142q10 26 34 32l-8 24q-34-10-48-46Z" fill="#0E2C43"/>
+  <g stroke="#8FBBD8" stroke-width="6" stroke-linecap="round" opacity=".8">
+    <path d="M290 122l34 8"/>
+  </g>
+
+  <!-- Body and cab -->
+  <rect x="126" y="150" width="152" height="48" rx="8" fill="url(#eqBhBody)"/>
+  <path d="M158 96h76a10 10 0 0 1 10 10v44H148v-44a10 10 0 0 1 10-10Z" fill="#123B57"/>
+  <rect x="160" y="106" width="70" height="34" rx="4" fill="#8FBBD8" opacity=".6"/>
+  <rect x="126" y="150" width="152" height="7" fill="#C8A96A"/>
+
+  <!-- Wheels: small front, large rear -->
+  <g fill="#0C2538"><circle cx="152" cy="216" r="26"/><circle cx="264" cy="210" r="36"/></g>
+  <g fill="#4C86AD" opacity=".85"><circle cx="152" cy="216" r="10"/><circle cx="264" cy="210" r="14"/></g>
+  <g fill="#0B8A6B"><circle cx="152" cy="216" r="4"/><circle cx="264" cy="210" r="5"/></g>
+</svg>

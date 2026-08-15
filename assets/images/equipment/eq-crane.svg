@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Rough terrain mobile crane with a telescopic boom">
+  <!-- Equipment illustration — Mobile & rough terrain cranes -->
+  <defs>
+    <linearGradient id="eq1Body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A6C"/><stop offset="1" stop-color="#0C2538"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Telescopic boom, drawn in three overlapping sections -->
+  <g transform="rotate(-38 150 150)">
+    <rect x="146" y="128" width="176" height="30" rx="6" fill="#C8A96A"/>
+    <rect x="300" y="133" width="120" height="21" rx="5" fill="#D6BC85"/>
+    <rect x="398" y="137" width="80"  height="14" rx="4" fill="#E2D2AE"/>
+    <path d="M300 133v21M398 137v14" stroke="#0C2538" stroke-width="2" opacity=".35"/>
+  </g>
+
+  <!-- Hoist rope and hook -->
+  <path d="M352 62v58" stroke="#0C2538" stroke-width="2"/>
+  <path d="M346 120h12v10a6 6 0 0 1-12 0Z" fill="#0C2538"/>
+
+  <!-- Superstructure and cab -->
+  <rect x="112" y="150" width="96" height="46" rx="6" fill="url(#eq1Body)"/>
+  <rect x="64"  y="140" width="52" height="56" rx="6" fill="#123B57"/>
+  <rect x="72"  y="150" width="36" height="26" rx="3" fill="#8FBBD8" opacity=".65"/>
+
+  <!-- Carrier deck -->
+  <rect x="48" y="196" width="304" height="30" rx="5" fill="#0E2C43"/>
+  <rect x="48" y="196" width="304" height="7" rx="3" fill="#C8A96A"/>
+
+  <!-- Outriggers -->
+  <g fill="#123B57">
+    <rect x="34"  y="204" width="22" height="12" rx="3"/><rect x="34" y="216" width="12" height="26" rx="3"/>
+    <rect x="344" y="204" width="22" height="12" rx="3"/><rect x="354" y="216" width="12" height="26" rx="3"/>
+  </g>
+  <g fill="#0B8A6B"><rect x="26" y="240" width="30" height="8" rx="3"/><rect x="344" y="240" width="30" height="8" rx="3"/></g>
+
+  <!-- Wheels -->
+  <g fill="#0C2538">
+    <circle cx="106" cy="230" r="24"/><circle cx="166" cy="230" r="24"/>
+    <circle cx="256" cy="230" r="24"/><circle cx="316" cy="230" r="24"/>
+  </g>
+  <g fill="#4C86AD" opacity=".8">
+    <circle cx="106" cy="230" r="9"/><circle cx="166" cy="230" r="9"/>
+    <circle cx="256" cy="230" r="9"/><circle cx="316" cy="230" r="9"/>
+  </g>
+</svg>

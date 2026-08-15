@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Tower crane with lattice mast, jib and counter jib">
+  <!-- Equipment illustration: Tower crane -->
+
+  <!-- Lattice mast -->
+  <g stroke="#C8A96A" fill="none" stroke-linecap="round">
+    <path d="M188 246V78M228 246V78" stroke-width="6"/>
+    <g stroke-width="3" opacity=".7">
+      <path d="M188 110h40M188 146h40M188 182h40M188 216h40"/>
+      <path d="m188 110 40 36M228 110l-40 36M188 182l40 34M228 182l-40 34"/>
+    </g>
+  </g>
+
+  <!-- Slewing platform and operator cab -->
+  <rect x="180" y="62" width="56" height="18" rx="4" fill="#0E2C43"/>
+  <rect x="236" y="46" width="26" height="26" rx="4" fill="#123B57"/>
+  <rect x="241" y="52" width="16" height="12" rx="2" fill="#8FBBD8" opacity=".65"/>
+
+  <!-- Jib and counter jib -->
+  <g stroke="#C8A96A" fill="none" stroke-linecap="round">
+    <path d="M96 62h296" stroke-width="6"/>
+    <g stroke-width="2.5" opacity=".65">
+      <path d="M262 62 208 30 152 62M320 62l-112-32M96 62l112-32"/>
+    </g>
+    <path d="M208 62V28" stroke-width="4"/>
+  </g>
+
+  <!-- Counterweight block -->
+  <rect x="92" y="52" width="34" height="26" rx="3" fill="#0E2C43"/>
+
+  <!-- Trolley, hoist rope and hook block -->
+  <rect x="318" y="56" width="26" height="12" rx="3" fill="#0E2C43"/>
+  <path d="M331 68v54" stroke="#0E2C43" stroke-width="2"/>
+  <rect x="320" y="122" width="22" height="14" rx="3" fill="#0B8A6B"/>
+
+  <!-- Base ballast -->
+  <rect x="152" y="246" width="112" height="16" rx="4" fill="#0E2C43"/>
+  <rect x="152" y="246" width="112" height="5" rx="2" fill="#0B8A6B"/>
+</svg>

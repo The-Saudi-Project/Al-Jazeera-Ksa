@@ -1,0 +1,639 @@
+﻿<!DOCTYPE html>
+<!--
+  Al Jazeera Service Contracting Co.
+  Projects page â€” showcase of company capability with 10 named
+  project cards including client, location, duration and value.
+
+  Page flow:
+    Navigation â†’ Hero Banner â†’ Introduction â†’
+    Filter Bar â†’ Projects Grid (10 cards) â†’
+    Call To Action â†’ Footer
+-->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ==========================================
+       SEO â€” Primary meta
+       ========================================== -->
+  <title>Projects | Construction &amp; Industrial Portfolio | Al Jazeera Service Contracting Co.</title>
+  <meta name="description"
+    content="Al Jazeera Service Contracting Co. project portfolio: construction, industrial, civil and infrastructure projects across Saudi Arabia including compounds, factories, labour camps, hospitals and commercial buildings.">
+  <meta name="keywords"
+    content="Al Jazeera Service Contracting Co. projects, construction portfolio Saudi Arabia, industrial projects Dammam, labour camp construction, civil works portfolio">
+  <meta name="author" content="Al Jazeera Service Contracting Co.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.aljazeeraksa.com/projects.html">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Al Jazeera Service Contracting Co.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title"
+    content="Projects | Construction &amp; Industrial Portfolio | Al Jazeera Service Contracting Co.">
+  <meta property="og:description"
+    content="Explore Al Jazeera Service Contracting Co.'s portfolio of construction, industrial and infrastructure projects across Saudi Arabia.">
+  <meta property="og:url" content="https://www.aljazeeraksa.com/projects.html">
+  <meta property="og:image" content="https://www.aljazeeraksa.com/assets/images/hero/hero-industrial.jpg">
+  <meta property="og:image:alt" content="Al Jazeera Service Contracting Co. â€” Al Jazeera Service Contracting Co.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="Projects | Construction &amp; Industrial Portfolio | Al Jazeera Service Contracting Co.">
+  <meta name="twitter:description"
+    content="Explore Al Jazeera Service Contracting Co.'s portfolio of construction, industrial and infrastructure projects across Saudi Arabia.">
+  <meta name="twitter:image" content="https://www.aljazeeraksa.com/assets/images/hero/hero-industrial.jpg">
+
+  <meta name="theme-color" content="#071B2C">
+  <link rel="icon" href="assets/images/logos/jazeera-logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"
+    integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
+    integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous">
+
+  <link href="assets/css/style.css?v=24" rel="stylesheet">
+  <link href="assets/css/responsive.css?v=24" rel="stylesheet">
+
+  <!-- Breadcrumb structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aljazeeraksa.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.aljazeeraksa.com/projects.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="ajs-skip-link" href="#main">Skip to main content</a>
+
+  <!-- ==========================================
+       Site Header
+       Inner pages use the standard (non-overlay) header so the
+       navbar sits above the page banner rather than on it.
+       ========================================== -->
+  <header class="ajs-header">
+
+    <!-- ==========================================
+         Top Utility Bar
+         ========================================== -->
+    <div class="ajs-topbar">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+
+          <div class="d-flex align-items-center gap-3">
+            <a href="tel:+966138422350"><i class="bi bi-telephone-fill" aria-hidden="true"></i> +966 13 842 2350</a>
+            <span class="ajs-topbar-divider ajs-topbar-hide-sm" aria-hidden="true"></span>
+            <a class="ajs-topbar-hide-sm" href="mailto:info@aljazeeraksa.com"><i class="bi bi-envelope-fill"
+                aria-hidden="true"></i> info@aljazeeraksa.com</a>
+            <span class="ajs-topbar-divider ajs-topbar-hide-sm" aria-hidden="true"></span>
+            <span class="ajs-topbar-hide-sm"><i class="bi bi-clock-fill" aria-hidden="true"></i> Sun – Thu, 8:00 –
+              17:00</span>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <!-- SOCIAL PLACEHOLDERS — point at the live company profiles -->
+            <a class="ajs-topbar-hide-sm" href="#" aria-label="Al Jazeera Service Contracting Co. on LinkedIn"><i
+                class="bi bi-linkedin" aria-hidden="true"></i></a>
+            <a class="ajs-topbar-hide-sm" href="#" aria-label="Al Jazeera Service Contracting Co. on Instagram"><i
+                class="bi bi-instagram" aria-hidden="true"></i></a>
+            <!-- Language switch hidden for now. Markup and the hreflang alternates
+                 in the document head stay in place; remove the two d-none
+                 classes below to bring the control back. -->
+            <span class="ajs-topbar-divider ajs-topbar-hide-sm d-none" aria-hidden="true"></span>
+            <a class="ajs-lang-switch d-none" href="#" aria-label="Switch to Arabic — التبديل إلى العربية">
+              EN | <span class="ajs-ar">العربية</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         Primary Navigation
+         Uses the same offcanvas pattern as the homepage so every
+         page feels unified. Logo left, links centred, CTA right.
+         ========================================== -->
+    <nav class="navbar ajs-navbar" aria-label="Main navigation">
+      <div class="container">
+
+        <a class="ajs-brand" href="index.html">
+          <img src="assets/images/logos/jazeera-logo.png" alt="Al Jazeera Service Contracting Co." width="327"
+            height="285">
+          <span class="ajs-brand-text"><span class="ajs-brand-ar">شركة خدمة الجزيرة للمقاولات</span><span class="ajs-brand-en">al jazeera service contracting co.</span></span>
+        </a>
+
+        <!-- Right-aligned Desktop Navigation & CTA Button -->
+        <div class="d-none d-lg-flex align-items-center ms-auto">
+          <ul class="navbar-nav flex-row gap-1 me-4">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home <span class="ajs-ar">الرئيسية</span></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About <span class="ajs-ar">من نحن</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services <span
+                  class="ajs-ar">الخدمات</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects <span
+                  class="ajs-ar">المشاريع</span></a></li>
+            <li class="nav-item d-none"><a class="nav-link" href="careers.html">Careers <span
+                  class="ajs-ar">الوظائف</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact <span class="ajs-ar">اتصل
+                  بنا</span></a></li>
+          </ul>
+          <a class="btn btn-ajs-primary" href="contact.html#quote">Request a Quote</a>
+        </div>
+
+        <!-- Mobile trigger — opens the offcanvas panel below lg -->
+        <button class="navbar-toggler ajs-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#ajsMenu" aria-controls="ajsMenu" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- ==========================================
+             Offcanvas Menu (below lg)
+             Full-height panel for mobile navigation.
+             ========================================== -->
+        <div class="offcanvas offcanvas-end ajs-offcanvas" tabindex="-1" id="ajsMenu" aria-labelledby="ajsMenuLabel">
+
+          <div class="offcanvas-header">
+            <span class="ajs-brand" id="ajsMenuLabel">
+              <img src="assets/images/logos/jazeera-logo.png" alt="" width="327" height="285">
+              <span class="ajs-brand-text"><span class="ajs-brand-ar">شركة خدمة الجزيرة للمقاولات</span><span class="ajs-brand-en">al jazeera service contracting co.</span></span>
+            </span>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home <span class="ajs-ar">الرئيسية</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About <span class="ajs-ar">من نحن</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Services <span
+                    class="ajs-ar">الخدمات</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="projects.html">Projects <span
+                    class="ajs-ar">المشاريع</span></a></li>
+              <li class="nav-item d-none"><a class="nav-link" href="careers.html">Careers <span
+                    class="ajs-ar">الوظائف</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact <span class="ajs-ar">اتصل
+                    بنا</span></a></li>
+            </ul>
+
+            <a class="btn btn-ajs-primary w-100 mt-4" href="contact.html#quote">Request a Quote</a>
+
+            <div class="ajs-offcanvas-contact">
+              <p class="mb-2"><i class="bi bi-telephone-fill" aria-hidden="true"></i><a href="tel:+966138422350">+966 13
+                  842 2350</a></p>
+              <p class="mb-2"><i class="bi bi-envelope-fill" aria-hidden="true"></i><a
+                  href="mailto:info@aljazeeraksa.com">info@aljazeeraksa.com</a></p>
+              <p class="mb-0"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i>Dammam, Eastern Province</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+  </header>
+
+  <main id="main">
+
+    <!-- ==========================================
+         Hero Banner — premium industrial background
+         ========================================== -->
+    <header class="ajs-banner">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb ajs-breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Projects</li>
+          </ol>
+        </nav>
+        <span class="ajs-eyebrow ajs-eyebrow--light">Our Projects <span class="ajs-ar">مشاريعنا</span></span>
+        <h1 data-aos="fade-up">Proven capability, delivered across the Kingdom</h1>
+        <p data-aos="fade-up" data-aos-delay="60">
+          A portfolio of construction, industrial and infrastructure projects that demonstrate
+          our capacity, quality standards and commitment to client success.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ==========================================
+         Introduction — professional portfolio overview
+         ========================================== -->
+    <section class="ajs-section" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center" data-aos="fade-up">
+            <span class="ajs-eyebrow ajs-eyebrow--center">Portfolio</span>
+            <h2 id="portfolio-heading">Building confidence through results</h2>
+            <p class="ajs-lead">
+              Each project below reflects our commitment to delivering quality construction, reliable
+              human resource support and professional project management. Where specific project details are
+              unavailable,
+              we have noted that additional information will be updated.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         Projects Grid â€” icon-based cards, no images.
+         All project info is shown directly on the card.
+         ========================================== -->
+    <section class="ajs-section ajs-section--dark" aria-labelledby="grid-heading">
+      <div class="container">
+
+        <!-- Filter bar for project categories -->
+        <div class="ajs-filters" data-filter-bar>
+          <button class="ajs-filter-btn is-active" data-filter="all" aria-pressed="true">All Projects</button>
+          <button class="ajs-filter-btn" data-filter="construction" aria-pressed="false">Construction</button>
+          <button class="ajs-filter-btn" data-filter="industrial" aria-pressed="false">Industrial</button>
+          <button class="ajs-filter-btn" data-filter="commercial" aria-pressed="false">Commercial</button>
+          <button class="ajs-filter-btn" data-filter="residential" aria-pressed="false">Residential</button>
+        </div>
+
+        <h2 id="grid-heading" class="visually-hidden">Project Grid</h2>
+
+        <div class="row g-4">
+
+          <!-- Project 01: Abdul Jaleel Bakhurji Compound -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-category="construction residential">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-house-door" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Residential</span>
+              </div>
+              <h3>Abdul Jaleel Bakhurji Compound</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Location</span><span>Dammam</span></li>
+                <li><span>Client</span><span>Mr. Abdul Jaleel Bakhurji</span></li>
+                <li><span>Duration</span><span>26 Months</span></li>
+                <li><span>Value</span><span>⃁ 22.75 million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 02: Construction of Metal Factory -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60" data-category="construction industrial">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Industrial</span>
+              </div>
+              <h3>Construction of Metal Factory</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Client</span><span>Metal Fasteners</span></li>
+                <li><span>Location</span><span>2nd Industrial, Dammam</span></li>
+                <li><span>Duration</span><span>12 Months</span></li>
+                <li><span>Value</span><span>⃁ 17 Million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 03: Construction of Labour Camp -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120"
+            data-category="construction residential">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Accommodation</span>
+              </div>
+              <h3>Construction of Labour Camp - IPS</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Client</span><span>International Port, Dammam</span></li>
+                <li><span>Location</span><span>Mina - Dammam</span></li>
+                <li><span>Duration</span><span>12 Months</span></li>
+                <li><span>Value</span><span>⃁ 13 Million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 04: M J Ghulam Building -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-category="construction commercial">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Commercial</span>
+              </div>
+              <h3>M J Ghulam Building</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Location</span><span>1st Industrial, Dammam</span></li>
+                <li><span>Client</span><span>Mr. Mohd. Jameel H Ghulam</span></li>
+                <li><span>Duration</span><span>22 Months</span></li>
+                <li><span>Value</span><span>⃁ 21 Million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 05: Giant Store -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60" data-category="construction commercial">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-shop" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Retail</span>
+              </div>
+              <h3>Giant Store</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Location</span><span>1st Industrial, Dammam</span></li>
+                <li><span>Client</span><span>AK - AL Muhaidib Group</span></li>
+                <li><span>Duration</span><span>24 Months</span></li>
+                <li><span>Value</span><span>⃁ 23 Million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 06: Labour Camp for Al Suwaidi Group -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120"
+            data-category="construction residential">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Accommodation</span>
+              </div>
+              <h3>Labour Camp for Al Suwaidi Group</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Location</span><span>Jubail</span></li>
+                <li><span>Client</span><span>Al Suwaidi</span></li>
+                <li><span>Duration</span><span>20 Months</span></li>
+                <li><span>Value</span><span>⃁ 23 Million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 07: King Fahad University Hospital -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-category="construction commercial">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-hospital" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Institutional</span>
+              </div>
+              <h3>King Fahad University Hospital</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Location</span><span>Dammam</span></li>
+                <li><span>Client</span><span>King Fahad University Hospital</span></li>
+                <li><span>Duration</span><span>24 Months</span></li>
+                <li><span>Value</span><span>⃁ 12.75 Million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 08: Commercial & Residential Building -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60"
+            data-category="construction commercial residential">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-buildings" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Mixed Use</span>
+              </div>
+              <h3>Commercial & Residential Building</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Location</span><span>Dammam</span></li>
+                <li><span>Client</span><span>M/S. Al - Muhaidib Group</span></li>
+                <li><span>Duration</span><span>21 Months</span></li>
+                <li><span>Value</span><span>⃁ 21 Million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 09: Private Villa Projects -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120"
+            data-category="construction residential">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-house-door" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Residential</span>
+              </div>
+              <h3>Private Villa Project</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Client</span><span>Mr. Nasir Al-Mulhim</span></li>
+                <li><span>Location</span><span>Dammam & Al Hassa</span></li>
+                <li><span>Duration</span><span>24 Months</span></li>
+                <li><span>Value</span><span>⃁ 13.5 Million</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Project 10: Al Rajhi Banking & Investment Corporation -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-category="construction commercial">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-bank2" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Commercial</span>
+              </div>
+              <h3>Al Rajhi Banking &amp; Investment Corporation</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Client</span><span>Al Rajhi Bank</span></li>
+                <li><span>Location</span><span>Dammam, Houfuf, Al-Khobar & Doha</span></li>
+                <li><span>Duration</span><span>24 Months</span></li>
+                <li><span>Value</span><span>⃁ 13.5 Million</span></li>
+              </ul>
+            </article>
+          </div>
+          <!-- Project 11: Al Bassam Commercial Complex -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-category="construction commercial">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-bank2" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Commercial</span>
+              </div>
+              <h3>Al Bassam Commercial Complex</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Client</span><span>Mr Saleh Al- Bassam</span></li>
+                <li><span>Location</span><span>Dammam - Auction Market</span></li>
+                <li><span>Duration</span><span>20 Months</span></li>
+                <li><span>Value</span><span>⃁ 16.5 Million</span></li>
+              </ul>
+            </article>
+          </div>
+          <!-- Project 12: Residential compound for SAFCO -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-category="construction residential">
+            <article class="ajs-project-card">
+              <div class="ajs-project-header">
+                <span class="ajs-project-icon"><i class="bi bi-bank2" aria-hidden="true"></i></span>
+                <span class="ajs-project-tag">Residential</span>
+              </div>
+              <h3>Residential compound for SAFCO</h3>
+              <ul class="ajs-fp-meta">
+                <li><span>Client</span><span>SAFCO</span></li>
+                <li><span>Location</span><span>Jubail</span></li>
+                <li><span>Duration</span><span>12 Months</span></li>
+                <li><span>Value</span><span>⃁ 12.75 Million</span></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <!-- Empty state shown when a filter yields no results -->
+        <div class="text-center py-5 d-none" data-filter-empty>
+          <i class="bi bi-search text-muted-ajs ajs-icon-xl" aria-hidden="true"></i>
+          <p class="mt-3 text-muted-ajs">No projects found in this category.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ==========================================
+         Call To Action
+         ========================================== -->
+    <section class="ajs-section ajs-cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="ajs-eyebrow ajs-eyebrow--light">Start Your Project</span>
+            <h2 id="cta-heading" class="mb-3">Let's build your next project together</h2>
+            <p class="mb-0 ajs-measure-lg">
+              Share your project requirements and our team will provide a detailed proposal with
+              relevant experience and competitive pricing.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="btn btn-ajs-gold" href="contact.html#quote">Request a Quotation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       Footer — unified with homepage
+       ========================================== -->
+  <footer class="ajs-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a class="ajs-brand" href="index.html">
+            <img src="assets/images/logos/jazeera-logo.png" alt="Al Jazeera Service Contracting Co." width="327"
+              height="285">
+            <span class="ajs-brand-text"><span class="ajs-brand-ar">شركة خدمة الجزيرة للمقاولات</span><span class="ajs-brand-en">al jazeera service contracting co.</span></span>
+          </a>
+          <p>A Saudi contracting and industrial support company established in 2010, delivering human resource support,
+            construction, mechanical works, equipment rental and maintenance services across the Kingdom.</p>
+          <form class="ajs-newsletter" action="https://formspree.io/f/maewykjb" method="post" novalidate data-validate>
+            <!-- Honeypot: bots fill this, humans never see it. -->
+            <input class="ajs-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_subject" value="Newsletter signup — aljazeeraksa.com">
+            <input type="hidden" name="Form" value="Newsletter">
+            <div class="ajs-form-status ajs-form-status--success" data-form-status role="status" aria-live="polite"><i
+                class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Thank you — you have been added to our
+                list.</span></div>
+            <label class="visually-hidden" for="newsletterEmail">Email address</label>
+            <div class="input-group">
+              <input class="form-control" type="email" id="newsletterEmail" name="newsletterEmail"
+                placeholder="Your email address" autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}"
+                title="Enter a complete email address, for example name@company.com" required>
+              <button class="btn btn-ajs-gold" type="submit" aria-label="Subscribe to updates"><i class="bi bi-send"
+                  aria-hidden="true"></i></button>
+            </div>
+            <span class="ajs-newsletter-note">Occasional company and project updates. No spam. See our <a
+                href="privacy.html">Privacy Policy</a>.</span>
+          </form>
+          <div class="ajs-social">
+            <a href="#" aria-label="Al Jazeera Service Contracting Co. on LinkedIn"><i class="bi bi-linkedin"
+                aria-hidden="true"></i></a>
+            <a href="#" aria-label="Al Jazeera Service Contracting Co. on X"><i class="bi bi-twitter-x"
+                aria-hidden="true"></i></a>
+            <a href="#" aria-label="Al Jazeera Service Contracting Co. on Instagram"><i class="bi bi-instagram"
+                aria-hidden="true"></i></a>
+            <a href="#" aria-label="Contact Al Jazeera Service Contracting Co. on WhatsApp"><i class="bi bi-whatsapp"
+                aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4>Quick Links</h4>
+          <ul class="ajs-footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li class="d-none"><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4>Services</h4>
+          <ul class="ajs-footer-links">
+            <li><a href="services.html#hr-support">Human Resource Support</a></li>
+            <li><a href="services.html#construction">Industrial Construction</a></li>
+            <li><a href="services.html#construction">Civil Construction</a></li>
+            <li><a href="services.html#mechanical">Mechanical Construction</a></li>
+            <li><a href="services.html#rental">Equipment Rental</a></li>
+            <li><a href="services.html#maintenance">Building Maintenance &amp; AMC</a></li>
+            <li><a href="services.html#it-services">IT &amp; Digital Services</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4>Contact</h4>
+          <ul class="ajs-footer-contact">
+            <li>
+              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+              <span>P.O. Box 6716<br>King Fahd bin Abdul Aziz Road<br>Dammam 32242<br>Kingdom of Saudi Arabia</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+              <span><a href="tel:+966138422350">+966 13 842 2350</a><br><a href="tel:+966592334678">+966 59 233
+                  4678</a></span>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              <span><a href="mailto:info@aljazeeraksa.com">info@aljazeeraksa.com</a></span>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill" aria-hidden="true"></i>
+              <span>Sunday – Thursday<br>8:00 AM – 5:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="ajs-footer-bottom">
+        <div class="row align-items-center g-3">
+          <div class="col-md-6">
+            <p>&copy; <span data-current-year>2026</span> Al Jazeera Service Contracting Co. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <!-- PLACEHOLDER — link to the privacy policy page once written -->
+            <a href="privacy.html">Privacy Policy</a>
+            <span class="mx-2" aria-hidden="true">&middot;</span>
+            <a href="#" aria-label="Switch to Arabic — التبديل إلى العربية">EN | <span class="ajs-ar">العربية</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="ajs-quick-call" href="tel:+966138422350" aria-label="Call Al Jazeera Service Contracting Co."><i
+      class="bi bi-telephone-fill" aria-hidden="true"></i></a>
+  <button class="ajs-to-top" type="button" aria-label="Scroll back to top"><i class="bi bi-arrow-up"
+      aria-hidden="true"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/main.js?v=24"></script>
+
+</body>
+
+</html>

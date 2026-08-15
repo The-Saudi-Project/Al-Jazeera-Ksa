@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Boom truck with a knuckle crane mounted behind the cab">
+  <!-- Equipment illustration: Boom truck -->
+  <defs>
+    <linearGradient id="eqBtBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A6C"/><stop offset="1" stop-color="#0C2538"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Knuckle boom, folded up over the deck -->
+  <path d="M188 176 176 96l24-4 14 78Z" fill="#C8A96A"/>
+  <path d="M196 96 300 62l8 24-104 34Z" fill="#D6BC85"/>
+  <path d="M300 68h72v16h-72Z" fill="#C8A96A"/>
+  <circle cx="196" cy="98" r="9" fill="#0E2C43"/>
+  <circle cx="300" cy="74" r="8" fill="#0E2C43"/>
+  <!-- Hoist line and hook -->
+  <path d="M366 84v46" stroke="#0E2C43" stroke-width="2"/>
+  <path d="M360 130h12v10a6 6 0 0 1-12 0Z" fill="#0E2C43"/>
+
+  <!-- Cab -->
+  <path d="M40 122h70a10 10 0 0 1 10 10v54H40a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8Z" fill="url(#eqBtBody)"/>
+  <rect x="46" y="132" width="58" height="32" rx="4" fill="#8FBBD8" opacity=".6"/>
+  <rect x="32" y="170" width="24" height="10" rx="3" fill="#C8A96A"/>
+
+  <!-- Flatbed deck -->
+  <rect x="120" y="176" width="268" height="18" rx="4" fill="#0E2C43"/>
+  <rect x="120" y="176" width="268" height="5" fill="#0B8A6B"/>
+  <!-- Stabiliser outriggers -->
+  <g fill="#123B57">
+    <rect x="150" y="194" width="12" height="26" rx="3"/>
+    <rect x="352" y="194" width="12" height="26" rx="3"/>
+  </g>
+  <g fill="#0B8A6B">
+    <rect x="140" y="218" width="32" height="8" rx="3"/>
+    <rect x="342" y="218" width="32" height="8" rx="3"/>
+  </g>
+
+  <!-- Wheels -->
+  <g fill="#0C2538">
+    <circle cx="100" cy="218" r="24"/><circle cx="266" cy="218" r="24"/><circle cx="322" cy="218" r="24"/>
+  </g>
+  <g fill="#4C86AD" opacity=".85">
+    <circle cx="100" cy="218" r="9"/><circle cx="266" cy="218" r="9"/><circle cx="322" cy="218" r="9"/>
+  </g>
+</svg>

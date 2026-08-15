@@ -1,0 +1,1967 @@
+﻿<!DOCTYPE html>
+<!--
+  Al Jazeera Service Contracting Co.
+  Home page — ARABIC (/ar/)
+
+  ==========================================================
+  ⚠  DRAFT COPY — NOT APPROVED FOR LAUNCH
+  Every Arabic string on this page is a translation draft. It
+  has NOT been reviewed by a native speaker, and the marketing
+  register in particular (hero headline, CTA wording, value
+  propositions) needs a copywriter's pass before this page is
+  published. Company facts, addresses and phone numbers are
+  carried over verbatim from the English build and are correct.
+  ==========================================================
+
+  Page flow is identical to the English page, deliberately —
+  the two builds must stay structurally in step so a change to
+  one can be mirrored into the other by eye.
+
+    Navigation → Hero → Company Overview → Vision & Mission →
+    Core Values → Services → Industries → Featured Projects →
+    Equipment Rental → Why Choose Us → Leadership → Clients →
+    Call To Action → Contact Preview → Footer
+
+  Differences from ../index.html, and ONLY these:
+    - lang="ar" dir="rtl"
+    - bootstrap.rtl.min.css instead of bootstrap.min.css
+    - assets/css/rtl.css added after the two project sheets
+    - asset and script paths prefixed ../
+    - canonical, og:url and hreflang point at /ar/
+    - Latin runs inside Arabic copy wrapped in .ajs-en
+      (the mirror of .ajs-ar on the English pages)
+    - copy translated
+-->
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ==========================================
+       SEO — Primary meta
+       ========================================== -->
+  <title>شركة خدمة الجزيرة للمقاولات | المملكة العربية السعودية</title>
+  <meta name="description"
+    content="شركة خدمة الجزيرة للمقاولات (Al Jazeera Service Contracting Co.) تقدّم خدمات دعم الموارد البشرية، والإنشاءات المدنية والصناعية، والأعمال الميكانيكية، وتأجير المعدات، وأعمال الصيانة في جميع أنحاء المملكة العربية السعودية. تأسست عام 2010 ومقرها الرئيسي في الدمام.">
+  <meta name="keywords"
+    content="شركة مقاولات في السعودية, دعم الموارد البشرية الدمام, الإنشاءات الصناعية الجبيل, تأجير المعدات المنطقة الشرقية, الأعمال الميكانيكية, شركة خدمة الجزيرة للمقاولات">
+  <meta name="author" content="شركة خدمة الجزيرة للمقاولات">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.aljazeeraksa.com/ar/">
+
+  <!-- Language alternates. Both builds declare the complete set,
+       including a self-reference — a page that omits its own
+       hreflang is dropped from the cluster and the pair stops being
+       treated as translations of each other. x-default points at
+       the English build because that is the site root. -->
+  <link rel="alternate" hreflang="ar" href="https://www.aljazeeraksa.com/ar/">
+  <link rel="alternate" hreflang="en" href="https://www.aljazeeraksa.com/">
+  <link rel="alternate" hreflang="x-default" href="https://www.aljazeeraksa.com/">
+
+  <!-- ==========================================
+       Open Graph / Twitter placeholders
+       Image paths point at a share card that should be exported
+       at 1200x630 before launch.
+       ========================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="شركة خدمة الجزيرة للمقاولات">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="شركة خدمة الجزيرة للمقاولات | المقاولات والموارد البشرية والدعم الصناعي في السعودية">
+  <meta property="og:description"
+    content="نبني مستقبل المملكة الصناعي — حلول متكاملة في المقاولات والموارد البشرية والمعدات تُنفَّذ في جميع أنحاء المملكة منذ عام 2010.">
+  <meta property="og:url" content="https://www.aljazeeraksa.com/ar/">
+  <meta property="og:image" content="https://www.aljazeeraksa.com/assets/images/landing.png">
+  <meta property="og:image:alt" content="شركة خدمة الجزيرة للمقاولات">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="شركة خدمة الجزيرة للمقاولات | المقاولات والموارد البشرية والدعم الصناعي في السعودية">
+  <meta name="twitter:description"
+    content="نبني مستقبل المملكة الصناعي — حلول متكاملة في المقاولات والموارد البشرية والمعدات تُنفَّذ في جميع أنحاء المملكة منذ عام 2010.">
+  <meta name="twitter:image" content="https://www.aljazeeraksa.com/assets/images/landing.png">
+
+  <meta name="theme-color" content="#071B2C">
+  <link rel="icon" href="../assets/images/logos/jazeera-logo.png" type="image/png">
+
+  <!-- ==========================================
+       Fonts & third-party styles
+       preconnect is declared before the stylesheet request so the
+       TLS handshake to Google Fonts overlaps CSS parsing.
+       ========================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous">
+
+  <!-- Project styles load last so they win over framework defaults -->
+  <link href="../assets/css/style.css?v=24" rel="stylesheet">
+  <link href="../assets/css/responsive.css?v=24" rel="stylesheet">
+
+  <!-- RTL overrides. Must load after both sheets above so its
+       mirrored rules win on source order. -->
+  <link href="../assets/css/rtl.css?v=24" rel="stylesheet">
+
+  <!-- ==========================================
+       Structured data
+       Organization markup gives search engines the company facts
+       directly instead of inferring them from copy.
+       ========================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "شركة خدمة الجزيرة للمقاولات",
+    "alternateName": ["Al Jazeera Service Contracting Co.", "Al Jazeera Service Contracting Co."],
+    "inLanguage": "ar",
+    "url": "https://www.aljazeeraksa.com/ar/",
+    "logo": "https://www.aljazeeraksa.com/assets/images/logos/jazeera-logo.png",
+    "foundingDate": "2010",
+    "description": "شركة سعودية للمقاولات والدعم الصناعي تقدّم خدمات دعم الموارد البشرية، والإنشاءات المدنية والصناعية، والأعمال الميكانيكية، وتأجير المعدات، وأعمال الصيانة في جميع أنحاء المملكة.",
+    "address": {
+      "@type": "PostalAddress",
+      "postOfficeBoxNumber": "6716",
+      "streetAddress": "طريق الملك فهد بن عبدالعزيز",
+      "postalCode": "32242",
+      "addressLocality": "الدمام",
+      "addressRegion": "المنطقة الشرقية",
+      "addressCountry": "SA"
+    },
+    "knowsAbout": [
+      "دعم الموارد البشرية",
+      "توريد العمالة",
+      "الإنشاءات المدنية",
+      "الإنشاءات الصناعية",
+      "الإنشاءات الميكانيكية",
+      "تأجير المعدات",
+      "الصيانة الصناعية"
+    ],
+    "areaServed": [
+      { "@type": "Place", "name": "المنطقة الشرقية" },
+      { "@type": "Place", "name": "الدمام" },
+      { "@type": "Place", "name": "الجبيل" },
+      { "@type": "Place", "name": "الرياض" },
+      { "@type": "Place", "name": "جدة" },
+      { "@type": "Place", "name": "ينبع" },
+      { "@type": "Place", "name": "جيزان" }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+966-13-842-2350",
+      "email": "info@aljazeeraksa.com",
+      "availableLanguage": ["en", "ar"]
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Bypass link for keyboard and screen-reader users -->
+  <a class="ajs-skip-link" href="#main">Skip to main content</a>
+
+  <!-- ==========================================
+       Site Header
+       .ajs-header--overlay lifts the header onto the hero so the
+       background image starts at the very top of the screen. On
+       scroll, main.js adds .is-stuck and it becomes a solid white
+       fixed bar. Inner pages omit this class and stay solid.
+       ========================================== -->
+  <header class="ajs-header ajs-header--overlay">
+
+    <!-- ==========================================
+         Top Utility Bar
+         Phone, email, hours and the language switch. Hidden once
+         the header sticks, to keep the fixed bar shallow.
+         ========================================== -->
+    <div class="ajs-topbar">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+
+          <div class="d-flex align-items-center gap-3">
+            <!-- Phone, e-mail and the hours range are Latin runs inside
+                 RTL copy. Without .ajs-en's bidi isolate the algorithm
+                 reorders them — "+966 13 842 2350" renders as
+                 "2350 842 13 966+" and the time range inverts. -->
+            <a href="tel:+966138422350"><i class="bi bi-telephone-fill" aria-hidden="true"></i> <span
+                class="ajs-en">+966 13 842 2350</span></a>
+            <span class="ajs-topbar-divider ajs-topbar-hide-sm" aria-hidden="true"></span>
+            <a class="ajs-topbar-hide-sm" href="mailto:info@aljazeeraksa.com"><i class="bi bi-envelope-fill"
+                aria-hidden="true"></i> <span class="ajs-en">info@aljazeeraksa.com</span></a>
+            <span class="ajs-topbar-divider ajs-topbar-hide-sm" aria-hidden="true"></span>
+            <span class="ajs-topbar-hide-sm"><i class="bi bi-clock-fill" aria-hidden="true"></i> الأحد – الخميس، <span
+                class="ajs-en">8:00 – 17:00</span></span>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <!-- SOCIAL PLACEHOLDERS — point at the live company profiles -->
+            <a class="ajs-topbar-hide-sm" href="#" aria-label="الجزيرة للمقاولات على لينكد إن"><i class="bi bi-linkedin"
+                aria-hidden="true"></i></a>
+            <a class="ajs-topbar-hide-sm" href="#" aria-label="الجزيرة للمقاولات على إنستغرام"><i
+                class="bi bi-instagram" aria-hidden="true"></i></a>
+            <!-- Language switch hidden for now. Markup and the hreflang alternates
+                 in the document head stay in place; remove the two d-none
+                 classes below to bring the control back. -->
+            <span class="ajs-topbar-divider ajs-topbar-hide-sm d-none" aria-hidden="true"></span>
+            <a class="ajs-lang-switch d-none" href="../index.html" aria-label="Switch to English — التبديل إلى الإنجليزية">
+              العربية | <span class="ajs-en">EN</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         Primary Navigation
+         Logo left, links centred, quote button right. Below the lg
+         breakpoint the links move into an offcanvas panel.
+         ========================================== -->
+    <nav class="navbar ajs-navbar" aria-label="Main navigation">
+      <div class="container">
+
+        <a class="ajs-brand" href="index.html">
+          <img src="../assets/images/logos/jazeera-logo.png" alt="شركة خدمة الجزيرة للمقاولات" width="327"
+            height="285">
+          <span class="ajs-brand-text"><span class="ajs-brand-ar">شركة خدمة الجزيرة للمقاولات</span><span class="ajs-brand-en">al jazeera service contracting co.</span></span>
+        </a>
+
+        <!-- Desktop Navigation & CTA Button.
+             The bilingual pairing carries over from the English build
+             with the roles reversed: Arabic leads, English is the
+             companion label. Same markup shape, .ajs-ar → .ajs-en. -->
+        <div class="d-none d-lg-flex align-items-center ms-auto">
+          <ul class="navbar-nav flex-row gap-1 me-4">
+            <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية <span class="ajs-en">Home</span></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">من نحن <span class="ajs-en">About</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">الخدمات <span
+                  class="ajs-en">Services</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">المشاريع <span
+                  class="ajs-en">Projects</span></a></li>
+            <li class="nav-item d-none"><a class="nav-link" href="careers.html">الوظائف <span class="ajs-en">Careers</span></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا <span
+                  class="ajs-en">Contact</span></a></li>
+          </ul>
+
+          <a class="btn btn-ajs-primary" href="contact.html#quote">اطلب عرض سعر</a>
+        </div>
+
+        <!-- Mobile trigger -->
+        <button class="navbar-toggler ajs-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#ajsMenu" aria-controls="ajsMenu" aria-label="فتح قائمة التنقل">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- ==========================================
+             Offcanvas Menu (below lg)
+             A full-height panel is easier to reach one-handed than
+             an inline dropdown, and keeps the long menu out of the
+             page flow entirely.
+             ========================================== -->
+        <div class="offcanvas offcanvas-end ajs-offcanvas" tabindex="-1" id="ajsMenu" aria-labelledby="ajsMenuLabel">
+
+          <div class="offcanvas-header">
+            <span class="ajs-brand" id="ajsMenuLabel">
+              <img src="../assets/images/logos/jazeera-logo.png" alt="" width="327" height="285">
+              <span class="ajs-brand-text"><span class="ajs-brand-ar">شركة خدمة الجزيرة للمقاولات</span><span class="ajs-brand-en">al jazeera service contracting co.</span></span>
+            </span>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="إغلاق القائمة"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية <span class="ajs-en">Home</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="about.html">من نحن <span class="ajs-en">About</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="services.html">الخدمات <span
+                    class="ajs-en">Services</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="projects.html">المشاريع <span
+                    class="ajs-en">Projects</span></a></li>
+              <li class="nav-item d-none"><a class="nav-link" href="careers.html">الوظائف <span
+                    class="ajs-en">Careers</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا <span
+                    class="ajs-en">Contact</span></a></li>
+            </ul>
+
+            <a class="btn btn-ajs-primary w-100 mt-4" href="contact.html#quote">اطلب عرض سعر</a>
+
+            <div class="ajs-offcanvas-contact">
+              <p class="mb-2"><i class="bi bi-telephone-fill" aria-hidden="true"></i><a href="tel:+966138422350"><span
+                    class="ajs-en">+966 13 842 2350</span></a></p>
+              <p class="mb-2"><i class="bi bi-envelope-fill" aria-hidden="true"></i><a
+                  href="mailto:info@aljazeeraksa.com"><span class="ajs-en">info@aljazeeraksa.com</span></a></p>
+              <p class="mb-0"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i>الدمام، المنطقة الشرقية</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+  </header>
+
+  <main id="main">
+
+    <!-- ==========================================
+         Hero Section
+         Full-viewport opening screen. The background image is set
+         from the --ajs-hero-image token in style.css so a real
+         photograph can be swapped in without touching this markup.
+         ========================================== -->
+    <!-- BACKDROP A/B SWITCH
+         `ajs-hero--coded` present  -> drawn blueprint backdrop (below)
+         `ajs-hero--coded` removed  -> photograph in .ajs-hero-bg
+         Both layers stay in the markup; only the class changes. -->
+    <section class="ajs-hero ajs-hero--coded" aria-labelledby="hero-heading">
+
+      <!-- Photograph layer. Hidden while the coded backdrop is active. -->
+      <div class="ajs-hero-bg" role="img"
+        aria-label="Industrial facility at dusk with process columns, storage vessels and a tower crane"></div>
+
+      <!-- Coded backdrop. Purely decorative, so it is hidden from
+           assistive technology: the headline already carries the
+           meaning this drawing is illustrating. -->
+      <div class="ajs-hero-canvas" aria-hidden="true">
+        <svg class="ajs-hero-figure" viewBox="0 0 1600 460"
+             preserveAspectRatio="xMidYMax slice" focusable="false">
+
+          <!-- Pipe rack -->
+          <g stroke-width="2">
+            <path class="ajs-fig-line-2" d="M60 300v92M150 300v92M240 300v92"/>
+            <path class="ajs-fig-line" d="M30 306h280M30 326h280"/>
+            <path class="ajs-fig-accent" d="M30 316h280"/>
+          </g>
+
+          <!-- Distillation columns, with shell banding and an access ladder -->
+          <g stroke-width="2">
+            <path class="ajs-fig-fill" d="M340 110h64v282h-64z" stroke="none"/>
+            <path class="ajs-fig-line" d="M340 110h64v282h-64z"/>
+            <path class="ajs-fig-line-2" d="M340 160h64M340 210h64M340 260h64M340 310h64M340 360h64"/>
+            <path class="ajs-fig-line" d="M332 102h80"/>
+            <path class="ajs-fig-line-2" d="M412 140v240M404 160h16M404 190h16M404 220h16M404 250h16M404 280h16M404 310h16M404 340h16"/>
+
+            <path class="ajs-fig-fill" d="M440 180h46v212h-46z" stroke="none"/>
+            <path class="ajs-fig-line" d="M440 180h46v212h-46z"/>
+            <path class="ajs-fig-line-2" d="M440 226h46M440 272h46M440 318h46M440 364h46"/>
+            <path class="ajs-fig-line" d="M433 172h60"/>
+
+            <path class="ajs-fig-fill" d="M520 240h34v152h-34z" stroke="none"/>
+            <path class="ajs-fig-line" d="M520 240h34v152h-34z"/>
+            <path class="ajs-fig-line-2" d="M520 285h34M520 330h34"/>
+            <path class="ajs-fig-line" d="M514 233h46"/>
+          </g>
+
+          <!-- Interconnecting pipework -->
+          <g stroke-width="3">
+            <path class="ajs-fig-accent" d="M404 210h36M486 285h34M404 355h36"/>
+          </g>
+
+          <!-- Flare stack -->
+          <g stroke-width="2">
+            <path class="ajs-fig-line" d="M620 392 632 150h14l10 242"/>
+            <path class="ajs-fig-line-2" d="M626 250h26M623 310h32"/>
+            <path class="ajs-fig-flare" stroke="none"
+                  d="M639 148c-7-12-2-20 2-26 1 8 6 9 8 15 3 7-1 13-4 16-2 2-4-3-6-5Z"/>
+          </g>
+
+          <!-- Storage spheres on leg supports -->
+          <g stroke-width="2">
+            <circle class="ajs-fig-fill" cx="790" cy="316" r="56" stroke="none"/>
+            <circle class="ajs-fig-line" cx="790" cy="316" r="56"/>
+            <path class="ajs-fig-line-2" d="M734 316h112M790 260v112"/>
+            <path class="ajs-fig-line-2" d="M756 358l-12 34M824 358l12 34M790 372v20"/>
+
+            <circle class="ajs-fig-fill" cx="928" cy="338" r="40" stroke="none"/>
+            <circle class="ajs-fig-line" cx="928" cy="338" r="40"/>
+            <path class="ajs-fig-line-2" d="M888 338h80M928 298v80"/>
+            <path class="ajs-fig-line-2" d="M904 370l-8 22M952 370l8 22"/>
+          </g>
+
+          <!-- Storage tanks with roof plates -->
+          <g stroke-width="2">
+            <path class="ajs-fig-fill" d="M1030 282h112v110h-112z" stroke="none"/>
+            <path class="ajs-fig-line" d="M1030 282h112v110h-112z"/>
+            <ellipse class="ajs-fig-line" cx="1086" cy="282" rx="56" ry="13"/>
+            <path class="ajs-fig-line-2" d="M1030 322h112M1030 358h112"/>
+
+            <path class="ajs-fig-fill" d="M1166 308h88v84h-88z" stroke="none"/>
+            <path class="ajs-fig-line" d="M1166 308h88v84h-88z"/>
+            <ellipse class="ajs-fig-line" cx="1210" cy="308" rx="44" ry="10"/>
+            <path class="ajs-fig-line-2" d="M1166 348h88"/>
+          </g>
+
+          <!-- Tower crane -->
+          <g stroke-width="2">
+            <path class="ajs-fig-line" d="M1392 392V84M1416 392V84"/>
+            <path class="ajs-fig-line-2"
+                  d="M1392 132h24M1392 180h24M1392 228h24M1392 276h24M1392 324h24
+                     M1392 132l24 48M1416 132l-24 48M1392 228l24 48M1416 228l-24 48M1392 324l24 48M1416 324l-24 48"/>
+            <path class="ajs-fig-line" d="M1180 84h390"/>
+            <path class="ajs-fig-line-2" d="M1404 56l-210 28M1404 56l150 22M1404 84V52"/>
+            <path class="ajs-fig-line-2" d="M1258 84v104"/>
+            <path class="ajs-fig-line" d="M1246 188h24v16h-24z"/>
+          </g>
+
+          <!-- Ground plane, low buildings and site boundary -->
+          <g stroke-width="2">
+            <path class="ajs-fig-accent" d="M0 392h1600"/>
+            <path class="ajs-fig-fill" d="M60 410h150v-24H60zM980 410h120v-20H980zM1450 410h110v-26h-110z" stroke="none"/>
+            <path class="ajs-fig-line-2" d="M60 386h150v24H60zM980 390h120v20H980zM1450 384h110v26h-110z"/>
+          </g>
+
+          <!-- Dimension line: the detail that makes the whole thing read
+               as a drawing set rather than as decoration. -->
+          <g stroke-width="1.5">
+            <path class="ajs-fig-dim" d="M340 438h214M340 430v16M554 430v16"/>
+            <path class="ajs-fig-dim" d="M720 438h248M720 430v16M968 430v16"/>
+            <path class="ajs-fig-dim" d="M1030 438h224M1030 430v16M1254 430v16"/>
+          </g>
+
+          <!-- Status nodes -->
+          <g>
+            <circle class="ajs-fig-node" cx="372" cy="96" r="4"/>
+            <circle class="ajs-fig-node" cx="463" cy="166" r="3.5"/>
+            <circle class="ajs-fig-node" cx="537" cy="227" r="3.5"/>
+            <circle class="ajs-fig-node" cx="1086" cy="270" r="4"/>
+            <circle class="ajs-fig-node" cx="1210" cy="298" r="3.5"/>
+            <circle class="ajs-fig-node" cx="1404" cy="76" r="4"/>
+          </g>
+
+        </svg>
+      </div>
+
+      <div class="ajs-hero-overlay" aria-hidden="true"></div>
+
+      <div class="container ajs-hero-content">
+        <div class="row align-items-center g-5">
+          <!-- Left Column: Copy & Actions -->
+          <div class="col-lg-7">
+            <span class="ajs-eyebrow ajs-eyebrow--light">شركة خدمة الجزيرة للمقاولات &middot; الدمام</span>
+
+            <h1 id="hero-heading">نبني <span class="ajs-hero-accent">مستقبل السعودية الصناعي</span></h1>
+
+            <p class="ajs-hero-sub">
+              نقدّم حلولاً متكاملة في المقاولات والدعم الصناعي وخدمات الموارد البشرية والإنشاءات
+              المدنية والميكانيكية وتأجير المعدات في جميع أنحاء المملكة، بجودة وموثوقية
+              لا تقبل المساومة.
+            </p>
+
+            <div class="ajs-hero-actions">
+              <a class="btn btn-ajs-gold" href="services.html">
+                استكشف خدماتنا <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-ajs-outline-light" href="contact.html#quote">اطلب عرض سعر</a>
+            </div>
+
+            <div class="ajs-hero-trust">
+              <span class="ajs-hero-trust-item"><i class="bi bi-award" aria-hidden="true"></i> تأسست عام 2010</span>
+              <span class="ajs-hero-trust-item"><i class="bi bi-globe2" aria-hidden="true"></i> عمليات على مستوى
+                المملكة</span>
+              <span class="ajs-hero-trust-item"><i class="bi bi-geo-alt" aria-hidden="true"></i> المقر في الدمام</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Floating Glassmorphic Feature Card (Desktop) -->
+          <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+            <div class="ajs-hero-card">
+              <span class="ajs-hero-card-badge"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> مقاول
+                معتمد</span>
+              <img src="../assets/images/about-operations.jpg" alt="موقع مشروع قائم لشركة خدمة الجزيرة للمقاولات"
+                class="ajs-hero-card-img">
+              <h3 class="h4 text-white mb-2">دعم صناعي متكامل</h3>
+              <p class="small text-white-50 mb-3">ندعم مشاريع البنية التحتية لأرامكو وسابك والشركة السعودية للكهرباء
+                والهيئة الملكية في المنطقة الشرقية.</p>
+              <div class="d-flex align-items-center justify-content-between pt-2 border-top border-secondary">
+                <span class="small text-white-50"><i class="bi bi-clock-history me-1" aria-hidden="true"></i> أكثر من 15
+                  عامًا من الخبرة</span>
+                <a href="projects.html" class="text-warning small fw-semibold text-decoration-none">عرض المشاريع <i
+                    class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll cue: a full-height hero otherwise hides the fact
+           that the page continues below. -->
+      <a class="ajs-scroll-cue d-none d-md-inline-flex" href="#overview" aria-label="Scroll to company overview">
+        <span class="ajs-scroll-cue-mouse" aria-hidden="true"></span>
+        <span>Scroll</span>
+      </a>
+    </section>
+
+    <!-- ==========================================
+         Company Overview Section
+         Establishes who the company is before asking for anything.
+         Statistic cards sit below the copy as supporting proof.
+         ========================================== -->
+    <section class="ajs-section" id="overview" aria-labelledby="overview-heading">
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="ajs-split-frame">
+              <div class="ajs-split-media">
+                <!-- img- comment: IMAGE UPLOAD INSTRUCTIONS FOR DEVELOPERS
+                     • Save file as: assets/images/about-operations.jpg (or .png / .webp)
+                     • Recommended minimum resolution: 1200 x 800 px (3:2 aspect ratio)
+                     • Search keywords for stock photos: "Saudi Arabia industrial construction structural steel erection site crane worker"
+                     • Recommended sources: Unsplash, Pexels, Pixabay, or official Al Jazeera Service Contracting Co. site photography -->
+                <img src="../assets/images/about-operations.jpg"
+                  alt="Al Jazeera Service Contracting Co. work front showing structural steel erection with a site crane" width="760" height="560"
+                  loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <span class="ajs-eyebrow">About Us <span class="ajs-ar">من نحن</span></span>
+            <h2 id="overview-heading">About Al Jazeera Service Contracting Co.</h2>
+
+            <p class="ajs-lead">
+              Al Jazeera Service Contracting Co. is a Saudi-based contracting and industrial support company established in 2010.
+              Headquartered in Dammam, we deliver integrated contracting solutions across the Kingdom
+              of Saudi Arabia.
+            </p>
+
+            <p>
+              Our scope covers human resource support, civil and industrial construction, mechanical works,
+              equipment rental, maintenance services and specialised industrial support — engaged
+              individually or combined into a single accountable contract.
+            </p>
+
+            <p class="mb-0">
+              With extensive experience across industrial, commercial, infrastructure and
+              petrochemical sectors, we are committed to dependable solutions built on quality,
+              safety, professionalism and long-term client partnerships.
+            </p>
+
+            <a class="ajs-link-arrow mt-4 d-inline-flex" href="about.html">
+              More about the company <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- ==========================================
+             Statistic Cards
+             PLACEHOLDER FIGURES. "15+" and "Kingdom-wide" are
+             derived from the founding year and stated coverage and
+             are safe to publish. The two marked XX+ are NOT — they
+             must be replaced with verified company numbers before
+             this page goes live.
+             ========================================== -->
+        <div class="row g-4 mt-5">
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in">
+            <div class="ajs-stat-card">
+              <i class="bi bi-calendar-check" aria-hidden="true"></i>
+              <strong>15+</strong>
+              <span>Years of Experience</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="60">
+            <div class="ajs-stat-card">
+              <i class="bi bi-clipboard2-check" aria-hidden="true"></i>
+              <!-- PLACEHOLDER — insert verified completed project count -->
+              <strong>XX+</strong>
+              <span>Completed Projects</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="120">
+            <div class="ajs-stat-card">
+              <i class="bi bi-globe2" aria-hidden="true"></i>
+              <strong>Kingdom</strong>
+              <span>Wide Operations</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="180">
+            <div class="ajs-stat-card">
+              <i class="bi bi-building" aria-hidden="true"></i>
+              <!-- PLACEHOLDER — insert verified industrial client count -->
+              <strong>XX+</strong>
+              <span>Industrial Clients</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Vision & Mission Section
+         Two matched statements, given equal visual weight so
+         neither reads as subordinate to the other.
+         ========================================== -->
+    <section class="ajs-section bg-surface" aria-labelledby="vm-heading">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Our Direction</span>
+          <h2 id="vm-heading">Vision &amp; Mission</h2>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <article class="ajs-vm-card">
+              <span class="ajs-vm-icon"><i class="bi bi-eye" aria-hidden="true"></i></span>
+              <h3>Our Vision</h3>
+              <p>
+                To become the preferred contracting and industrial support partner across the Kingdom
+                of Saudi Arabia by consistently delivering dependable services with professionalism,
+                integrity and excellence.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <article class="ajs-vm-card">
+              <span class="ajs-vm-icon"><i class="bi bi-compass" aria-hidden="true"></i></span>
+              <h3>Our Mission</h3>
+              <p>
+                To provide reliable contracting, human resource services, construction, equipment rental and
+                industrial support solutions that contribute to the success of our clients while
+                supporting Saudi Arabia's continued development.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Core Values Section
+         Each value carries one clarifying line — the word alone
+         reads as boilerplate, the sentence makes it a commitment.
+         ========================================== -->
+    <section class="ajs-section" aria-labelledby="values-heading">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Core Values</span>
+          <h2 id="values-heading">What our clients can hold us to</h2>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="ajs-value-card">
+              <i class="bi bi-patch-check" aria-hidden="true"></i>
+              <div>
+                <h4>Quality</h4>
+                <p>Work inspected against specification, not against convenience.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <div class="ajs-value-card">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+              <div>
+                <h4>Safety</h4>
+                <p>No task is approved until the method and the risk are understood.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <div class="ajs-value-card">
+              <i class="bi bi-hand-thumbs-up" aria-hidden="true"></i>
+              <div>
+                <h4>Integrity</h4>
+                <p>Honest pricing, honest progress reporting, honest bad news.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="ajs-value-card">
+              <i class="bi bi-person-badge" aria-hidden="true"></i>
+              <div>
+                <h4>Professionalism</h4>
+                <p>Supervision, documentation and conduct that suit an operating plant.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <div class="ajs-value-card">
+              <i class="bi bi-clock-history" aria-hidden="true"></i>
+              <div>
+                <h4>Reliability</h4>
+                <p>Crews and plant arrive when the programme says they will.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <div class="ajs-value-card">
+              <i class="bi bi-people" aria-hidden="true"></i>
+              <div>
+                <h4>Client Commitment</h4>
+                <p>Scope finished properly, including the unglamorous last ten percent.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 offset-lg-4" data-aos="fade-up">
+            <div class="ajs-value-card">
+              <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+              <div>
+                <h4>Continuous Improvement</h4>
+                <p>Lessons from every close-out feed the next mobilisation.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Our Services Section
+         Eight service lines as image-led cards. Each links through
+         to the matching anchor on the services page.
+         ========================================== -->
+    <section class="ajs-section bg-surface" aria-labelledby="services-heading">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Our Services <span class="ajs-ar">الخدمات</span></span>
+          <h2 id="services-heading">Our Services</h2>
+          <p class="ajs-lead ajs-measure-lg">
+            Comprehensive contracting and industrial support solutions tailored to the needs of Saudi
+            Arabia's growing industries.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <article class="ajs-service-card">
+              <div class="ajs-service-media">
+                <img src="../assets/images/services/service-hr-support.jpg" alt="Al Jazeera Service Contracting Co. human resource support team in protective equipment"
+                  width="760" height="560" loading="lazy">
+                <span class="ajs-service-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
+              </div>
+              <div class="ajs-service-body">
+                <h3>Human Resource Support</h3>
+                <p>Skilled, semi-skilled and general workforce mobilised under our payroll, supervision and compliance.
+                </p>
+                <a class="ajs-link-arrow" href="services.html#hr-support">Learn More <i class="bi bi-arrow-right"
+                    aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-service-card">
+              <div class="ajs-service-media">
+                <img src="../assets/images/services/service-civil.jpg" alt="Al Jazeera Service Contracting Co. Industrial construction site" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-service-icon"><i class="bi bi-buildings" aria-hidden="true"></i></span>
+              </div>
+              <div class="ajs-service-body">
+                <h3>Industrial Construction</h3>
+                <p>Plant buildings, workshops and industrial civil works delivered to project specification.</p>
+                <a class="ajs-link-arrow" href="services.html#construction">Learn More <i class="bi bi-arrow-right"
+                    aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-service-card">
+              <div class="ajs-service-media">
+                <img src="../assets/images/projects/project-01.jpg" alt="Civil construction compound project" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-service-icon"><i class="bi bi-bricks" aria-hidden="true"></i></span>
+              </div>
+              <div class="ajs-service-body">
+                <h3>Civil Construction</h3>
+                <p>Foundations, concrete structures, block work and finishing for commercial and residential projects.
+                </p>
+                <a class="ajs-link-arrow" href="services.html#construction">Learn More <i class="bi bi-arrow-right"
+                    aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+            <article class="ajs-service-card">
+              <div class="ajs-service-media">
+                <img src="../assets/images/services/service-mechanical.jpg"
+                  alt="Mechanical construction piping installation" width="800" height="600" loading="lazy">
+                <span class="ajs-service-icon"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></span>
+              </div>
+              <div class="ajs-service-body">
+                <h3>Mechanical Construction</h3>
+                <p>Piping, structural fabrication and equipment installation by permit-experienced crews.</p>
+                <a class="ajs-link-arrow" href="services.html#mechanical">Learn More <i class="bi bi-arrow-right"
+                    aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <article class="ajs-service-card">
+              <div class="ajs-service-media">
+                <img src="../assets/images/services/service-rental.jpg" alt="Heavy equipment fleet depot in Dammam"
+                  width="800" height="600" loading="lazy">
+                <span class="ajs-service-icon"><i class="bi bi-truck" aria-hidden="true"></i></span>
+              </div>
+              <div class="ajs-service-body">
+                <h3>Equipment Rental</h3>
+                <p>Lifting, earthmoving, access and power equipment supplied bare or with certified operators.</p>
+                <a class="ajs-link-arrow" href="services.html#fleet">Learn More <i class="bi bi-arrow-right"
+                    aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-service-card">
+              <div class="ajs-service-media">
+                <img src="../assets/images/about-operations.jpg" alt="Plant maintenance team on active site" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-service-icon"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i></span>
+              </div>
+              <div class="ajs-service-body">
+                <h3>Building Maintenance &amp; AMC</h3>
+                <p>Integrated FM &amp; Annual Maintenance Contracts for commercial buildings, compounds, villas &amp; offices (MEP, Cleaning, Pest Control, Security).</p>
+                <a class="ajs-link-arrow" href="services.html#maintenance">Learn More <i class="bi bi-arrow-right"
+                    aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-service-card">
+              <div class="ajs-service-media">
+                <img src="../assets/images/projects/project-02.jpg" alt="Electrical substation plant installation"
+                  width="800" height="600" loading="lazy">
+                <span class="ajs-service-icon"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i></span>
+              </div>
+              <div class="ajs-service-body">
+                <h3>Electrical Works</h3>
+                <p>Installation, cabling, distribution and electrical maintenance for industrial facilities.</p>
+                <a class="ajs-link-arrow" href="services.html#industrial">Learn More <i class="bi bi-arrow-right"
+                    aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+            <article class="ajs-service-card">
+              <div class="ajs-service-media">
+                <img src="../assets/images/projects/project-04.jpg" alt="Process control instrumentation panel" width="760"
+                  height="560" loading="lazy">
+                <span class="ajs-service-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
+              </div>
+              <div class="ajs-service-body">
+                <h3>Instrumentation</h3>
+                <p>Instrument installation, loop checking and calibration support during projects and shutdowns.</p>
+                <a class="ajs-link-arrow" href="services.html#industrial">Learn More <i class="bi bi-arrow-right"
+                    aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a class="btn btn-ajs-outline" href="services.html">View all service details</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Industries We Serve Section
+         Communicates sector familiarity. Deliberately does not
+         name any client — that claim belongs in the Clients band.
+         ========================================== -->
+    <section class="ajs-section" aria-labelledby="industries-heading">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Industries</span>
+          <h2 id="industries-heading">Industries We Serve</h2>
+          <p class="ajs-lead ajs-measure-lg">
+            Experience across the sectors that drive the Kingdom's industrial and infrastructure
+            development.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-fuel-pump" aria-hidden="true"></i></span>
+              <h3>Oil &amp; Gas</h3>
+              <p>Upstream and downstream facility support under permit conditions.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-thermometer-half" aria-hidden="true"></i></span>
+              <h3>Petrochemical</h3>
+              <p>Process unit works, turnarounds and plant support services.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-signpost-split" aria-hidden="true"></i></span>
+              <h3>Infrastructure</h3>
+              <p>Roads, bridges, drainage and public works civil packages.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-nut" aria-hidden="true"></i></span>
+              <h3>Manufacturing</h3>
+              <p>Factory construction, expansion and production support crews.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-shop" aria-hidden="true"></i></span>
+              <h3>Commercial</h3>
+              <p>Retail, office and mixed-use buildings from structure to fit-out.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i></span>
+              <h3>Industrial Plants</h3>
+              <p>Dedicated on-site teams under long-term service agreements.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-droplet-half" aria-hidden="true"></i></span>
+              <h3>Utilities</h3>
+              <p>Water, wastewater and utility network construction support.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-bank" aria-hidden="true"></i></span>
+              <h3>Government</h3>
+              <p>Public sector projects delivered to procurement documentation standards.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-water" aria-hidden="true"></i></span>
+              <h3>Ports</h3>
+              <p>Marine, jetty and terminal support works in coastal locations.</p>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-industry-card">
+              <span class="ajs-industry-icon"><i class="bi bi-lightning-charge" aria-hidden="true"></i></span>
+              <h3>Energy</h3>
+              <p>Power generation, substation and transmission civil packages.</p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Featured Projects Section
+         Displays key completed projects from the company portfolio.
+
+         DATA TO CONFIRM: every card below carries a real project
+         name from the company brochure, but Client, Duration and
+         Project Value are marked "To be confirmed" because those
+         figures were not supplied. Fill them in — or delete the
+         rows — before publishing. Images are placeholder artwork.
+         ========================================== -->
+    <section class="ajs-section ajs-section--dark" aria-labelledby="projects-heading">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center ajs-eyebrow--light">Portfolio <span
+              class="ajs-ar">المشاريع</span></span>
+          <h2 id="projects-heading">Featured Projects</h2>
+          <p class="ajs-lead ajs-measure-lg">
+            A selection of completed works spanning industrial, commercial, residential and
+            institutional scopes.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-01.jpg" alt="Abdul Jaleel Bakhurji Compound development"
+                  width="800" height="600" loading="lazy">
+                <span class="ajs-fp-tag">Residential</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>Abdul Jaleel Bakhurji Compound</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Eastern Province</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-02.jpg" alt="Construction of Metal Factory" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-fp-tag">Industrial</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>Construction of Metal Factory</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Jubail</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-04.jpg" alt="M J Ghulam Commercial Building" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-fp-tag">Commercial</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>M J Ghulam Building</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Dammam</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-04.jpg" alt="Multi-storey commercial building" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-fp-tag">Commercial</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>M J Ghulam Building</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Dammam</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-02.jpg" alt="Large retail store structure" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-fp-tag">Retail</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>Giant Store</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Khobar</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-01.jpg" alt="Workers accommodation complex" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-fp-tag">Accommodation</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>Al Suwaidi Labour Camp</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Jubail</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-04.jpg" alt="Hospital facility building" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-fp-tag">Institutional</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>King Fahad University Hospital</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Khobar</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-04.jpg" alt="Mixed use commercial and residential building"
+                  width="800" height="600" loading="lazy">
+                <span class="ajs-fp-tag">Mixed Use</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>Commercial &amp; Residential Building</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Dammam</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-01.jpg" alt="Private villa construction" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-fp-tag">Residential</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>Private Villa Projects</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Eastern Province</span></li>
+                  <li><span>Client</span><span>Private</span></li>
+                  <li><span>Duration</span><span>To be updated</span></li>
+                  <li><span>Value</span><span>To be updated</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="ajs-fp-card">
+              <div class="ajs-fp-media">
+                <img src="../assets/images/projects/project-04.jpg" alt="Banking corporation office building" width="800"
+                  height="600" loading="lazy">
+                <span class="ajs-fp-tag">Commercial</span>
+              </div>
+              <div class="ajs-fp-body">
+                <h3>Al Rajhi Banking &amp; Investment Corporation</h3>
+                <ul class="ajs-fp-meta">
+                  <li><span>Location</span><span>Dammam</span></li>
+                  <li><span>Client</span><span>To be updated</span></li>
+                  <li><span>Duration</span><span>To be confirmed</span></li>
+                  <li><span>Value</span><span>To be confirmed</span></li>
+                </ul>
+                <a class="btn btn-ajs-outline-light" href="projects.html">View Project</a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a class="btn btn-ajs-gold" href="projects.html">View All Projects</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Equipment Rental Section
+         Fourteen fleet categories. Each card converts directly to
+         a quotation request rather than to another listing page.
+         ========================================== -->
+    <section class="ajs-section" aria-labelledby="equipment-heading">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Equipment Rental <span class="ajs-ar">المعدات</span></span>
+          <h2 id="equipment-heading">A maintained fleet, ready to mobilise</h2>
+          <p class="ajs-lead ajs-measure-lg">
+            Supplied bare or with certified operators, backed by scheduled inspection and
+            maintenance from our own workshop.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-excavator.svg" alt="Tracked hydraulic excavator" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Excavator</h3>
+                <p>Excavation, trenching and bulk earthmoving.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-forklift.svg" alt="Counterbalance forklift truck" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Forklift</h3>
+                <p>Warehouse and yard material handling.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-boom-truck.svg" alt="Boom truck with knuckle crane" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Boom Truck</h3>
+                <p>Combined transport and on-site lifting.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-tower-crane.svg" alt="Tower crane with lattice mast" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Tower Crane</h3>
+                <p>Sustained lifting on multi-storey structures.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-crane.svg" alt="Rough terrain mobile crane" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Mobile Crane</h3>
+                <p>Rough terrain lifting with certified operators.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-backhoe.svg" alt="Backhoe loader" width="420" height="280"
+                  loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Backhoe Loader</h3>
+                <p>Versatile digging and loading in tight sites.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-trailer.svg" alt="Lowbed trailer with prime mover" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Trailer</h3>
+                <p>Lowbed and flatbed heavy equipment transport.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-bus.svg" alt="Staff service bus" width="420" height="280"
+                  loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Service Bus</h3>
+                <p>Daily crew transport to and from site.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-power.svg" alt="Diesel generator set" width="420" height="280"
+                  loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Generator</h3>
+                <p>Temporary site and shutdown power supply.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-tower-light.svg" alt="Mobile lighting tower" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Tower Light</h3>
+                <p>Night shift and shutdown area lighting.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-compressor.svg" alt="Towable diesel air compressor" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Compressor</h3>
+                <p>Compressed air for tools and blasting works.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-access.svg" alt="Articulated boom lift" width="420" height="280"
+                  loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Man Lift</h3>
+                <p>Safe powered access for work at height.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-drum-truck.svg" alt="Concrete mixer drum truck" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Drum Truck</h3>
+                <p>Concrete delivery to the pour location.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-equipment-card">
+              <div class="ajs-equipment-media">
+                <img src="../assets/images/equipment/eq-welding.svg" alt="Engine driven welding machine" width="420"
+                  height="280" loading="lazy">
+              </div>
+              <div class="ajs-equipment-body">
+                <h3>Welding Machine</h3>
+                <p>Engine-driven sets for on-site fabrication.</p>
+                <a class="btn btn-ajs-outline btn-sm mt-auto" href="contact.html#quote">Request Quote</a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a class="btn btn-ajs-outline" href="services.html#fleet">Browse the full fleet</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Why Choose Us Section
+         Nine reasons, borderless so the block stays calm at this
+         count. Placed after the proof sections, not before them.
+         ========================================== -->
+    <section class="ajs-section bg-surface" aria-labelledby="why-heading">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Why Al Jazeera Service Contracting Co.</span>
+          <h2 id="why-heading">Why Choose Us</h2>
+          <p class="ajs-lead ajs-measure-lg">
+            Industrial clients do not change contractors lightly. These are the things that decide
+            whether a contract is renewed.
+          </p>
+        </div>
+
+        <div class="row g-4 g-lg-5">
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
+              <div>
+                <h3>Experienced Team</h3>
+                <p>Supervisors and engineers who have run this scope of work before, on comparable sites.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
+              <div>
+                <h3>Professional Workforce</h3>
+                <p>Trade-tested craftsmen under our own payroll, supervision and statutory compliance.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-truck" aria-hidden="true"></i></span>
+              <div>
+                <h3>Reliable Equipment</h3>
+                <p>An owned fleet on a maintenance schedule, so availability is not left to a third party.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i></span>
+              <div>
+                <h3>Industrial Expertise</h3>
+                <p>Crews familiar with permit-to-work systems and the discipline of live plant areas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+              <div>
+                <h3>Commitment to Safety</h3>
+                <p>Method statements, risk assessments and toolbox talks are part of the scope, not an add-on.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-patch-check" aria-hidden="true"></i></span>
+              <div>
+                <h3>Quality Execution</h3>
+                <p>Inspection records and handover documentation issued in the format your team expects.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></span>
+              <div>
+                <h3>Timely Delivery</h3>
+                <p>Programmes built on real mobilisation lead times rather than optimistic ones.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-chat-left-text" aria-hidden="true"></i></span>
+              <div>
+                <h3>Customer Focus</h3>
+                <p>One supervisor accountable for the whole work front, and one number to call.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <div class="ajs-reason">
+              <span class="ajs-reason-icon"><i class="bi bi-globe2" aria-hidden="true"></i></span>
+              <div>
+                <h3>Kingdom-wide Support</h3>
+                <p>Coverage from Dammam and Jubail through Riyadh, Jeddah, Yanbu and Jizan.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Leadership Section
+         Deliberately minimal: portrait, name, title. Portraits are
+         placeholders — replace with official photographs at 640x640
+         or larger, saved into assets/images/team/.
+         ========================================== -->
+    <!-- TEMPORARILY HIDDEN LEADERSHIP SECTION -->
+    <section class="ajs-section" aria-labelledby="leadership-heading" style="display: none !important;">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Leadership</span>
+          <h2 id="leadership-heading">The people behind the company</h2>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up">
+            <article class="ajs-leader-card">
+              <div class="ajs-leader-media">
+                <img src="../assets/images/team/chairman.jpg" alt="Portrait of Rajeh Ahmed Al Harbi, Chairman" width="320"
+                  height="320" loading="lazy">
+              </div>
+              <div class="ajs-leader-body">
+                <h3>Rajeh Ahmed Al Harbi</h3>
+                <p class="ajs-leader-role">Chairman</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+            <article class="ajs-leader-card">
+              <div class="ajs-leader-media">
+                <img src="../assets/images/team/md.jpg" alt="Portrait of Ashraf NP, CEO and Director" width="320"
+                  height="320" loading="lazy">
+              </div>
+              <div class="ajs-leader-body">
+                <h3>Ashraf NP</h3>
+                <p class="ajs-leader-role">CEO &amp; Director</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <article class="ajs-leader-card">
+              <div class="ajs-leader-media">
+                <img src="../assets/images/team/ceo.jpg" alt="Portrait of Biju Devassi, Manager"
+                  width="320" height="320" loading="lazy">
+              </div>
+              <div class="ajs-leader-body">
+                <h3>Biju Devassi</h3>
+                <p class="ajs-leader-role">Manager</p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Clients Section
+         Continuous CSS marquee. Tiles are TEXT ONLY — no client
+         logo is reproduced until the official asset is supplied by
+         the client and permission to display it is confirmed.
+
+         All twelve organisations listed below were confirmed by the
+         company as genuine clients (confirmed 2 Aug 2026). Naming an
+         organisation here asserts a commercial relationship, so any
+         future addition needs the same confirmation before it ships.
+         ========================================== -->
+    <section class="ajs-section" aria-labelledby="clients-heading">
+      <div class="container">
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Clients</span>
+          <h2 id="clients-heading">Trusted by leading organisations</h2>
+        </div>
+      </div>
+
+      <div class="ajs-marquee" data-aos="fade-up">
+        <!-- The list is duplicated so the track can translate by
+             exactly -50% and loop with no visible seam. The second
+             copy is hidden from assistive tech to avoid repetition. -->
+        <div class="ajs-marquee-track">
+
+          <div class="ajs-client-chip"><span class="ajs-client-name">Saudi Aramco</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">SABIC</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">Saudi Electricity Co.</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">Sadara</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">Al Rajhi</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">Hyundai</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">Technip</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">Samsung</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">SAFCO</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">Tamimi</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">CMC</span><span class="ajs-client-note">Logo
+              pending</span></div>
+          <div class="ajs-client-chip"><span class="ajs-client-name">King Fahad University Hospital</span><span
+              class="ajs-client-note">Logo pending</span></div>
+
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">Saudi Aramco</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">SABIC</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">Saudi Electricity
+              Co.</span><span class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">Sadara</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">Al Rajhi</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">Hyundai</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">Technip</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">Samsung</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">SAFCO</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">Tamimi</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">CMC</span><span
+              class="ajs-client-note">Logo pending</span></div>
+          <div class="ajs-client-chip" aria-hidden="true"><span class="ajs-client-name">King Fahad University
+              Hospital</span><span class="ajs-client-note">Logo pending</span></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Call To Action Section
+         Full-width conversion banner on deep navy.
+         ========================================== -->
+    <section class="ajs-section ajs-cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="ajs-eyebrow ajs-eyebrow--light">Next Step</span>
+            <h2 id="cta-heading" class="mb-3">Let's Build the Future Together</h2>
+            <p class="mb-0 ajs-measure-lg">
+              Discuss your next industrial, commercial, or infrastructure project with our
+              experienced team.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end ajs-btn-inline">
+            <a class="btn btn-ajs-gold mb-2 mb-lg-0 me-lg-2" href="contact.html#quote">Request a Proposal</a>
+            <a class="btn btn-ajs-outline-light" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Contact Preview Section
+         Map panel plus office details and a short enquiry form.
+         The form is validated client-side only — see main.js.
+         ========================================== -->
+    <section class="ajs-section bg-surface" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Contact <span class="ajs-ar">اتصل بنا</span></span>
+          <h2 id="contact-heading">Get in touch with our team</h2>
+        </div>
+
+        <div class="row g-5">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <!-- MAP PLACEHOLDER
+                 Replace the <img> below with the Google Maps embed
+                 iframe for the head office. Keep the .ajs-map-panel
+                 wrapper so the rounded corners, height and address
+                 card are preserved. -->
+            <div class="ajs-map-panel">
+              <img src="../assets/images/coverage-map.svg"
+                alt="Map of Saudi Arabia showing the Al Jazeera Service Contracting Co. head office in Dammam and operating locations" width="760"
+                height="620" loading="lazy">
+              <div class="ajs-map-marker">
+                <strong>Al Jazeera Service Contracting Co.</strong>
+                P.O. Box 6716, King Fahd bin Abdul Aziz Road, Dammam 32242
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+
+            <ul class="ajs-contact-lines">
+              <li>
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                <div>
+                  <span class="ajs-contact-label">Head Office</span>
+                  <address class="ajs-contact-value mb-0">
+                    P.O. Box 6716<br>
+                    King Fahd bin Abdul Aziz Road<br>
+                    Dammam 32242<br>
+                    Kingdom of Saudi Arabia
+                  </address>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                <div>
+                  <span class="ajs-contact-label">Phone</span>
+                  <span class="ajs-contact-value">
+                    <a href="tel:+966138422350">+966 13 842 2350</a><br>
+                    <a href="tel:+966592334678">+966 59 233 46078</a>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                <div>
+                  <span class="ajs-contact-label">Email &amp; Web</span>
+                  <span class="ajs-contact-value">
+                    <a href="mailto:info@aljazeeraksa.com">info@aljazeeraksa.com</a><br>
+                    <a href="https://www.aljazeeraksa.com">www.aljazeeraksa.com</a>
+                  </span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Mirrors index.html: the enquiry form that used to sit
+                 here was removed so there is one quotation form to
+                 maintain, on the contact page.
+
+                 STILL ENGLISH. This whole section is awaiting
+                 translation along with the rest of the page body, and
+                 the two links below point at /ar/contact.html, which
+                 does not exist yet — same state as every other nav
+                 link on this page. -->
+            <p class="mb-4">
+              Send us your scope and we will come back within one working day. The quotation
+              form on the contact page captures project type, location and timescale, so the
+              first reply can carry real detail rather than another set of questions.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-ajs-primary" href="contact.html#quote">
+                Request a Quote <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-ajs-outline" href="contact.html">Contact details</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       Footer
+       Four columns plus a newsletter sign-up and the legal row.
+       ========================================== -->
+  <footer class="ajs-footer">
+    <div class="container">
+      <div class="row g-5">
+
+        <div class="col-lg-4 col-md-6">
+          <a class="ajs-brand" href="index.html">
+            <img src="../assets/images/logos/jazeera-logo.png" alt="Al Jazeera Service Contracting Co."
+              width="327" height="285">
+            <span class="ajs-brand-text"><span class="ajs-brand-ar">شركة خدمة الجزيرة للمقاولات</span><span class="ajs-brand-en">al jazeera service contracting co.</span></span>
+          </a>
+          <p>
+            A Saudi contracting and industrial support company established in 2010, delivering
+            human resource support, construction, mechanical works, equipment rental and maintenance services
+            across the Kingdom.
+          </p>
+
+          <!-- Newsletter is a placeholder: it uses the same
+               client-side handler as the contact forms and is not
+               yet connected to a mailing provider. -->
+          <form class="ajs-newsletter" action="https://formspree.io/f/maewykjb" method="post" novalidate data-validate>
+            <!-- Honeypot: bots fill this, humans never see it. -->
+            <input class="ajs-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_subject" value="Newsletter signup — aljazeeraksa.com">
+            <input type="hidden" name="Form" value="Newsletter">
+            <div class="ajs-form-status ajs-form-status--success" data-form-status role="status" aria-live="polite">
+              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+              <span>Thank you — you have been added to our list.</span>
+            </div>
+            <label class="visually-hidden" for="newsletterEmail">Email address</label>
+            <div class="input-group">
+              <input class="form-control" type="email" id="newsletterEmail" name="newsletterEmail"
+                placeholder="Your email address" autocomplete="email" pattern="[^@s]+@[^@s]+.[A-Za-z]{2,}" title="Enter a complete email address, for example name@company.com" required>
+              <button class="btn btn-ajs-gold" type="submit" aria-label="Subscribe to updates">
+                <i class="bi bi-send" aria-hidden="true"></i>
+              </button>
+            </div>
+            <span class="ajs-newsletter-note">Occasional company and project updates. No spam. See our <a href="../privacy.html">Privacy Policy</a>.</span>
+          </form>
+
+          <div class="ajs-social">
+            <!-- SOCIAL PLACEHOLDERS — point at the live company profiles -->
+            <a href="#" aria-label="Al Jazeera Service Contracting Co. on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Al Jazeera Service Contracting Co. on X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Al Jazeera Service Contracting Co. on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Contact Al Jazeera Service Contracting Co. on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4>Quick Links</h4>
+          <ul class="ajs-footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li class="d-none"><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4>Services</h4>
+          <ul class="ajs-footer-links">
+            <li><a href="services.html#hr-support">Human Resource Support</a></li>
+            <li><a href="services.html#construction">Industrial Construction</a></li>
+            <li><a href="services.html#construction">Civil Construction</a></li>
+            <li><a href="services.html#mechanical">Mechanical Construction</a></li>
+            <li><a href="services.html#rental">Equipment Rental</a></li>
+            <li><a href="services.html#maintenance">Building Maintenance &amp; AMC</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Contact</h4>
+          <ul class="ajs-footer-contact">
+            <li>
+              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+              <span>P.O. Box 6716<br>King Fahd bin Abdul Aziz Road<br>Dammam 32242<br>Kingdom of Saudi Arabia</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+              <span><a href="tel:+966138422350">+966 13 842 2350</a><br><a href="tel:+966592334678">+966 59 233
+                  46078</a></span>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              <span><a href="mailto:info@aljazeeraksa.com">info@aljazeeraksa.com</a></span>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill" aria-hidden="true"></i>
+              <span>Sunday – Thursday<br>8:00 AM – 5:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="ajs-footer-bottom">
+        <div class="row align-items-center g-3">
+          <div class="col-md-6">
+            <p>&copy; <span data-current-year>2026</span> Al Jazeera Service Contracting Co. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <!-- PLACEHOLDER — link to the privacy policy page once written -->
+            <a href="privacy.html">Privacy Policy</a>
+            <span class="mx-2" aria-hidden="true">&middot;</span>
+            <a href="#" aria-label="Switch to Arabic — التبديل إلى العربية">EN | <span class="ajs-ar">العربية</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating quick actions -->
+  <a class="ajs-quick-call" href="tel:+966138422350" aria-label="Call Al Jazeera Service Contracting Co.">
+    <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+  </a>
+  <button class="ajs-to-top" type="button" aria-label="Scroll back to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ==========================================
+       Scripts
+       Loaded at the end of body so parsing is never blocked.
+       ========================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu" crossorigin="anonymous"></script>
+  <script src="../assets/js/main.js?v=24"></script>
+
+</body>
+
+</html>
+

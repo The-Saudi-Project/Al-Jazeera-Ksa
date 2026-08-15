@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Tracked hydraulic excavator with boom, arm and bucket">
+  <!-- Equipment illustration — Earthmoving & excavation -->
+  <defs>
+    <linearGradient id="eq2Body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A6C"/><stop offset="1" stop-color="#0C2538"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Boom, arm and bucket -->
+  <path d="M198 168 214 96l26 6-10 74Z" fill="#C8A96A"/>
+  <path d="M236 100q52-16 92 26l-22 20q-30-30-64-22Z" fill="#C8A96A"/>
+  <path d="M306 146 344 190l-18 14-40-44Z" fill="#D6BC85"/>
+  <path d="M320 196q30 12 44 2l6 24q-24 14-58-4Z" fill="#0E2C43"/>
+  <g fill="#C8A96A"><path d="M362 216h16l-2 16-16-2Z"/></g>
+  <!-- Hydraulic rams -->
+  <g stroke="#0E2C43" stroke-width="7" stroke-linecap="round">
+    <path d="M226 132l52 4"/><path d="M296 160l24 26"/>
+  </g>
+  <g stroke="#8FBBD8" stroke-width="3" stroke-linecap="round" opacity=".7">
+    <path d="M250 134h26"/><path d="M306 172l12 12"/>
+  </g>
+
+  <!-- House and cab -->
+  <rect x="66" y="140" width="150" height="54" rx="8" fill="url(#eq2Body)"/>
+  <path d="M76 106h58a10 10 0 0 1 10 10v24H66v-24a10 10 0 0 1 10-10Z" fill="#123B57"/>
+  <rect x="80" y="114" width="46" height="22" rx="3" fill="#8FBBD8" opacity=".65"/>
+  <rect x="66" y="140" width="150" height="8" fill="#C8A96A"/>
+
+  <!-- Counterweight -->
+  <path d="M52 148h20v46H52a8 8 0 0 1-8-8v-30a8 8 0 0 1 8-8Z" fill="#0E2C43"/>
+
+  <!-- Undercarriage / tracks -->
+  <rect x="52" y="196" width="180" height="16" rx="6" fill="#0E2C43"/>
+  <path d="M76 212h132a34 34 0 0 1 0 44H76a34 34 0 0 1 0-44Z" fill="#0C2538"/>
+  <path d="M84 220h116a26 26 0 0 1 0 28H84a26 26 0 0 1 0-28Z" fill="#123B57"/>
+  <g fill="#0C2538">
+    <circle cx="90" cy="234" r="12"/><circle cx="142" cy="234" r="9"/><circle cx="194" cy="234" r="12"/>
+  </g>
+  <g fill="#0B8A6B"><circle cx="90" cy="234" r="4"/><circle cx="194" cy="234" r="4"/></g>
+</svg>

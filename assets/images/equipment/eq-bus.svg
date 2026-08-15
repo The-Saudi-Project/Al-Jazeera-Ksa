@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Staff service bus for site crew transport">
+  <!-- Equipment illustration: Service bus -->
+  <defs>
+    <linearGradient id="eqBusBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A6C"/><stop offset="1" stop-color="#0C2538"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Body shell -->
+  <path d="M40 84h326a14 14 0 0 1 14 14v104H26V98a14 14 0 0 1 14-14Z" fill="url(#eqBusBody)"/>
+  <rect x="26" y="140" width="354" height="8" fill="#C8A96A"/>
+  <rect x="26" y="194" width="354" height="8" fill="#0B8A6B"/>
+
+  <!-- Windscreen and passenger glazing -->
+  <path d="M40 100h44v34H34V106a6 6 0 0 1 6-6Z" fill="#8FBBD8" opacity=".65"/>
+  <g fill="#8FBBD8" opacity=".55">
+    <rect x="96"  y="100" width="52" height="34" rx="3"/>
+    <rect x="160" y="100" width="52" height="34" rx="3"/>
+    <rect x="224" y="100" width="52" height="34" rx="3"/>
+    <rect x="288" y="100" width="52" height="34" rx="3"/>
+  </g>
+
+  <!-- Passenger door -->
+  <rect x="60" y="148" width="34" height="46" rx="3" fill="#0B2537"/>
+  <path d="M77 148v46" stroke="#4C86AD" stroke-width="2" opacity=".6"/>
+
+  <!-- Lamps -->
+  <rect x="26" y="160" width="18" height="12" rx="3" fill="#C8A96A"/>
+  <rect x="362" y="160" width="18" height="12" rx="3" fill="#C8A96A" opacity=".7"/>
+
+  <!-- Wheels -->
+  <g fill="#0C2538"><circle cx="106" cy="212" r="26"/><circle cx="304" cy="212" r="26"/></g>
+  <g fill="#4C86AD" opacity=".85"><circle cx="106" cy="212" r="10"/><circle cx="304" cy="212" r="10"/></g>
+</svg>

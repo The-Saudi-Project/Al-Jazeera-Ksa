@@ -1,0 +1,64 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 620" width="760" height="620" role="img"
+     aria-labelledby="mapTitle mapDesc">
+  <title id="mapTitle">Al Jazeera Service Contracting Co. coverage across Saudi Arabia</title>
+  <desc id="mapDesc">Stylised outline of the Kingdom of Saudi Arabia marking the head office in
+  Dammam and operating locations in Jubail, Riyadh, Jeddah, Yanbu and Jizan.</desc>
+
+  <!-- Coverage map (Contact / About pages)
+       A simplified, decorative outline rather than a survey-accurate
+       map: its job is to show reach at a glance. -->
+  <defs>
+    <linearGradient id="mapFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E2C43"/><stop offset="1" stop-color="#071B2C"/>
+    </linearGradient>
+    <pattern id="mapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#FFFFFF" stroke-opacity=".06"/>
+    </pattern>
+  </defs>
+
+  <rect width="760" height="620" fill="#F7F9FB"/>
+  <g stroke="#E5E5E5" stroke-width="1">
+    <path d="M0 80h760M0 160h760M0 240h760M0 320h760M0 400h760M0 480h760M0 560h760"/>
+    <path d="M80 0v620M160 0v620M240 0v620M320 0v620M400 0v620M480 0v620M560 0v620M640 0v620M720 0v620"/>
+  </g>
+
+  <!-- Simplified Kingdom outline -->
+  <path d="M150 118 300 96l90 26 118-10 42 44 84 18 18 62-40 58 22 56-52 66-74 20-46 62-72-14-56-56-72-24-46-72-24-92 38-56Z"
+        fill="url(#mapFill)"/>
+  <path d="M150 118 300 96l90 26 118-10 42 44 84 18 18 62-40 58 22 56-52 66-74 20-46 62-72-14-56-56-72-24-46-72-24-92 38-56Z"
+        fill="url(#mapGrid)"/>
+  <path d="M150 118 300 96l90 26 118-10 42 44 84 18 18 62-40 58 22 56-52 66-74 20-46 62-72-14-56-56-72-24-46-72-24-92 38-56Z"
+        fill="none" stroke="#C8A96A" stroke-width="2" stroke-opacity=".6"/>
+
+  <!-- Head office — Dammam. Larger marker with a pulse ring so the
+       primary location is unmistakable. -->
+  <g transform="translate(566 236)">
+    <circle r="34" fill="#0B8A6B" opacity=".18"/>
+    <circle r="22" fill="#0B8A6B" opacity=".3"/>
+    <circle r="11" fill="#C8A96A"/>
+    <circle r="4.5" fill="#071B2C"/>
+  </g>
+
+  <!-- Operating locations -->
+  <g fill="#C8A96A">
+    <circle cx="546" cy="300" r="7"/>  <!-- Jubail -->
+    <circle cx="424" cy="292" r="7"/>  <!-- Riyadh -->
+    <circle cx="252" cy="376" r="7"/>  <!-- Jeddah -->
+    <circle cx="290" cy="288" r="7"/>  <!-- Yanbu -->
+    <circle cx="322" cy="470" r="7"/>  <!-- Jizan -->
+  </g>
+  <g fill="#0B8A6B" opacity=".35">
+    <circle cx="546" cy="300" r="15"/><circle cx="424" cy="292" r="15"/>
+    <circle cx="252" cy="376" r="15"/><circle cx="290" cy="288" r="15"/><circle cx="322" cy="470" r="15"/>
+  </g>
+
+  <!-- Connecting routes from the Dammam head office -->
+  <g fill="none" stroke="#C8A96A" stroke-width="1.6" stroke-opacity=".55" stroke-dasharray="6 7">
+    <path d="M566 236 546 300"/>
+    <path d="M566 236 424 292"/>
+    <path d="M424 292 290 288"/>
+    <path d="M424 292 252 376"/>
+    <path d="M252 376 322 470"/>
+  </g>
+</svg>
+

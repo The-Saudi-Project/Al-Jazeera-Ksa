@@ -1,0 +1,11 @@
+# robots.txt — Al Jazeera Service Contracting Co.
+# https://www.aljazeeraksa.com/
+
+User-agent: *
+Allow: /
+
+# Nothing on this site is private or paginated, so the whole tree is
+# crawlable. Add Disallow rules here if an admin or staging path is
+# ever introduced.
+
+Sitemap: https://www.aljazeeraksa.com/sitemap.xml

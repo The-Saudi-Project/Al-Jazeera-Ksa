@@ -1,0 +1,3752 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&display=swap');
+
+/*==========================================================
+  AL JAZEERA SERVICE CONTRACTING CO. (Al Jazeera Service Contracting Co.)
+  Main Stylesheet
+
+  Loaded AFTER Bootstrap 5.3 so that the tokens and component
+  styles below intentionally override framework defaults.
+  Breakpoint-specific rules live in responsive.css to keep
+  this file focused on the design system itself.
+
+  CONTENTS
+  01. Design Tokens
+  02. Base & Typography
+  03. Accessibility Helpers
+  04. Layout Utilities
+  05. Buttons
+  06. Section Headings
+  07. Top Utility Bar
+  08. Navigation  (08a overlay header, 08b offcanvas)
+  09. Hero (full viewport)
+  10. Stat Band
+  11. Cards (service / feature / value / project / equipment)
+  12. Split Feature Blocks
+  13. Sector Strip
+  14. Accordion & Tabs
+  15. Timeline
+  16. CTA Band
+  17. Forms
+  18. Page Banner (inner pages)
+  19. Footer
+  20. Scroll To Top
+  21. Stat Cards
+  22. Vision & Mission
+  23. Service Cards
+  24. Industry Grid
+  25. Featured Project Cards
+  26. Why Choose Us
+  27. Leadership Cards
+  28. Client Marquee
+  29. Contact Preview
+  30. Footer Newsletter
+
+  Page-specific blocks
+  31. Service Detail Sections (services)
+  32. Career Cards (careers)
+  33. Contact Extras (contact)
+  34. Project Detail Cards (projects)
+  35. Registered Vendor Band (home)
+
+  36. Motion & Print   (kept last: its reduced-motion overrides
+                        must win over every rule above)
+==========================================================*/
+
+
+/*==========================================================
+  01. DESIGN TOKENS
+  Single source of truth for colour, type scale, spacing and
+  elevation. Every component below consumes these variables so
+  the brand can be retuned from one place.
+==========================================================*/
+:root {
+  /* --- Brand palette --- */
+  --ajs-navy: #071B2C;
+  --ajs-navy-600: #0D2A42;
+  --ajs-navy-400: #16395673;
+  --ajs-green: #0B8A6B;
+  --ajs-green-dark: #086F56;
+  --ajs-gold: #C8A96A;
+  --ajs-gold-soft: #E2D2AE;
+  /* Pressed/hover state for gold surfaces. */
+  --ajs-gold-dark: #B89755;
+
+  /* --- Functional colours ---
+     Not brand colours, but they were sitting in the stylesheet as
+     raw hex. Tokenised so they are findable and changeable in one
+     place like everything else. */
+  --ajs-danger: #C0392B;
+  --ajs-placeholder: #A6AEB6;
+  /* WhatsApp brand green — fixed by the platform, not ours to pick. */
+  --ajs-whatsapp: #25D366;
+  --ajs-whatsapp-dark: #1DA851;
+
+  /* --- Coded hero backdrop ---
+     Deeper navies than the main palette, used only for the drawn
+     blueprint field. Kept as tokens so the backdrop can be retuned
+     without hunting through the hero section. */
+  --ajs-blueprint-1: #0A2438;
+  --ajs-blueprint-2: #08202F;
+  --ajs-blueprint-3: #050F1A;
+  --ajs-blueprint-fill: #061726;
+  /* Cool steel used for secondary technical linework. */
+  --ajs-steel: #4C86AD;
+
+  /* --- Hero Imagery ---
+     Single source of truth for the hero background. The overlay
+     layered above it guarantees text contrast, so any reasonably
+     dark wide photograph works. Swap this one line to change it.
+     NOTE: the current file is 1024x1024 — replace with a landscape
+     export (min 1920x1080) so it is not upscaled and cropped. */
+  --ajs-hero-image: url('../images/landing.png');
+
+  /* --- Surfaces --- */
+  --ajs-bg: #FFFFFF;
+  --ajs-surface: #F7F9FB;
+  --ajs-surface-2: #EFF3F7;
+  --ajs-border: #E5E5E5;
+  --ajs-border-strong: #D3DAE1;
+
+  /* --- Text --- */
+  --ajs-text: #1E1E1E;
+  --ajs-muted: #6C757D;
+  --ajs-on-dark: #FFFFFF;
+  --ajs-on-dark-muted: #A9BACA;
+
+  /* --- Typography --- */
+  --ajs-font: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ajs-font-ar: "Cairo", "Poppins", system-ui, sans-serif;
+
+  /* Fluid type scale — clamp() keeps headings large on desktop
+     without ever overflowing narrow phones. */
+  /* Scale tightened one step across the board. The previous ceilings
+     were sized as though every heading had the full container width,
+     but the hero headline only gets 7 of 12 columns beside the
+     feature card, so it wrapped to three lines and overpowered the
+     page. Ratios between the steps are unchanged. */
+  --ajs-h1: clamp(2.1rem, 1.3rem + 2.6vw, 3.5rem);
+  --ajs-h2: clamp(1.7rem, 1.2rem + 1.6vw, 2.5rem);
+  --ajs-h3: clamp(1.22rem, 1.05rem + 0.65vw, 1.55rem);
+  --ajs-h4: clamp(1.05rem, 0.98rem + 0.32vw, 1.22rem);
+  --ajs-lead: clamp(0.98rem, 0.94rem + 0.25vw, 1.08rem);
+
+  /* --- Header height ---
+     The overlay header sits ON the hero, so hero content has to
+     clear it manually. Declared here rather than baked into the
+     hero padding because it is the sum of three things that change
+     independently (topbar, navbar padding, logo height) — when any
+     of them moves, this is the one value to update.
+     Currently: topbar ~40px + navbar padding 37px + logo 66px. */
+  --ajs-header-h: 143px;
+
+  /* --- Spacing rhythm --- */
+  /* Band padding pulled back in step with the type. 8rem top and
+     bottom left sections feeling stranded once the headings shrank. */
+  --ajs-section-y: clamp(3.5rem, 2.2rem + 4vw, 6.5rem);
+  --ajs-gutter: 1.5rem;
+
+  /* --- Elevation & shape --- */
+  --ajs-radius: 4px;
+  --ajs-radius-lg: 8px;
+  --ajs-shadow-sm: 0 2px 10px rgba(7, 27, 44, 0.05);
+  --ajs-shadow: 0 12px 34px rgba(7, 27, 44, 0.09);
+  --ajs-shadow-lg: 0 24px 60px rgba(7, 27, 44, 0.14);
+
+  /* --- Motion --- */
+  --ajs-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ajs-speed: 0.35s;
+
+  /* Press feedback runs far faster than hover. A press is the one
+     moment the user is watching for a reaction, so it has to land
+     almost immediately — 350ms here reads as an unresponsive
+     control even though it is the correct speed for a hover lift. */
+  --ajs-speed-press: 0.16s;
+
+  /* The property set the card-like components actually animate.
+     Declared once here rather than as `transition: all`, which
+     forces the browser to watch every property and makes any future
+     layout-affecting change silently animatable. */
+  --ajs-transition-ui:
+    transform var(--ajs-speed) var(--ajs-ease),
+    box-shadow var(--ajs-speed) var(--ajs-ease),
+    border-color var(--ajs-speed) var(--ajs-ease),
+    background-color var(--ajs-speed) var(--ajs-ease),
+    color var(--ajs-speed) var(--ajs-ease),
+    opacity var(--ajs-speed) var(--ajs-ease);
+
+  /* Bootstrap variable overrides so framework components
+     (grid gutters, focus rings, links) inherit the brand. */
+  --bs-body-font-family: var(--ajs-font);
+  --bs-body-color: var(--ajs-text);
+  --bs-link-color: var(--ajs-green);
+  --bs-link-hover-color: var(--ajs-green-dark);
+}
+
+
+/*==========================================================
+  02. BASE & TYPOGRAPHY
+  Large, airy type is the backbone of the premium look, so the
+  base rules set generous line-height and disciplined tracking.
+==========================================================*/
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor jumps so the sticky navbar never covers a heading. */
+  scroll-padding-top: 110px;
+}
+
+body {
+  font-family: var(--ajs-font);
+  color: var(--ajs-text);
+  background-color: var(--ajs-bg);
+  font-size: 1rem;
+  /* 1.75 reads as airy on short card copy but loose across the long
+     paragraphs on About and Services. 1.68 keeps it comfortable
+     without the text drifting apart. */
+  line-height: 1.68;
+  font-weight: 400;
+  /* Guarantees the "no horizontal scrolling" requirement even if a
+     decorative element overshoots its container. */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4 {
+  font-family: var(--ajs-font);
+  font-weight: 700;
+  color: var(--ajs-navy);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.65em;
+}
+
+h1, .h1 { font-size: var(--ajs-h1); font-weight: 700; }
+h2, .h2 { font-size: var(--ajs-h2); }
+h3, .h3 { font-size: var(--ajs-h3); }
+h4, .h4 { font-size: var(--ajs-h4); }
+
+p { margin-bottom: 1.15rem; }
+p:last-child { margin-bottom: 0; }
+
+.lead,
+.ajs-lead {
+  font-size: var(--ajs-lead);
+  line-height: 1.85;
+  color: var(--ajs-muted);
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  transition: color var(--ajs-speed) var(--ajs-ease);
+}
+
+/* Accessibility focus ring — WCAG 2.1 AA compliant keyboard navigation indicator. */
+:focus-visible {
+  outline: 3px solid var(--ajs-gold) !important;
+  outline-offset: 3px !important;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* Arabic companion labels. Cairo renders Arabic far better than
+   Poppins, and the slight size reduction keeps bilingual pairs
+   optically balanced next to their English counterparts. */
+.ajs-ar {
+  font-family: var(--ajs-font-ar);
+  font-size: 0.9em;
+  font-weight: 500;
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+/* Small uppercase label used above most section headings. */
+.ajs-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ajs-green);
+  margin-bottom: 1.1rem;
+}
+
+.ajs-eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: var(--ajs-gold);
+  flex: 0 0 auto;
+}
+
+.ajs-eyebrow--light { color: var(--ajs-gold); }
+.ajs-eyebrow--center { justify-content: center; }
+
+/* Colour helpers */
+.text-navy  { color: var(--ajs-navy) !important; }
+.text-green { color: var(--ajs-green) !important; }
+.text-gold  { color: var(--ajs-gold) !important; }
+.text-muted-ajs { color: var(--ajs-muted) !important; }
+.bg-navy    { background-color: var(--ajs-navy) !important; }
+.bg-surface { background-color: var(--ajs-surface) !important; }
+
+
+/*==========================================================
+  03. ACCESSIBILITY HELPERS
+  Keyboard users must always be able to see where they are and
+  bypass the long navigation block.
+==========================================================*/
+
+/* Skip link — visually hidden until it receives focus. */
+.ajs-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.75rem 1.25rem;
+  background: var(--ajs-green);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 var(--ajs-radius) var(--ajs-radius);
+  transition: top 0.2s var(--ajs-ease);
+}
+
+.ajs-skip-link:focus {
+  top: 0;
+  color: #fff;
+}
+
+/* Consistent, high-contrast focus ring across every interactive
+   element, including those Bootstrap styles differently. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible,
+.accordion-button:focus-visible {
+  outline: 3px solid var(--ajs-gold);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+/* Focus ring on dark backgrounds needs a lighter colour to pass
+   contrast against deep navy. */
+.ajs-footer a:focus-visible,
+.ajs-topbar a:focus-visible,
+.ajs-hero a:focus-visible {
+  outline-color: var(--ajs-gold-soft);
+}
+
+
+/*==========================================================
+  04. LAYOUT UTILITIES
+==========================================================*/
+
+/* Standard vertical rhythm for every full-width band. */
+.ajs-section {
+  padding-top: var(--ajs-section-y);
+  padding-bottom: var(--ajs-section-y);
+  position: relative;
+}
+
+.ajs-section--tight {
+  padding-top: calc(var(--ajs-section-y) * 0.6);
+  padding-bottom: calc(var(--ajs-section-y) * 0.6);
+}
+
+.ajs-section--dark {
+  background-color: var(--ajs-navy);
+  color: var(--ajs-on-dark-muted);
+}
+
+.ajs-section--dark h1,
+.ajs-section--dark h2,
+.ajs-section--dark h3,
+.ajs-section--dark h4 { color: #fff; }
+
+.ajs-section--dark .lead,
+.ajs-section--dark .ajs-lead { color: var(--ajs-on-dark-muted); }
+
+/* Constrains long-form copy to a comfortable measure (~65ch). */
+.ajs-measure { max-width: 62ch; }
+.ajs-measure-lg { max-width: 78ch; }
+
+/* --- Small reusable utilities ---
+   These replace inline style attributes that had accumulated across
+   the pages. Keeping them here means a size or radius change is made
+   once, not hunted for across seven files. */
+
+/* Secondary body copy inside cards and list rows. Previously written
+   inline as both 0.9rem and 0.88rem; consolidated to one value. */
+.ajs-text-sm { font-size: 0.9rem; }
+
+/* Oversized icon, used for empty-state glyphs. */
+.ajs-icon-xl { font-size: 2.5rem; line-height: 1; }
+
+/* Fills its container while preserving the image's aspect ratio.
+   Used by cards whose frame sets the aspect, not the image. */
+.ajs-img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--ajs-radius-lg);
+}
+
+/* Google Maps embed. Height is set here rather than on the element
+   so the map and its surrounding panel stay in step. */
+.ajs-map-embed {
+  border: 0;
+  width: 100%;
+  min-height: 480px;
+  display: block;
+}
+
+/* Thin gold rule used as a decorative divider. */
+.ajs-rule {
+  width: 60px;
+  height: 3px;
+  background: var(--ajs-gold);
+  border: 0;
+  opacity: 1;
+  margin: 1.5rem 0;
+}
+
+.ajs-rule--center { margin-left: auto; margin-right: auto; }
+
+/* Faint oversized numeral used behind section content for depth. */
+.ajs-ghost-number {
+  position: absolute;
+  font-size: clamp(7rem, 18vw, 16rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ajs-navy);
+  opacity: 0.035;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/*==========================================================
+  05. BUTTONS
+  Squared-off buttons with a slow fill read as more "industrial"
+  than pill shapes, and reinforce the engineering positioning.
+==========================================================*/
+.btn {
+  --bs-btn-border-radius: var(--ajs-radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  padding: 0.95rem 2rem;
+  border-radius: var(--ajs-radius);
+  border-width: 1px;
+  /* Button labels are short by design; wrapping one mid-phrase looks
+     broken, so they are kept on a single line everywhere. */
+  white-space: nowrap;
+  transition: var(--ajs-transition-ui);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.btn i { font-size: 1.05em; }
+
+/* Press feedback.
+   Hover states tell you an element is interactive; a press state
+   tells you the interface actually received the click. Without it a
+   button feels inert on the way down and only "responds" once the
+   next page starts loading — which on a slow connection is a long
+   time to wonder whether the click registered.
+
+   The lift is dropped and the button scales slightly under the
+   cursor, so it reads as being pushed into the page. Kept at 0.97:
+   below about 0.95 it starts to look like a glitch rather than a
+   press. Duration is the fast press token, not the hover speed. */
+.btn:active {
+  transform: scale(0.97);
+  transition-duration: var(--ajs-speed-press);
+}
+
+/* Same gesture on the other pressable controls, so the response is
+   consistent wherever a visitor clicks. */
+.ajs-filter-btn:active,
+.ajs-toggler:active,
+.ajs-to-top:active,
+.ajs-quick-call:active,
+.ajs-vendor-card:active,
+.ajs-client-chip:active {
+  transform: scale(0.97);
+  transition-duration: var(--ajs-speed-press);
+}
+
+/* Cards that are themselves links settle back toward the page on
+   press, releasing the hover lift rather than scaling. Scaling a
+   large surface exaggerates the movement and looks unstable. */
+a.ajs-card:active,
+a.ajs-service-card:active,
+a.ajs-project-card:active,
+a.ajs-fp-card:active,
+a.ajs-equipment-card:active,
+a.ajs-leader-card:active,
+a.ajs-value-card:active {
+  transform: translateY(-1px);
+  transition-duration: var(--ajs-speed-press);
+}
+
+/* The .btn rule above sets `padding` directly, which beats the CSS
+   variables Bootstrap's .btn-sm / .btn-lg modifiers rely on. Both
+   sizes are therefore restated here so the modifiers still work. */
+.btn-sm {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.82rem;
+}
+
+.btn-lg {
+  padding: 1.1rem 2.4rem;
+  font-size: 1rem;
+}
+
+.btn-ajs-primary {
+  background: var(--ajs-green);
+  border-color: var(--ajs-green);
+  color: #fff;
+}
+
+.btn-ajs-primary:hover,
+.btn-ajs-primary:focus {
+  background: var(--ajs-green-dark);
+  border-color: var(--ajs-green-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--ajs-shadow);
+}
+
+.btn-ajs-navy {
+  background: var(--ajs-navy);
+  border-color: var(--ajs-navy);
+  color: #fff;
+}
+
+.btn-ajs-navy:hover,
+.btn-ajs-navy:focus {
+  background: var(--ajs-navy-600);
+  border-color: var(--ajs-navy-600);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--ajs-shadow);
+}
+
+.btn-ajs-gold {
+  background: var(--ajs-gold);
+  border-color: var(--ajs-gold);
+  color: var(--ajs-navy);
+}
+
+.btn-ajs-gold:hover,
+.btn-ajs-gold:focus {
+  background: var(--ajs-gold-dark);
+  border-color: var(--ajs-gold-dark);
+  color: var(--ajs-navy);
+  transform: translateY(-2px);
+  box-shadow: var(--ajs-shadow);
+}
+
+.btn-ajs-outline {
+  background: transparent;
+  border-color: var(--ajs-border-strong);
+  color: var(--ajs-navy);
+}
+
+.btn-ajs-outline:hover,
+.btn-ajs-outline:focus {
+  background: var(--ajs-navy);
+  border-color: var(--ajs-navy);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Outline variant for use on the navy hero / dark bands. */
+.btn-ajs-outline-light {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.btn-ajs-outline-light:hover,
+.btn-ajs-outline-light:focus {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ajs-navy);
+  transform: translateY(-2px);
+}
+
+/* Text-only link styled as a call to action with a sliding arrow. */
+.ajs-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: var(--ajs-green);
+}
+
+.ajs-link-arrow i { transition: transform var(--ajs-speed) var(--ajs-ease); }
+.ajs-link-arrow:hover { color: var(--ajs-navy); }
+.ajs-link-arrow:hover i { transform: translateX(5px); }
+
+
+/*==========================================================
+  06. SECTION HEADINGS
+==========================================================*/
+.ajs-section-head { margin-bottom: 3.5rem; }
+.ajs-section-head p { color: var(--ajs-muted); }
+.ajs-section-head--center { text-align: center; }
+.ajs-section-head--center .ajs-lead { margin-inline: auto; }
+
+
+/*==========================================================
+  07. TOP UTILITY BAR
+  Carries contact details and the language switch so the main
+  navbar can stay uncluttered.
+==========================================================*/
+.ajs-topbar {
+  background: var(--ajs-navy);
+  color: var(--ajs-on-dark-muted);
+  font-size: 0.82rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ajs-topbar a {
+  color: var(--ajs-on-dark-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.ajs-topbar a:hover { color: var(--ajs-gold); }
+.ajs-topbar i { color: var(--ajs-gold); font-size: 0.95rem; }
+
+.ajs-topbar-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Language switch — a placeholder until the Arabic build exists. */
+.ajs-lang-switch {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--ajs-radius);
+  padding: 0.25rem 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ajs-lang-switch:hover {
+  border-color: var(--ajs-gold);
+  color: var(--ajs-gold);
+}
+
+
+/*==========================================================
+  08. NAVIGATION
+  Sticky on scroll with a subtle shrink, so the brand stays
+  present without stealing vertical space while reading.
+==========================================================*/
+.ajs-navbar {
+  background: #fff;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--ajs-border);
+  transition: padding var(--ajs-speed) var(--ajs-ease),
+              box-shadow var(--ajs-speed) var(--ajs-ease);
+  z-index: 1030;
+}
+
+/* Ensure navbar items stay strictly on a single horizontal row on all screen sizes */
+.ajs-navbar > .container,
+.ajs-navbar > .container-fluid {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+/* Applied by main.js once the page scrolls past the top bar. */
+.ajs-navbar.is-stuck {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.7rem 0;
+  box-shadow: var(--ajs-shadow-sm);
+  animation: ajsNavDrop 0.4s var(--ajs-ease);
+}
+
+@keyframes ajsNavDrop {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+.ajs-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
+  margin-right: auto !important;
+}
+
+.ajs-brand img {
+  height: 90px;
+  width: auto;
+  /* filter is transitioned so the white edge fades out as the
+     header turns solid, rather than snapping off. */
+  transition: height var(--ajs-speed) var(--ajs-ease),
+              filter var(--ajs-speed) var(--ajs-ease);
+}
+
+/* Logo on dark surfaces — white edge hugging the mark.
+
+   The mark is a teal tile inside a dark navy outline. On white that
+   outline defines the shape; on navy it is nearly the background
+   colour, so the logo loses its edge entirely.
+
+   A background on the element would put white behind the PNG's
+   whole box — including its transparent margin — producing a white
+   rectangle with the tile floating inside it. That reads as a
+   sticker stuck onto the header.
+
+   Chained drop-shadows instead. Each one operates on the alpha of
+   the previous result, so four axis-aligned passes grow a uniform
+   edge that follows the tile's actual rounded-square silhouette,
+   not its bounding box. White appears only where the mark is,
+   which is the same relationship it has to the white header when
+   scrolled. Nothing is measured, so this survives the logo being
+   re-exported at different proportions. */
+.ajs-header--overlay:not(.is-stuck) .ajs-brand img,
+.ajs-footer .ajs-brand img,
+.ajs-offcanvas .ajs-brand img {
+  filter:
+    drop-shadow(2px 0 0 var(--ajs-bg))
+    drop-shadow(-2px 0 0 var(--ajs-bg))
+    drop-shadow(0 2px 0 var(--ajs-bg))
+    drop-shadow(0 -2px 0 var(--ajs-bg));
+}
+
+.is-stuck .ajs-brand img { height: 72px; }
+
+.ajs-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.ajs-brand-ar,
+.ajs-brand-name {
+  font-family: var(--ajs-font-ar), "Cairo", sans-serif;
+  font-size: 1.44rem;
+  font-weight: 700;
+  color: var(--ajs-navy);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.ajs-brand-en,
+.ajs-brand-tag {
+  font-family: 'Orbitron', var(--ajs-font), sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ajs-navy);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+/* The link row is pushed to the right by .ajs-brand's auto margin,
+   which is the single rule controlling horizontal distribution. An
+   auto margin here as well would only compete with it, so the gap to
+   the quote button is set explicitly instead. */
+.ajs-navbar .navbar-nav {
+  margin-right: 1.25rem !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.ajs-navbar .btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Horizontal padding is kept tight on purpose. The row is anchored on
+   its right edge by the quote button, so narrowing each link is what
+   shifts the whole group rightward and opens a clear gap between the
+   brand lockup and "Home". */
+.ajs-navbar .nav-link {
+  color: var(--ajs-navy);
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 0.5rem 0.6rem !important;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Gold underline grows from the centre on hover / active. */
+.ajs-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.25rem;
+  width: 0;
+  height: 2px;
+  background: var(--ajs-gold);
+  transform: translateX(-50%);
+  transition: width var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-navbar .nav-link:hover,
+.ajs-navbar .nav-link.active { color: var(--ajs-green); }
+
+/* Subtracting the link's own horizontal padding makes the underline
+   sit under the label rather than the whole hit area. Keep this value
+   in step with the padding above if that ever changes. */
+.ajs-navbar .nav-link:hover::after,
+.ajs-navbar .nav-link.active::after { width: calc(100% - 1.2rem); }
+
+/* Arabic label sits under the English one on desktop. */
+.ajs-navbar .nav-link .ajs-ar {
+  display: block;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--ajs-muted);
+  margin-top: 1px;
+}
+
+.ajs-navbar .nav-link:hover .ajs-ar,
+.ajs-navbar .nav-link.active .ajs-ar { color: var(--ajs-green); }
+
+/* Custom hamburger — Bootstrap's default icon is a background
+   image that cannot inherit the brand colour. */
+.ajs-toggler {
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius);
+  padding: 0.5rem 0.65rem;
+  background: #fff;
+  line-height: 0;
+}
+
+.ajs-toggler:focus { box-shadow: none; }
+
+.ajs-toggler span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ajs-navy);
+  margin: 4px 0;
+  transition: transform var(--ajs-speed) var(--ajs-ease),
+              opacity var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-toggler[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.ajs-toggler[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.ajs-toggler[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+
+/*----------------------------------------------------------
+  08a. OVERLAY HEADER  (home page only)
+  On pages that open with a full-viewport hero the header sits
+  ON the hero rather than above it, so the photograph starts at
+  the very top of the screen. Once the visitor scrolls past the
+  hero the same header becomes a solid white fixed bar.
+
+  Inner pages keep the default solid header and are unaffected —
+  they simply never receive the .ajs-header--overlay class.
+----------------------------------------------------------*/
+.ajs-header--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+/* Transparent state: the hero's own dark overlay provides contrast,
+   so the bar only needs a hairline to separate it from the image. */
+.ajs-header--overlay .ajs-topbar {
+  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.ajs-header--overlay .ajs-navbar {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ajs-header--overlay .ajs-brand-ar,
+.ajs-header--overlay .ajs-brand-name { color: #fff; }
+.ajs-header--overlay .ajs-brand-en,
+.ajs-header--overlay .ajs-brand-tag { color: #fff; }
+.ajs-header--overlay .ajs-navbar .nav-link { color: #fff; }
+.ajs-header--overlay .ajs-navbar .nav-link .ajs-ar { color: rgba(255, 255, 255, 0.6); }
+.ajs-header--overlay .ajs-navbar .nav-link:hover,
+.ajs-header--overlay .ajs-navbar .nav-link.active { color: var(--ajs-gold); }
+.ajs-header--overlay .ajs-navbar .nav-link:hover .ajs-ar,
+.ajs-header--overlay .ajs-navbar .nav-link.active .ajs-ar { color: var(--ajs-gold); }
+
+.ajs-header--overlay .ajs-toggler {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ajs-header--overlay .ajs-toggler span { background: #fff; }
+
+/* Scrolled state: JS adds .is-stuck once the hero is behind us. */
+.ajs-header--overlay.is-stuck {
+  position: fixed;
+  background: #fff;
+  box-shadow: var(--ajs-shadow-sm);
+  animation: ajsNavDrop 0.4s var(--ajs-ease);
+}
+
+/* The utility bar is dropped on scroll so the fixed header stays
+   shallow and leaves the content as much height as possible. */
+.ajs-header--overlay.is-stuck .ajs-topbar { display: none; }
+
+.ajs-header--overlay.is-stuck .ajs-navbar {
+  padding: 0.7rem 0;
+  border-bottom-color: var(--ajs-border);
+}
+
+.ajs-header--overlay.is-stuck .ajs-brand img { height: 54px; }
+.ajs-header--overlay.is-stuck .ajs-brand-ar,
+.ajs-header--overlay.is-stuck .ajs-brand-name { color: var(--ajs-navy); }
+.ajs-header--overlay.is-stuck .ajs-brand-en,
+.ajs-header--overlay.is-stuck .ajs-brand-tag { color: var(--ajs-navy); }
+.ajs-header--overlay.is-stuck .ajs-navbar .nav-link { color: var(--ajs-navy); }
+.ajs-header--overlay.is-stuck .ajs-navbar .nav-link .ajs-ar { color: var(--ajs-muted); }
+.ajs-header--overlay.is-stuck .ajs-navbar .nav-link:hover,
+.ajs-header--overlay.is-stuck .ajs-navbar .nav-link.active { color: var(--ajs-green); }
+.ajs-header--overlay.is-stuck .ajs-toggler { border-color: var(--ajs-border); }
+.ajs-header--overlay.is-stuck .ajs-toggler span { background: var(--ajs-navy); }
+
+
+/*----------------------------------------------------------
+  08b. OFFCANVAS MENU  (mobile navigation)
+  Bootstrap's offcanvas replaces the inline collapse on small
+  screens: a full-height panel is easier to reach one-handed and
+  keeps long menus off the page flow entirely.
+----------------------------------------------------------*/
+.ajs-offcanvas {
+  background: var(--ajs-navy);
+  color: #fff;
+  width: min(360px, 86vw);
+}
+
+.ajs-offcanvas .offcanvas-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 1.5rem;
+}
+
+.ajs-offcanvas .ajs-brand-ar,
+.ajs-offcanvas .ajs-brand-name { color: #fff; }
+.ajs-offcanvas .ajs-brand-en,
+.ajs-offcanvas .ajs-brand-tag { color: rgba(255, 255, 255, 0.9); }
+.ajs-offcanvas .ajs-brand-text { display: flex; }
+
+/* Bootstrap's default close button is a dark SVG; invert it so it
+   is visible against the navy panel. */
+.ajs-offcanvas .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.7;
+}
+
+.ajs-offcanvas .btn-close:hover { opacity: 1; }
+
+.ajs-offcanvas .offcanvas-body { padding: 1.5rem; }
+
+.ajs-offcanvas .nav-link {
+  color: #fff;
+  font-size: 1.02rem;
+  font-weight: 500;
+  padding: 0.95rem 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ajs-offcanvas .nav-link::after { display: none; }
+.ajs-offcanvas .nav-link .ajs-ar { color: rgba(255, 255, 255, 0.55); font-size: 0.9rem; }
+.ajs-offcanvas .nav-link:hover,
+.ajs-offcanvas .nav-link.active { color: var(--ajs-gold); }
+.ajs-offcanvas .nav-link:hover .ajs-ar,
+.ajs-offcanvas .nav-link.active .ajs-ar { color: var(--ajs-gold); }
+
+/* Contact details pinned under the menu, so the panel doubles as a
+   quick-contact surface on mobile. */
+.ajs-offcanvas-contact {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.88rem;
+}
+
+.ajs-offcanvas-contact a { color: var(--ajs-on-dark-muted); }
+.ajs-offcanvas-contact a:hover { color: var(--ajs-gold); }
+.ajs-offcanvas-contact i { color: var(--ajs-gold); margin-right: 0.6rem; }
+
+
+/*==========================================================
+  09. HERO
+  Full-viewport opening screen. Structured as three stacked
+  layers so the background photograph can be swapped without
+  touching the overlay or the content:
+
+    .ajs-hero-bg       photograph (or placeholder artwork)
+    .ajs-hero-overlay  navy wash that guarantees text contrast
+    .container         headline, actions, trust markers
+
+  To use a real photograph, drop the file in assets/images/hero/
+  and repoint --ajs-hero-image below. Nothing else changes.
+==========================================================*/
+.ajs-hero {
+  position: relative;
+  /* svh accounts for mobile browser chrome, which makes a plain
+     100vh hero taller than the visible screen on iOS. */
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background: var(--ajs-navy);
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Background layer. Real photography with a slow ambient zoom.
+   Reads the --ajs-hero-image token so the photograph is still
+   swappable from one place in the tokens block. */
+.ajs-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--ajs-hero-image);
+  background-size: cover;
+  /* Biased above centre. The current photograph is square, so a
+     widescreen viewport crops top and bottom; favouring the upper
+     band keeps the plant and skyline in frame and sheds the empty
+     road foreground, which carries no information. */
+  background-position: center 42%;
+  background-repeat: no-repeat;
+  transform: scale(1.03);
+  animation: ajsHeroZoom 28s ease-in-out infinite alternate;
+}
+
+/* Zoom range kept deliberately shallow. The source file is only
+   1024px wide, so it is already being upscaled on any desktop
+   screen; a large zoom compounds that into visible softness.
+   Widen this range once a 1920px-plus photograph is supplied. */
+@keyframes ajsHeroZoom {
+  from { transform: scale(1.03); }
+  to   { transform: scale(1.08); }
+}
+
+
+/*----------------------------------------------------------
+  09a. CODED HERO BACKDROP
+
+  A drawn alternative to the photograph: a blueprint field with a
+  technical elevation of a process facility along the base. Weighs
+  nothing, stays sharp at any pixel density, and carries no
+  licensing or authenticity risk.
+
+  TO SWITCH:  add or remove `ajs-hero--coded` on <section class="ajs-hero">
+              present  -> coded backdrop
+              absent   -> photograph
+  Both layers stay in the markup, so this is a one-word A/B.
+----------------------------------------------------------*/
+.ajs-hero-canvas { display: none; }
+
+.ajs-hero--coded .ajs-hero-bg { display: none; }
+
+.ajs-hero--coded .ajs-hero-canvas {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  /* Layered depth without a single raster byte: two off-centre
+     glows over a vertical navy gradient. */
+  background:
+    radial-gradient(ellipse 60% 55% at 72% 28%, rgba(11, 138, 107, 0.26), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 22% 78%, rgba(200, 169, 106, 0.16), transparent 72%),
+    linear-gradient(170deg, var(--ajs-blueprint-1) 0%, var(--ajs-blueprint-2) 45%, var(--ajs-blueprint-3) 100%);
+}
+
+/* Fine blueprint grid. Drifts very slowly, which reads as depth
+   rather than as movement — most visitors never consciously see it. */
+.ajs-hero-canvas::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: ajsGridDrift 70s linear infinite;
+}
+
+/* Coarser second grid plus an edge vignette, so the corners fall
+   away and the centre carries the eye. */
+.ajs-hero-canvas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200, 169, 106, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 169, 106, 0.05) 1px, transparent 1px),
+    radial-gradient(ellipse 78% 70% at 50% 45%, transparent 45%, rgba(3, 10, 18, 0.72) 100%);
+  background-size: 220px 220px, 220px 220px, 100% 100%;
+}
+
+@keyframes ajsGridDrift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-44px, -44px, 0); }
+}
+
+/* The technical elevation itself. Anchored to the bottom edge and
+   full-bleed, so the copy sits in clear space above it. */
+.ajs-hero-figure {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: clamp(240px, 46vh, 460px);
+  display: block;
+  pointer-events: none;
+}
+
+/* Hairline weights are set here rather than per-element in the SVG
+   so the whole drawing can be re-weighted from one place. */
+.ajs-hero-figure .ajs-fig-line   { stroke: var(--ajs-gold); stroke-opacity: 0.5;  fill: none; }
+.ajs-hero-figure .ajs-fig-line-2 { stroke: var(--ajs-steel); stroke-opacity: 0.42; fill: none; }
+.ajs-hero-figure .ajs-fig-accent { stroke: var(--ajs-green); stroke-opacity: 0.72; fill: none; }
+.ajs-hero-figure .ajs-fig-fill   { fill: var(--ajs-blueprint-fill); fill-opacity: 0.55; }
+.ajs-hero-figure .ajs-fig-dim    { stroke: var(--ajs-gold); stroke-opacity: 0.28; fill: none; }
+
+/* Status nodes: a slow, staggered pulse suggesting a live plant. */
+.ajs-hero-figure .ajs-fig-node {
+  fill: var(--ajs-gold);
+  animation: ajsNodePulse 4.5s ease-in-out infinite;
+}
+
+.ajs-hero-figure .ajs-fig-node:nth-of-type(2n)  { animation-delay: 1.5s; }
+.ajs-hero-figure .ajs-fig-node:nth-of-type(3n)  { animation-delay: 2.9s; }
+
+@keyframes ajsNodePulse {
+  0%, 100% { opacity: 0.25; }
+  50%      { opacity: 0.95; }
+}
+
+/* Flare tip — the one warm point in the composition. */
+.ajs-hero-figure .ajs-fig-flare {
+  fill: var(--ajs-gold);
+  transform-origin: center bottom;
+  animation: ajsFlareFlicker 3.2s ease-in-out infinite;
+}
+
+@keyframes ajsFlareFlicker {
+  0%, 100% { opacity: 0.85; transform: scaleY(1); }
+  40%      { opacity: 1;    transform: scaleY(1.12); }
+  70%      { opacity: 0.7;  transform: scaleY(0.94); }
+}
+
+/* Vignette overlay: dark on text side (left), highly transparent on photo side (right). */
+.ajs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(105deg,
+      rgba(7, 27, 44, 0.85) 0%,
+      rgba(7, 27, 44, 0.55) 50%,
+      rgba(7, 27, 44, 0.18) 100%),
+    radial-gradient(circle at 85% 30%, rgba(11, 138, 107, 0.2), transparent 60%);
+}
+
+/* The coded backdrop is already dark and low-contrast, so the wash
+   that a bright photograph needs would bury the linework. Kept only
+   strong enough to hold the headline. */
+.ajs-hero--coded .ajs-hero-overlay {
+  background:
+    linear-gradient(105deg,
+      rgba(7, 27, 44, 0.62) 0%,
+      rgba(7, 27, 44, 0.28) 52%,
+      rgba(7, 27, 44, 0.04) 100%);
+}
+
+/* Hero feature card.
+   Previously a frosted-glass panel. Glass is the house style of
+   consumer software, not of heavy industry — and it was doing it on
+   the single most prominent element on the site. Replaced with a
+   solid navy surface and a gold hairline: the same separation from
+   the backdrop, read as engineered rather than decorative.
+
+   Dropping backdrop-filter also removes a per-frame blur over the
+   animating hero backdrop, which was the most expensive paint on
+   the page. */
+.ajs-hero-card {
+  background: var(--ajs-navy-600);
+  border: 1px solid rgba(200, 169, 106, 0.28);
+  border-radius: var(--ajs-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--ajs-shadow-lg);
+  color: #fff;
+  transition: transform var(--ajs-speed) var(--ajs-ease),
+              box-shadow var(--ajs-speed) var(--ajs-ease),
+              border-color var(--ajs-speed) var(--ajs-ease);
+}
+
+/* House lift is -2px everywhere else; matched here so the gesture
+   is the same object on every card. */
+.ajs-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ajs-shadow-lg);
+  border-color: var(--ajs-gold);
+}
+
+.ajs-hero-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--ajs-radius);
+  margin-bottom: 1.25rem;
+}
+
+.ajs-hero-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ajs-gold);
+  background: rgba(200, 169, 106, 0.12);
+  border: 1px solid rgba(200, 169, 106, 0.25);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--ajs-radius);
+  margin-bottom: 0.75rem;
+}
+
+/* Hero content clears the fixed navigation and the scroll cue. */
+/* Clears the overlay header, plus breathing room. Derived from the
+   header token so raising the logo can never silently push the
+   header down onto the hero copy again. */
+.ajs-hero-content {
+  position: relative;
+  padding-top: calc(var(--ajs-header-h) + 3rem);
+  padding-bottom: 8rem;
+}
+
+.ajs-hero h1 { color: #fff; margin-bottom: 1.5rem; }
+
+/* Gold treatment on the key phrase inside the headline. */
+.ajs-hero h1 .ajs-hero-accent {
+  color: var(--ajs-gold);
+  position: relative;
+  white-space: nowrap;
+}
+
+.ajs-hero-sub {
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem);
+  line-height: 1.9;
+  color: var(--ajs-on-dark-muted);
+  max-width: 56ch;
+  margin-bottom: 2.5rem;
+}
+
+.ajs-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* Trust markers directly under the CTAs — the fastest way to
+   signal legitimacy to a procurement reader. */
+.ajs-hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ajs-hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.86rem;
+  color: var(--ajs-on-dark-muted);
+}
+
+.ajs-hero-trust-item i { color: var(--ajs-gold); font-size: 1.15rem; }
+
+/* Scroll cue. Signals that the page continues below the fold,
+   which a full-viewport hero otherwise hides. */
+.ajs-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 2.25rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ajs-on-dark-muted);
+  z-index: 2;
+}
+
+.ajs-scroll-cue:hover { color: var(--ajs-gold); }
+
+/* Mouse-shaped outline with a wheel that drifts down and fades. */
+.ajs-scroll-cue-mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  /* Deliberate exception to the squared-corner rule: this outline
+     depicts a mouse, so it has to be capsule-shaped to read as one.
+     It is an icon, not a UI container. */
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.ajs-scroll-cue-mouse::before {
+  content: "";
+  width: 3px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--ajs-gold);
+  animation: ajsScrollWheel 1.8s ease-in-out infinite;
+}
+
+@keyframes ajsScrollWheel {
+  0%   { opacity: 0; transform: translateY(-3px); }
+  40%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+
+
+/*==========================================================
+  10. STAT BAND
+  Sits across the hero seam so the numbers are among the first
+  things read. Counters are animated by main.js.
+==========================================================*/
+.ajs-stats {
+  background: var(--ajs-navy-600);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: clamp(3rem, 5vw, 5rem);
+}
+
+.ajs-stat {
+  padding: 2.75rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  height: 100%;
+}
+
+.ajs-stat:last-child { border-right: 0; }
+
+.ajs-stat-value {
+  font-size: clamp(2.2rem, 1.6rem + 2vw, 3.1rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.6rem;
+}
+
+.ajs-stat-value .ajs-stat-suffix { color: var(--ajs-gold); }
+
+.ajs-stat-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ajs-on-dark-muted);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Light-background variant used on inner pages. */
+.ajs-stat--light { border-right-color: var(--ajs-border); }
+.ajs-stat--light .ajs-stat-value { color: var(--ajs-navy); }
+.ajs-stat--light .ajs-stat-label { color: var(--ajs-muted); }
+
+
+/*==========================================================
+  11. CARDS
+  One shared shell (.ajs-card) with modifiers, so hover, border
+  and elevation behaviour stay identical across the whole site.
+==========================================================*/
+.ajs-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  padding: 2.5rem 2rem;
+  height: 100%;
+  overflow: hidden;
+  transition: transform var(--ajs-speed) var(--ajs-ease),
+              box-shadow var(--ajs-speed) var(--ajs-ease),
+              border-color var(--ajs-speed) var(--ajs-ease);
+}
+
+/* Green bar wipes across the top edge on hover. */
+.ajs-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ajs-green), var(--ajs-gold));
+  transition: width 0.45s var(--ajs-ease);
+}
+
+.ajs-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ajs-shadow);
+  border-color: transparent;
+}
+
+.ajs-card:hover::before { width: 100%; }
+
+.ajs-card h3 { margin-bottom: 0.85rem; }
+.ajs-card p { color: var(--ajs-muted); font-size: 0.95rem; margin-bottom: 0; }
+
+/* --- Icon treatment shared by service & feature cards --- */
+.ajs-card-icon {
+  width: 62px;
+  height: 62px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ajs-radius);
+  background: var(--ajs-surface);
+  color: var(--ajs-green);
+  font-size: 1.7rem;
+  margin-bottom: 1.6rem;
+  transition: background var(--ajs-speed) var(--ajs-ease),
+              color var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-card:hover .ajs-card-icon {
+  background: var(--ajs-green);
+  color: #fff;
+}
+
+/* Faint index number in the card corner, echoing spec sheets. */
+.ajs-card-index {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ajs-navy);
+  opacity: 0.06;
+}
+
+/* --- Service list inside a card --- */
+.ajs-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+}
+
+.ajs-card-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 0.9rem;
+  color: var(--ajs-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Tick drawn from two borders rather than an icon-font glyph, so
+   the bullet cannot break if the icon set is versioned up. */
+.ajs-card-list li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0.55em;
+  width: 11px;
+  height: 6px;
+  border-left: 2px solid var(--ajs-green);
+  border-bottom: 2px solid var(--ajs-green);
+  transform: rotate(-45deg);
+}
+
+/* --- Dark card, used on navy sections --- */
+.ajs-card--dark {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.ajs-card--dark h3 { color: #fff; }
+.ajs-card--dark p { color: var(--ajs-on-dark-muted); }
+.ajs-card--dark .ajs-card-icon {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--ajs-gold);
+}
+.ajs-card--dark .ajs-card-index { color: #fff; opacity: 0.07; }
+.ajs-card--dark:hover { border-color: rgba(200, 169, 106, 0.45); }
+
+/* --- Value card: compact, for the core-values grid --- */
+.ajs-value-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  padding: 1.6rem 1.4rem;
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius);
+  height: 100%;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-value-card:hover {
+  border-color: var(--ajs-gold);
+  box-shadow: var(--ajs-shadow-sm);
+  transform: translateY(-4px);
+}
+
+.ajs-value-card i {
+  color: var(--ajs-gold);
+  font-size: 1.35rem;
+  line-height: 1.5;
+  flex: 0 0 auto;
+}
+
+.ajs-value-card h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+.ajs-value-card p { font-size: 0.86rem; color: var(--ajs-muted); margin: 0; line-height: 1.65; }
+
+/* --- Project card: image with a navy gradient overlay --- */
+.ajs-project-card {
+  position: relative;
+  display: block;
+  border-radius: var(--ajs-radius-lg);
+  overflow: hidden;
+  background: var(--ajs-navy);
+  height: 100%;
+}
+
+.ajs-project-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.ajs-project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ajs-ease);
+}
+
+.ajs-project-card:hover .ajs-project-media img { transform: scale(1.06); }
+
+/* Gradient keeps white caption text legible over any artwork. */
+.ajs-project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+              rgba(7, 27, 44, 0.94) 0%,
+              rgba(7, 27, 44, 0.55) 42%,
+              rgba(7, 27, 44, 0.06) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+  transition: background var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-project-card:hover .ajs-project-overlay {
+  background: linear-gradient(to top,
+              rgba(7, 27, 44, 0.97) 0%,
+              rgba(7, 27, 44, 0.72) 55%,
+              rgba(7, 27, 44, 0.3) 100%);
+}
+
+.ajs-project-tag {
+  align-self: flex-start;
+  background: var(--ajs-gold);
+  color: var(--ajs-navy);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 2px;
+  margin-bottom: 0.9rem;
+}
+
+.ajs-project-title {
+  color: #fff;
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.45rem;
+}
+
+.ajs-project-meta {
+  font-size: 0.82rem;
+  color: var(--ajs-gold-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+/* --- Equipment card --- */
+.ajs-equipment-card {
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-equipment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ajs-shadow);
+  border-color: transparent;
+}
+
+.ajs-equipment-media {
+  background: var(--ajs-surface);
+  padding: 1.75rem;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--ajs-border);
+}
+
+.ajs-equipment-media img {
+  max-height: 100%;
+  width: auto;
+  transition: transform 0.5s var(--ajs-ease);
+}
+
+.ajs-equipment-card:hover .ajs-equipment-media img { transform: scale(1.05); }
+
+.ajs-equipment-body {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.ajs-equipment-body h3 { font-size: 1.12rem; margin-bottom: 0.5rem; }
+.ajs-equipment-body p { font-size: 0.9rem; color: var(--ajs-muted); }
+
+/* Key/value spec rows at the foot of an equipment card. */
+.ajs-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.1rem 0 0;
+  border-top: 1px solid var(--ajs-border);
+  padding-top: 1rem;
+}
+
+.ajs-spec-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.84rem;
+  padding: 0.32rem 0;
+}
+
+.ajs-spec-list span:first-child { color: var(--ajs-muted); }
+.ajs-spec-list span:last-child { color: var(--ajs-navy); font-weight: 600; }
+
+/* --- Contact / info card --- */
+.ajs-info-card {
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  padding: 2.25rem 1.9rem;
+  height: 100%;
+  text-align: center;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-info-card:hover {
+  border-color: transparent;
+  box-shadow: var(--ajs-shadow);
+  transform: translateY(-5px);
+}
+
+.ajs-info-card .ajs-card-icon { margin-inline: auto; display: flex; }
+.ajs-info-card:hover .ajs-card-icon { background: var(--ajs-green); color: #fff; }
+.ajs-info-card h3 { font-size: 1.05rem; }
+.ajs-info-card a { color: var(--ajs-muted); font-size: 0.94rem; }
+.ajs-info-card a:hover { color: var(--ajs-green); }
+
+
+/*==========================================================
+  12. SPLIT FEATURE BLOCKS
+  Alternating image / copy rows used on About and Services.
+==========================================================*/
+.ajs-split-media {
+  position: relative;
+  border-radius: var(--ajs-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ajs-shadow);
+}
+
+.ajs-split-media img { display: block; width: 100%; }
+
+/* Gold frame offset behind the image adds depth cheaply. */
+.ajs-split-frame { position: relative; }
+
+.ajs-split-frame::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: -22px;
+  width: 65%;
+  height: 100%;
+  border: 2px solid var(--ajs-gold);
+  border-radius: var(--ajs-radius-lg);
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.ajs-split-frame > * { position: relative; z-index: 1; }
+
+/* Checklist used beside split media. */
+.ajs-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0 0;
+}
+
+.ajs-check-list li {
+  position: relative;
+  padding-left: 2.1rem;
+  margin-bottom: 0.95rem;
+  color: var(--ajs-text);
+  font-size: 0.96rem;
+}
+
+.ajs-check-list li:last-child { margin-bottom: 0; }
+
+/* Round badge (::before) with a border-drawn tick inside (::after). */
+.ajs-check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.28rem;
+  width: 22px;
+  height: 22px;
+  background: rgba(11, 138, 107, 0.12);
+  border-radius: 50%;
+}
+
+.ajs-check-list li::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0.72rem;
+  width: 10px;
+  height: 5px;
+  border-left: 2px solid var(--ajs-green);
+  border-bottom: 2px solid var(--ajs-green);
+  transform: rotate(-45deg);
+}
+
+.ajs-section--dark .ajs-check-list li::before { background: rgba(200, 169, 106, 0.18); }
+.ajs-section--dark .ajs-check-list li::after {
+  border-left-color: var(--ajs-gold);
+  border-bottom-color: var(--ajs-gold);
+}
+
+.ajs-section--dark .ajs-check-list li { color: var(--ajs-on-dark-muted); }
+
+
+/*==========================================================
+  13. SECTOR STRIP
+  A row of the industries Al Jazeera Service Contracting Co. works in. Marks are greyscale
+  at rest so the band reads as one calm unit, and resolve to
+  full colour on hover.
+==========================================================*/
+.ajs-logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ajs-logo-item {
+  flex: 1 1 170px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.6rem 1rem;
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius);
+  text-align: center;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-logo-item img {
+  height: 46px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter var(--ajs-speed) var(--ajs-ease),
+              opacity var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-logo-caption {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ajs-muted);
+  line-height: 1.4;
+  transition: color var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-logo-item:hover {
+  border-color: var(--ajs-gold);
+  box-shadow: var(--ajs-shadow-sm);
+  transform: translateY(-4px);
+}
+
+.ajs-logo-item:hover img { filter: grayscale(0); opacity: 1; }
+.ajs-logo-item:hover .ajs-logo-caption { color: var(--ajs-navy); }
+
+
+/*==========================================================
+  14. ACCORDION & FILTER TABS
+==========================================================*/
+.ajs-accordion .accordion-item {
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius) !important;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ajs-accordion .accordion-button {
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--ajs-navy);
+  padding: 1.3rem 1.5rem;
+  background: #fff;
+}
+
+.ajs-accordion .accordion-button:not(.collapsed) {
+  background: var(--ajs-surface);
+  color: var(--ajs-green);
+  box-shadow: none;
+}
+
+/* Bootstrap's chevron is swapped for a gold plus / minus. Both are
+   inline SVG data URIs so no icon font is involved and the colour
+   is locked to the brand. */
+.ajs-accordion .accordion-button::after {
+  width: 1rem;
+  height: 1rem;
+  background-size: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1.5v13M1.5 8h13' stroke='%23C8A96A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  transition: transform var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-accordion .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 8h13' stroke='%230B8A6B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  transform: rotate(180deg);
+}
+
+.ajs-accordion .accordion-body {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--ajs-muted);
+  font-size: 0.95rem;
+}
+
+/* Filter pills used on the projects page. */
+.ajs-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.ajs-filter-btn {
+  background: transparent;
+  border: 1px solid var(--ajs-border-strong);
+  color: var(--ajs-navy);
+  border-radius: var(--ajs-radius);
+  padding: 0.55rem 1.4rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-filter-btn:hover { border-color: var(--ajs-navy); }
+
+.ajs-filter-btn.is-active {
+  background: var(--ajs-navy);
+  border-color: var(--ajs-navy);
+  color: #fff;
+}
+
+/* Overrides for filter buttons on dark backgrounds */
+.ajs-section--dark .ajs-filter-btn {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ajs-section--dark .ajs-filter-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.ajs-section--dark .ajs-filter-btn.is-active {
+  background: var(--ajs-gold);
+  border-color: var(--ajs-gold);
+  color: var(--ajs-navy);
+}
+
+/* Hidden state applied by the filter script. */
+.ajs-filter-hidden { display: none !important; }
+
+
+/*==========================================================
+  15. TIMELINE
+  Company milestones on the About page.
+==========================================================*/
+.ajs-timeline {
+  position: relative;
+  padding-left: 2.4rem;
+  list-style: none;
+  margin: 0;
+}
+
+.ajs-timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--ajs-gold), rgba(200, 169, 106, 0.15));
+}
+
+.ajs-timeline-item { position: relative; padding-bottom: 2.4rem; }
+.ajs-timeline-item:last-child { padding-bottom: 0; }
+
+.ajs-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -2.4rem;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--ajs-gold);
+}
+
+.ajs-timeline-year {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ajs-green);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.ajs-timeline-item h4 { font-size: 1.08rem; margin-bottom: 0.4rem; }
+.ajs-timeline-item p { color: var(--ajs-muted); font-size: 0.93rem; margin: 0; }
+
+.ajs-section--dark .ajs-timeline-item::before { background: var(--ajs-navy); }
+.ajs-section--dark .ajs-timeline-item p { color: var(--ajs-on-dark-muted); }
+
+
+/*==========================================================
+  16. CTA BAND
+  Repeated near the foot of every page — the primary conversion
+  point for quotation requests.
+==========================================================*/
+.ajs-cta {
+  position: relative;
+  background: var(--ajs-navy);
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ajs-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  z-index: -2;
+}
+
+.ajs-cta::after {
+  content: "";
+  position: absolute;
+  left: -8%;
+  bottom: -60%;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(11, 138, 107, 0.28), transparent 65%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.ajs-cta h2 { color: #fff; }
+.ajs-cta p { color: var(--ajs-on-dark-muted); }
+
+
+/*==========================================================
+  17. FORMS
+==========================================================*/
+.ajs-form-panel {
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  padding: clamp(1.75rem, 1rem + 2.5vw, 3rem);
+  box-shadow: var(--ajs-shadow-sm);
+}
+
+.ajs-form-label,
+.form-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ajs-navy);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.45rem;
+}
+
+/* Marks a required field for sighted users; the input itself
+   carries the `required` attribute for assistive tech. */
+.ajs-required { color: var(--ajs-green); }
+
+.form-control,
+.form-select {
+  border: 1px solid var(--ajs-border-strong);
+  border-radius: var(--ajs-radius);
+  padding: 0.85rem 1rem;
+  font-size: 0.94rem;
+  color: var(--ajs-text);
+  background-color: #fff;
+  transition: border-color var(--ajs-speed) var(--ajs-ease),
+              box-shadow var(--ajs-speed) var(--ajs-ease);
+}
+
+.form-control::placeholder { color: var(--ajs-placeholder); }
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--ajs-green);
+  box-shadow: 0 0 0 3px rgba(11, 138, 107, 0.12);
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid { border-color: var(--ajs-danger); }
+
+.invalid-feedback { font-size: 0.82rem; }
+
+.form-check-input:checked {
+  background-color: var(--ajs-green);
+  border-color: var(--ajs-green);
+}
+
+/* Inline confirmation shown after a successful client-side submit. */
+.ajs-form-status {
+  display: none;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--ajs-radius);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+}
+
+.ajs-form-status.is-visible { display: flex; }
+
+.ajs-form-status--success {
+  background: rgba(11, 138, 107, 0.08);
+  border: 1px solid rgba(11, 138, 107, 0.3);
+  color: var(--ajs-green-dark);
+}
+
+/* Failure state. Previously missing entirely — a form that could
+   only ever report success would tell someone their enquiry had
+   been received even when the request failed. */
+.ajs-form-status--error {
+  background: rgba(192, 57, 43, 0.07);
+  border: 1px solid rgba(192, 57, 43, 0.28);
+  color: var(--ajs-danger);
+}
+
+.ajs-form-status i { font-size: 1.15rem; line-height: 1.4; }
+
+/* Submitting state — the button reports that the request is in
+   flight and blocks a second submission. Without this a slow
+   connection invites repeat clicks and duplicate enquiries. */
+.btn.is-sending {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+/* Honeypot.
+   A field bots fill in and humans never see. Formspree discards any
+   submission where `_gotcha` has a value, so this filters most
+   automated traffic before it reaches the inbox.
+
+   Positioned off-screen rather than `display: none` — some bots skip
+   fields that are display-hidden, which would defeat the trap. It is
+   removed from the tab order and from the accessibility tree in the
+   markup, so no real visitor can reach it by keyboard or hear it. */
+.ajs-hp {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+/*==========================================================
+  18. PAGE BANNER (inner pages)
+  Shorter navy header that keeps inner pages visually tied to
+  the home hero without repeating its full height.
+==========================================================*/
+.ajs-banner {
+  position: relative;
+  background: var(--ajs-navy);
+  color: #fff;
+  padding: clamp(3.5rem, 2.5rem + 5vw, 7rem) 0 clamp(3rem, 2rem + 4vw, 5.5rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ajs-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  z-index: -2;
+}
+
+.ajs-banner::after {
+  content: "";
+  position: absolute;
+  top: -45%;
+  right: -6%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(11, 138, 107, 0.26), transparent 65%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.ajs-banner h1 { color: #fff; margin-bottom: 1rem; }
+.ajs-banner p { color: var(--ajs-on-dark-muted); max-width: 62ch; margin: 0; }
+
+/* Breadcrumb tuned for the dark banner background. */
+.ajs-breadcrumb {
+  --bs-breadcrumb-divider-color: rgba(255, 255, 255, 0.35);
+  --bs-breadcrumb-item-padding-x: 0.6rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.ajs-breadcrumb .breadcrumb-item a { color: var(--ajs-on-dark-muted); }
+.ajs-breadcrumb .breadcrumb-item a:hover { color: var(--ajs-gold); }
+.ajs-breadcrumb .breadcrumb-item.active { color: var(--ajs-gold); }
+
+
+/*==========================================================
+  19. FOOTER
+==========================================================*/
+.ajs-footer {
+  background: var(--ajs-navy);
+  color: var(--ajs-on-dark-muted);
+  padding-top: clamp(3.5rem, 2.5rem + 3vw, 5.5rem);
+  font-size: 0.92rem;
+}
+
+.ajs-footer h4 {
+  color: #fff;
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.ajs-footer a { color: var(--ajs-on-dark-muted); }
+.ajs-footer a:hover { color: var(--ajs-gold); }
+
+/* Footer reuses the header's brand lockup with reversed colours
+   rather than shipping a second set of markup. */
+.ajs-footer .ajs-brand { margin-bottom: 1.5rem; }
+.ajs-footer .ajs-brand img { height: 80px; }
+.ajs-footer .ajs-brand-ar,
+.ajs-footer .ajs-brand-name { color: #fff; }
+.ajs-footer .ajs-brand-en,
+.ajs-footer .ajs-brand-tag { color: rgba(255, 255, 255, 0.9); }
+.ajs-footer .ajs-brand-text { display: flex; }
+
+.ajs-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ajs-footer-links li { margin-bottom: 0.7rem; }
+
+.ajs-footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform var(--ajs-speed) var(--ajs-ease),
+              color var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-footer-links a:hover { transform: translateX(4px); }
+
+/* Contact rows carry an icon in a fixed gutter for alignment. */
+.ajs-footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ajs-footer-contact li {
+  display: flex;
+  gap: 0.85rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.7;
+}
+
+.ajs-footer-contact i {
+  color: var(--ajs-gold);
+  font-size: 1.05rem;
+  flex: 0 0 20px;
+  margin-top: 3px;
+}
+
+.ajs-social {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.6rem;
+}
+
+.ajs-social a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--ajs-radius);
+  font-size: 1rem;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-social a:hover {
+  background: var(--ajs-gold);
+  border-color: var(--ajs-gold);
+  color: var(--ajs-navy);
+  transform: translateY(-3px);
+}
+
+.ajs-footer-bottom {
+  margin-top: 3.5rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+}
+
+.ajs-footer-bottom p { margin: 0; }
+
+
+/*==========================================================
+  20. SCROLL TO TOP
+==========================================================*/
+.ajs-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ajs-green);
+  color: #fff;
+  border: 0;
+  border-radius: var(--ajs-radius);
+  box-shadow: var(--ajs-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: var(--ajs-transition-ui);
+  z-index: 1040;
+}
+
+.ajs-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.ajs-to-top:hover { background: var(--ajs-navy); }
+
+/* Floating WhatsApp-style quick contact, offset above the
+   scroll-to-top button so the two never overlap. */
+.ajs-quick-call {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 5.2rem;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ajs-gold);
+  color: var(--ajs-navy);
+  border-radius: var(--ajs-radius);
+  box-shadow: var(--ajs-shadow);
+  font-size: 1.15rem;
+  z-index: 1040;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-quick-call:hover { background: var(--ajs-navy); color: #fff; }
+
+/* Thin gold/green progress indicator fixed to the top edge of the window. */
+.ajs-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--ajs-gold), var(--ajs-green));
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+
+/*==========================================================
+  21. STAT CARDS
+  Used under the company overview. Distinct from the .ajs-stat
+  band: these are separate cards on a light background rather
+  than divisions of one dark strip.
+==========================================================*/
+.ajs-stat-card {
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  height: 100%;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-stat-card:hover {
+  border-color: transparent;
+  box-shadow: var(--ajs-shadow);
+  transform: translateY(-5px);
+}
+
+.ajs-stat-card i {
+  font-size: 1.5rem;
+  color: var(--ajs-gold);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.ajs-stat-card strong {
+  display: block;
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ajs-navy);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.ajs-stat-card span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ajs-muted);
+  line-height: 1.5;
+}
+
+
+/*==========================================================
+  22. VISION & MISSION
+  A matched pair of tall cards. The gold top rule and the wash
+  that fills on hover are what make them read as "statements"
+  rather than as two more content cards.
+==========================================================*/
+.ajs-vm-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  padding: 2.75rem 2.25rem;
+  height: 100%;
+  overflow: hidden;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-vm-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ajs-gold), var(--ajs-green));
+}
+
+/* Oversized watermark icon in the corner, clipped by the card. */
+.ajs-vm-card::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 180px;
+  height: 180px;
+  border: 24px solid var(--ajs-surface-2);
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: transform var(--ajs-speed) var(--ajs-ease);
+  pointer-events: none;
+}
+
+.ajs-vm-card:hover {
+  box-shadow: var(--ajs-shadow);
+  transform: translateY(-6px);
+  border-color: transparent;
+}
+
+.ajs-vm-card:hover::after { transform: scale(1.12); }
+
+.ajs-vm-icon {
+  position: relative;
+  z-index: 1;
+  width: 72px;
+  height: 72px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ajs-radius-lg);
+  background: var(--ajs-navy);
+  color: var(--ajs-gold);
+  font-size: 1.9rem;
+  margin-bottom: 1.75rem;
+  transition: background var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-vm-card:hover .ajs-vm-icon { background: var(--ajs-green); color: #fff; }
+.ajs-vm-card h3,
+.ajs-vm-card p { position: relative; z-index: 1; }
+.ajs-vm-card p { color: var(--ajs-muted); margin-bottom: 0; }
+
+
+/*==========================================================
+  23. SERVICE CARDS
+  Image-led cards. The icon badge straddles the seam between the
+  image and the body, which ties the two halves together and
+  gives the eye a fixed entry point on every card.
+==========================================================*/
+.ajs-service-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ajs-shadow);
+  border-color: transparent;
+}
+
+.ajs-service-media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: var(--ajs-navy);
+}
+
+.ajs-service-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ajs-ease);
+}
+
+.ajs-service-card:hover .ajs-service-media img { transform: scale(1.07); }
+
+/* Card media for a service with no photograph yet.
+   .ajs-img-placeholder carries a 320px min-height for its full-width
+   use on the services page; dropped inside a card that min-height
+   wins over the 16/11 media box and forces the card taller than the
+   others in its row. Reset it so the panel fills the box instead.
+   Corners come off because the card already clips them. */
+.ajs-service-media .ajs-img-placeholder {
+  min-height: 0;
+  height: 100%;
+  border-radius: 0;
+}
+
+/* Gradient scrim keeps icon badge and photo details perfectly visible */
+.ajs-service-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 27, 44, 0.65) 0%, rgba(7, 27, 44, 0.05) 60%);
+  pointer-events: none;
+}
+
+/* Icon badge sits cleanly inside the bottom-left corner of the image */
+.ajs-service-icon {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ajs-radius);
+  background: var(--ajs-green);
+  color: #fff;
+  font-size: 1.35rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-service-card:hover .ajs-service-icon {
+  background: var(--ajs-gold);
+  color: var(--ajs-navy);
+  transform: translateY(-2px);
+}
+
+/* Tight, balanced padding without empty white space */
+.ajs-service-body {
+  padding: 1.35rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.ajs-service-body h3 {
+  font-size: 1.12rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.ajs-service-body p {
+  color: var(--ajs-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Pushes the "Learn more" link to the foot of every card so the
+   links align across a row of unequal-length descriptions. */
+.ajs-service-body .ajs-link-arrow { margin-top: auto; align-self: flex-start; }
+
+
+/*==========================================================
+  24. INDUSTRY GRID
+  Compact icon tiles. Ten of them, so each has to stay light —
+  an icon, a name and one clarifying line.
+==========================================================*/
+.ajs-industry-card {
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  padding: 1.85rem 1.5rem;
+  height: 100%;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-industry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ajs-shadow-sm);
+  border-color: var(--ajs-gold);
+}
+
+.ajs-industry-icon {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ajs-radius);
+  background: var(--ajs-surface);
+  color: var(--ajs-green);
+  font-size: 1.4rem;
+  margin-bottom: 1.1rem;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-industry-card:hover .ajs-industry-icon { background: var(--ajs-navy); color: var(--ajs-gold); }
+.ajs-industry-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+.ajs-industry-card p { font-size: 0.85rem; color: var(--ajs-muted); margin: 0; line-height: 1.65; }
+
+
+/*==========================================================
+  25. FEATURED PROJECT CARDS
+  Sit on the dark band. Unlike the portfolio tiles on the
+  Projects page these carry a commercial data block, because the
+  home page has to prove scale, not just show pictures.
+==========================================================*/
+.ajs-fp-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--ajs-radius-lg);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-fp-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(200, 169, 106, 0.5);
+  box-shadow: var(--ajs-shadow-lg);
+}
+
+.ajs-fp-media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+}
+
+.ajs-fp-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ajs-ease);
+}
+
+.ajs-fp-card:hover .ajs-fp-media img { transform: scale(1.06); }
+
+.ajs-fp-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--ajs-gold);
+  color: var(--ajs-navy);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 2px;
+}
+
+.ajs-fp-body {
+  padding: 1.25rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.ajs-fp-body h3 { color: #fff; font-size: 1.08rem; margin-bottom: 0.75rem; }
+
+/* Label / value rows. Dotted leaders make the pairs scannable
+   without needing a table. */
+.ajs-fp-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+.ajs-fp-meta li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  padding: 0.3rem 0;
+}
+
+.ajs-fp-meta li span:first-child { color: var(--ajs-on-dark-muted); flex: 0 0 auto; }
+
+.ajs-fp-meta li span:last-child {
+  color: #fff;
+  font-weight: 600;
+  text-align: right;
+}
+
+.ajs-fp-body .btn { margin-top: auto; }
+
+/* Image-free project cards — icon + tag header variant */
+.ajs-project-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--ajs-gold);
+  border-radius: var(--ajs-radius-lg);
+  padding: 1.5rem 1.4rem 1.4rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(200, 169, 106, 0.45);
+  border-left-color: var(--ajs-gold);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.ajs-project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.ajs-project-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(200, 169, 106, 0.12);
+  color: var(--ajs-gold);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.ajs-project-tag {
+  background: rgba(200, 169, 106, 0.15);
+  color: var(--ajs-gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+}
+
+.ajs-project-card h3 {
+  color: #fff;
+  font-size: 1.08rem;
+  margin-bottom: 0.75rem;
+}
+
+.ajs-project-card .ajs-fp-meta {
+  flex: 1 1 auto;
+}
+
+.ajs-project-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+
+/*==========================================================
+  26. WHY CHOOSE US
+  Deliberately borderless: nine reasons in bordered boxes would
+  read as a wall. Icon plus text keeps the section calm.
+==========================================================*/
+.ajs-reason {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.ajs-reason-icon {
+  flex: 0 0 auto;
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ajs-radius);
+  background: rgba(11, 138, 107, 0.09);
+  color: var(--ajs-green);
+  font-size: 1.6rem;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-reason:hover .ajs-reason-icon {
+  background: var(--ajs-green);
+  color: #fff;
+  transform: rotate(-6deg);
+}
+
+.ajs-reason h3 { font-size: 1.04rem; margin-bottom: 0.4rem; }
+.ajs-reason p { font-size: 0.89rem; color: var(--ajs-muted); margin: 0; line-height: 1.7; }
+
+/* Dark-band variant */
+.ajs-section--dark .ajs-reason-icon { background: rgba(200, 169, 106, 0.14); color: var(--ajs-gold); }
+.ajs-section--dark .ajs-reason h3 { color: #fff; }
+.ajs-section--dark .ajs-reason p { color: var(--ajs-on-dark-muted); }
+
+
+/*==========================================================
+  27. LEADERSHIP CARDS
+  Restrained on purpose: a portrait, a name and a title. Adding
+  biographies here would pull focus from the company itself.
+==========================================================*/
+.ajs-leader-card {
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  overflow: hidden;
+  height: 100%;
+  text-align: center;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-leader-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ajs-shadow);
+  border-color: transparent;
+}
+
+.ajs-leader-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--ajs-navy);
+}
+
+.ajs-leader-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ajs-ease);
+}
+
+.ajs-leader-card:hover .ajs-leader-media img { transform: scale(1.05); }
+
+/* Gold rule slides across the seam on hover. */
+.ajs-leader-media::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background: var(--ajs-gold);
+  transition: width 0.45s var(--ajs-ease);
+}
+
+.ajs-leader-card:hover .ajs-leader-media::after { width: 100%; }
+
+.ajs-leader-body { padding: 1.6rem 1.25rem; }
+.ajs-leader-body h3 { font-size: 1.08rem; margin-bottom: 0.35rem; }
+
+.ajs-leader-role {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ajs-green);
+  margin: 0;
+}
+
+
+/*==========================================================
+  28. CLIENT MARQUEE
+  A pure-CSS continuous scroll: the track holds the list twice
+  and translates by exactly -50%, so the loop point is invisible.
+  No slider library is needed for a one-direction ticker.
+==========================================================*/
+.ajs-marquee {
+  position: relative;
+  overflow: hidden;
+  /* Fades both edges so items enter and leave rather than
+     appearing to be cut off by the container. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* Spacing is applied as a trailing margin on each tile rather than
+   as `gap`. With `gap`, half the track is 12 tiles + 11.5 gaps, so
+   translating by -50% lands mid-gap and the loop visibly jumps. */
+.ajs-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: ajsMarquee 40s linear infinite;
+}
+
+.ajs-marquee:hover .ajs-marquee-track { animation-play-state: paused; }
+
+@keyframes ajsMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Placeholder client tile. Text-only by design — no client logo
+   is reproduced until the official asset is supplied. */
+.ajs-client-chip {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  /* Matches the logo tile width so mixed rows keep one rhythm. */
+  min-width: 240px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1rem 1.5rem;
+  /* Darkest neutral in the system, not navy. The clients band sits on
+     --ajs-bg, so a tinted tile reads as a defined panel rather than a
+     white shape lost on a white page.
+
+     Navy was the obvious reading of "darker", but it is wrong for this
+     asset set: the supplied marks are positive versions built for light
+     backgrounds, and their dominant fills sit close to navy in
+     luminance — Samsung's #1428A0 lands near 1.3:1 against --ajs-navy
+     and Saipem's #2B495A near 1.9:1, both far under the 3:1 a graphic
+     needs. Going dark means re-sourcing every logo as its reversed
+     variant first. Was a raw #fff; tokenised while here. */
+  background: var(--ajs-surface-2);
+  /* Steps up with the darker fill so the edge stays readable. */
+  border: 1px solid var(--ajs-border-strong);
+  border-radius: var(--ajs-radius);
+  text-align: center;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-client-chip:hover { border-color: var(--ajs-gold); box-shadow: var(--ajs-shadow-sm); }
+
+.ajs-client-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ajs-navy);
+  line-height: 1.3;
+}
+
+.ajs-client-note {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ajs-muted);
+  opacity: 0.75;
+}
+
+/* --- Manual controls ---
+   Progressive enhancement. The buttons ship in the markup but stay
+   hidden until main.js section 12 adds .is-interactive to the wrap,
+   so a visitor without JS is never shown a control that does
+   nothing. Under reduced motion the auto-scroll never starts, but
+   these controls still work — which is the point: WCAG 2.2.2 wants
+   moving content to be stoppable, and a row you can step through by
+   hand is strictly better than one that only moves on its own. */
+.ajs-marquee-wrap {
+  position: relative;
+}
+
+.ajs-marquee-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  /* Revealed by .is-interactive below. */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: var(--ajs-bg);
+  color: var(--ajs-navy);
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius);
+  box-shadow: var(--ajs-shadow-sm);
+  transition: color var(--ajs-speed) var(--ajs-ease),
+              border-color var(--ajs-speed) var(--ajs-ease),
+              box-shadow var(--ajs-speed) var(--ajs-ease);
+}
+
+.ajs-marquee-btn:hover {
+  color: var(--ajs-green);
+  border-color: var(--ajs-gold);
+  box-shadow: var(--ajs-shadow);
+}
+
+/* The house press gesture is scale(0.97), but this button is already
+   centred with translateY(-50%) — restating it is required or the
+   button jumps to the top edge of the row on press. */
+.ajs-marquee-btn:active {
+  transform: translateY(-50%) scale(0.97);
+  transition-duration: var(--ajs-speed-press);
+}
+
+/* Sit just inside the mask's fade zone, so a control never covers a
+   fully opaque logo. */
+.ajs-marquee-btn--prev { left: clamp(0.5rem, 2vw, 2rem); }
+.ajs-marquee-btn--next { right: clamp(0.5rem, 2vw, 2rem); }
+
+.ajs-marquee-wrap.is-interactive .ajs-marquee-btn { display: inline-flex; }
+
+/* With JS driving, the row becomes a real scroll container, so the
+   buttons, arrow keys, trackpad and touch all move the same thing.
+   The keyframe is switched off in this state — a CSS transform and
+   a scroll offset moving one element fight each other, and the
+   result is a row that stutters. Scrollbar is hidden because the
+   mask already signals that the row continues. */
+.ajs-marquee-wrap.is-interactive .ajs-marquee {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ajs-marquee-wrap.is-interactive .ajs-marquee::-webkit-scrollbar { display: none; }
+
+.ajs-marquee-wrap.is-interactive .ajs-marquee-track { animation: none; }
+
+/* --- Dark tile, for reversed logos ---
+   Some brands only publish a white/knockout version of their mark.
+   On the light tile those render as an empty box. Rather than
+   recolouring someone else's trademark — which their guidelines
+   generally forbid — the tile inverts instead, which is exactly what
+   a reversed logo is designed for.
+
+   Deliberately navy rather than a mid grey: a reversed mark needs
+   real separation, and navy is already the site's dark surface, so
+   the tile reads as part of the system rather than an accident. */
+.ajs-client-chip--dark {
+  background: var(--ajs-navy);
+  border-color: var(--ajs-navy);
+}
+
+.ajs-client-chip--dark .ajs-client-name { color: var(--ajs-on-dark); }
+.ajs-client-chip--dark .ajs-client-note { color: var(--ajs-on-dark-muted); }
+
+/* --- Logo variant of the client tile ---
+   Used once an official, permission-cleared logo file exists for a
+   client. Falls back to the text tile above until then, so the two
+   states can sit in the same track without a visible mismatch.
+
+   The box metrics (min-width, height, trailing margin) are NOT
+   restated here on purpose. The marquee translates by exactly -50%,
+   so the two halves of the track must measure identically; changing
+   a tile dimension in this variant would desynchronise the loop and
+   make it jump on every cycle. Only the contents differ. */
+.ajs-client-chip--logo {
+  /* Slightly tighter than the text tile: a wordmark needs less
+     breathing room than two stacked lines of type. */
+  padding: 0.9rem 1.15rem;
+
+  /* A DEFINITE width, not the base tile's min-width.
+     The base tile is `flex: 0 0 auto` with `min-width`, so it grows
+     to whatever its content asks for. An image at height:100% asks
+     for height x aspect-ratio, which meant every tile sized itself
+     from its logo's proportions: measured live, Samsung's 6.3:1
+     wordmark produced a 425px tile next to SABIC's 210px, and
+     object-fit had nothing to work against because the box was
+     never constrained. Fixing the width makes the box definite, so
+     contain finally letterboxes wide marks instead of stretching
+     the tile around them, and the row reads as one rhythm again. */
+  width: 240px;
+}
+
+/* Fixing BOTH dimensions here rather than on the img element is
+   what makes this robust. The twelve marks have very different
+   aspect ratios — Aramco and Samsung are wide wordmarks, others are
+   near-square — and object-fit: contain letterboxes each one inside
+   an identical box. That gives a consistent optical size without
+   cropping, and because the box is fixed in CSS the tile cannot
+   shift as images decode, whatever the file's intrinsic size.
+   contain, not cover: cover would crop a wordmark. */
+.ajs-client-chip--logo img {
+  width: 100%;
+  height: 100%;
+  /* Flex items default to min-height:auto, which would let a tall
+     logo push past the tile instead of scaling down inside it. */
+  min-height: 0;
+  object-fit: contain;
+}
+
+
+/*==========================================================
+  29. CONTACT PREVIEW
+  Map panel plus a details column. The map is a labelled
+  placeholder until the head office coordinates are embedded.
+==========================================================*/
+.ajs-map-panel {
+  position: relative;
+  border-radius: var(--ajs-radius-lg);
+  overflow: hidden;
+  height: 100%;
+  min-height: 420px;
+  background: var(--ajs-surface);
+  border: 1px solid var(--ajs-border);
+}
+
+.ajs-map-panel img,
+.ajs-map-panel iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  border: 0;
+}
+
+/* Address card floating over the map, mirroring how a real map
+   embed shows its pin label. */
+.ajs-map-marker {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: #fff;
+  border-left: 4px solid var(--ajs-gold);
+  border-radius: var(--ajs-radius);
+  box-shadow: var(--ajs-shadow);
+  padding: 1rem 1.25rem;
+  font-size: 0.86rem;
+  color: var(--ajs-muted);
+  max-width: 320px;
+}
+
+.ajs-map-marker strong {
+  display: block;
+  color: var(--ajs-navy);
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Icon + text contact rows used beside the map. */
+.ajs-contact-lines {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.ajs-contact-lines li {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ajs-border);
+}
+
+.ajs-contact-lines li:last-child { border-bottom: 0; }
+
+.ajs-contact-lines i {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ajs-radius);
+  background: var(--ajs-surface);
+  color: var(--ajs-green);
+  font-size: 1.05rem;
+}
+
+.ajs-contact-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ajs-muted);
+  margin-bottom: 0.15rem;
+}
+
+.ajs-contact-value { color: var(--ajs-navy); font-size: 0.95rem; line-height: 1.65; }
+.ajs-contact-value a { color: var(--ajs-navy); }
+.ajs-contact-value a:hover { color: var(--ajs-green); }
+
+
+/*==========================================================
+  30. FOOTER NEWSLETTER
+  Inline field and button. Not wired to a provider yet — the
+  form reuses the same client-side handler as the contact forms.
+==========================================================*/
+.ajs-newsletter { margin-top: 1.5rem; }
+
+.ajs-newsletter .form-control {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border-radius: var(--ajs-radius) 0 0 var(--ajs-radius);
+}
+
+.ajs-newsletter .form-control::placeholder { color: rgba(255, 255, 255, 0.45); }
+
+.ajs-newsletter .form-control:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--ajs-gold);
+  box-shadow: none;
+  color: #fff;
+}
+
+.ajs-newsletter .btn {
+  border-radius: 0 var(--ajs-radius) var(--ajs-radius) 0;
+  padding-inline: 1.1rem;
+}
+
+.ajs-newsletter-note {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--ajs-on-dark-muted);
+  margin-top: 0.6rem;
+}
+
+
+/*==========================================================
+  31. SERVICE DETAIL SECTIONS (services page)
+  Alternating image / copy blocks. Each service gets a full
+  section with an image, description, feature list and CTA.
+  Odd sections are image-left / copy-right; even sections
+  reverse the order via .ajs-service-detail--reverse.
+==========================================================*/
+.ajs-service-detail {
+  position: relative;
+}
+
+/* These ten headings are section titles repeated down a single
+   page, not page-level headings. At the full h2 step each one
+   competed with the page's own h1 and the block read as heavy by
+   the third repetition.
+
+   Stepped down to the h3 size while staying an <h2> in the markup:
+   the heading level is correct semantically, only its visual weight
+   changes. Uses the existing scale step rather than an in-between
+   value, so it stays on the type system. */
+.ajs-service-detail h2 {
+  font-size: var(--ajs-h3);
+}
+
+/* Lead follows the heading down a notch. At the full lead size it
+   sat almost level with the title once the title shrank, which
+   flattened the hierarchy inside the block. */
+.ajs-service-detail .ajs-lead {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* Ghost number behind the service title for depth. */
+.ajs-service-detail .ajs-ghost-number {
+  top: -0.5rem;
+  right: 0;
+}
+
+/* Image placeholder — used when a real photograph has not
+   been supplied yet. Displays a descriptive label over a
+   navy panel so it never looks broken. */
+.ajs-img-placeholder {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  background: var(--ajs-navy);
+  border-radius: var(--ajs-radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.ajs-img-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.ajs-img-placeholder::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(11, 138, 107, 0.2), transparent 65%);
+  border-radius: 50%;
+}
+
+.ajs-img-placeholder i {
+  font-size: 2.8rem;
+  color: var(--ajs-gold);
+  position: relative;
+  z-index: 1;
+}
+
+.ajs-img-placeholder span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ajs-on-dark-muted);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Feature list inside a service detail block. */
+.ajs-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+.ajs-feature-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 0.9rem;
+  color: var(--ajs-muted);
+  margin-bottom: 0.65rem;
+  break-inside: avoid;
+}
+
+.ajs-feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0.55em;
+  width: 11px;
+  height: 6px;
+  border-left: 2px solid var(--ajs-green);
+  border-bottom: 2px solid var(--ajs-green);
+  transform: rotate(-45deg);
+}
+
+/* Applications tag list. */
+.ajs-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ajs-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--ajs-surface);
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ajs-navy);
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-tag:hover {
+  border-color: var(--ajs-gold);
+  background: rgba(200, 169, 106, 0.08);
+}
+
+.ajs-tag i { color: var(--ajs-green); font-size: 0.72rem; }
+
+
+/*==========================================================
+  32. CAREER CARDS (careers page)
+  Position cards with location and employment type badges.
+==========================================================*/
+.ajs-career-card {
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  padding: 2rem 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-career-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ajs-shadow);
+  border-color: transparent;
+}
+
+/* Green bar wipes across the top edge on hover. */
+.ajs-career-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ajs-green), var(--ajs-gold));
+  transition: width 0.45s var(--ajs-ease);
+  border-radius: var(--ajs-radius-lg) var(--ajs-radius-lg) 0 0;
+}
+
+.ajs-career-card:hover::before { width: 100%; }
+
+.ajs-career-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+}
+
+.ajs-career-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ajs-career-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--ajs-muted);
+  background: var(--ajs-surface);
+  border-radius: var(--ajs-radius);
+  padding: 0.35rem 0.85rem;
+}
+
+.ajs-career-badge i { color: var(--ajs-green); font-size: 0.8rem; }
+
+.ajs-career-card .btn { margin-top: auto; align-self: flex-start; }
+
+
+/*==========================================================
+  33. CONTACT EXTRAS (contact page)
+  WhatsApp / download / quote action buttons and office
+  hours styling.
+==========================================================*/
+.ajs-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* WhatsApp branded button */
+.btn-ajs-whatsapp {
+  background: var(--ajs-whatsapp);
+  border-color: var(--ajs-whatsapp);
+  color: #fff;
+}
+
+.btn-ajs-whatsapp:hover,
+.btn-ajs-whatsapp:focus {
+  background: var(--ajs-whatsapp-dark);
+  border-color: var(--ajs-whatsapp-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--ajs-shadow);
+}
+
+/* Office hours badge */
+.ajs-office-hours {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(11, 138, 107, 0.08);
+  border: 1px solid rgba(11, 138, 107, 0.2);
+  border-radius: var(--ajs-radius);
+  padding: 0.7rem 1.1rem;
+  font-size: 0.88rem;
+  color: var(--ajs-green-dark);
+  font-weight: 500;
+}
+
+.ajs-office-hours i { color: var(--ajs-green); }
+
+
+/*==========================================================
+  34. PROJECT DETAIL CARDS (projects page)
+  Extended project cards with metadata rows for client,
+  location, duration and value.
+==========================================================*/
+.ajs-project-detail-card {
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius-lg);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-project-detail-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ajs-shadow);
+  border-color: transparent;
+}
+
+.ajs-project-detail-media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: var(--ajs-navy);
+}
+
+.ajs-project-detail-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ajs-ease);
+}
+
+.ajs-project-detail-card:hover .ajs-project-detail-media img {
+  transform: scale(1.06);
+}
+
+.ajs-project-detail-body {
+  padding: 1.25rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.ajs-project-detail-body h3 {
+  font-size: 1.08rem;
+  margin-bottom: 0.75rem;
+}
+
+.ajs-project-meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  border-top: 1px solid var(--ajs-border);
+  padding-top: 0.85rem;
+}
+
+.ajs-project-meta-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.84rem;
+  padding: 0.35rem 0;
+}
+
+.ajs-project-meta-list li span:first-child {
+  color: var(--ajs-muted);
+  flex: 0 0 auto;
+}
+
+.ajs-project-meta-list li span:last-child {
+  color: var(--ajs-navy);
+  font-weight: 600;
+  text-align: right;
+}
+
+.ajs-project-detail-body .btn { margin-top: auto; align-self: flex-start; }
+
+
+/*==========================================================
+  35. REGISTERED VENDOR BAND
+
+  A verifiable credential outranks a claimed one: a procurement
+  officer can check a vendor number against their own system in
+  seconds, which no logo or testimonial allows. This band is
+  therefore given more weight than the client strip beneath it.
+
+  Built to scale: the list is a flex row, so additional
+  registrations are added by duplicating one <li>.
+==========================================================*/
+.ajs-vendor-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(1.75rem, 1rem + 3vw, 4rem);
+  padding: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  background: var(--ajs-surface);
+  border: 1px solid var(--ajs-border);
+  border-left: 4px solid var(--ajs-green);
+  border-radius: var(--ajs-radius-lg);
+}
+
+/* Copy column takes the slack so the credential cards keep their
+   natural width however many there are. */
+.ajs-vendor-intro {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.ajs-vendor-intro h2 {
+  font-size: var(--ajs-h3);
+  margin-bottom: 0.6rem;
+}
+
+.ajs-vendor-intro p {
+  color: var(--ajs-muted);
+  font-size: 0.94rem;
+  margin: 0;
+}
+
+.ajs-vendor-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ajs-vendor-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 1.4rem;
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius);
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-vendor-card:hover {
+  border-color: var(--ajs-gold);
+  box-shadow: var(--ajs-shadow-sm);
+  transform: translateY(-3px);
+}
+
+.ajs-vendor-card > i {
+  font-size: 1.9rem;
+  color: var(--ajs-green);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.ajs-vendor-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.ajs-vendor-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ajs-navy);
+}
+
+.ajs-vendor-id {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ajs-muted);
+}
+
+/* The number itself is the payload, so it is set apart from its
+   label in weight and colour. */
+.ajs-vendor-id strong {
+  color: var(--ajs-navy);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+
+/*==========================================================
+  36. MOTION & PRINT
+==========================================================*/
+
+/* Honour the OS "reduce motion" setting: transitions, AOS
+   reveals and smooth scrolling are all neutralised. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* The looping decorative animations are stopped outright rather
+     than sped up — a 0.001ms loop would still flicker. */
+  .ajs-hero-bg {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .ajs-marquee-track { animation: none !important; }
+  .ajs-scroll-cue-mouse::before { animation: none !important; opacity: 1; }
+
+  /* Coded backdrop: the drawing stays, the drift, pulse and flare
+     flicker stop. Nodes are pinned visible so the composition does
+     not lose its accent points. */
+  .ajs-hero-canvas::before { animation: none !important; }
+  .ajs-hero-figure .ajs-fig-node { animation: none !important; opacity: 0.85; }
+  .ajs-hero-figure .ajs-fig-flare { animation: none !important; opacity: 0.9; transform: none; }
+}
+
+@media print {
+  .ajs-topbar,
+  .ajs-navbar,
+  .ajs-to-top,
+  .ajs-quick-call,
+  .ajs-cta { display: none !important; }
+
+  body { color: #000; }
+  .ajs-hero, .ajs-banner, .ajs-footer { background: #fff !important; color: #000 !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+}
+

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Concrete mixer drum truck">
+  <!-- Equipment illustration: Drum / mixer truck -->
+  <defs>
+    <linearGradient id="eqDrBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A6C"/><stop offset="1" stop-color="#0C2538"/>
+    </linearGradient>
+    <linearGradient id="eqDrDrum" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D6BC85"/><stop offset="1" stop-color="#B08F4E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mixing drum, tilted on its axis -->
+  <g transform="rotate(-12 250 130)">
+    <path d="M170 96h116l34 34-34 34H170a34 34 0 0 1 0-68Z" fill="url(#eqDrDrum)"/>
+    <!-- Spiral banding reads as the mixing blades inside -->
+    <g stroke="#8A6E38" stroke-width="3" opacity=".55" fill="none">
+      <path d="M196 96q18 34 0 68M228 96q18 34 0 68M260 96q18 34 0 68"/>
+    </g>
+    <ellipse cx="170" cy="130" rx="12" ry="34" fill="#C8A96A"/>
+  </g>
+
+  <!-- Discharge chute -->
+  <path d="M330 148l46 30-10 16-46-30Z" fill="#0E2C43"/>
+  <path d="M366 178h22v14h-22Z" fill="#C8A96A"/>
+
+  <!-- Drum support frame -->
+  <path d="M150 186h176v14H150Z" fill="#0E2C43"/>
+  <g stroke="#123B57" stroke-width="8" stroke-linecap="round">
+    <path d="M176 186v-18M300 186v-24"/>
+  </g>
+
+  <!-- Cab -->
+  <path d="M36 120h68a10 10 0 0 1 10 10v56H36a8 8 0 0 1-8-8v-50a8 8 0 0 1 8-8Z" fill="url(#eqDrBody)"/>
+  <rect x="42" y="130" width="58" height="32" rx="4" fill="#8FBBD8" opacity=".6"/>
+  <rect x="28" y="168" width="24" height="10" rx="3" fill="#C8A96A"/>
+
+  <!-- Chassis -->
+  <rect x="110" y="186" width="240" height="16" rx="4" fill="#0E2C43"/>
+  <rect x="110" y="186" width="240" height="5" fill="#0B8A6B"/>
+
+  <!-- Wheels -->
+  <g fill="#0C2538">
+    <circle cx="94" cy="222" r="24"/><circle cx="240" cy="222" r="24"/><circle cx="298" cy="222" r="24"/>
+  </g>
+  <g fill="#4C86AD" opacity=".85">
+    <circle cx="94" cy="222" r="9"/><circle cx="240" cy="222" r="9"/><circle cx="298" cy="222" r="9"/>
+  </g>
+</svg>

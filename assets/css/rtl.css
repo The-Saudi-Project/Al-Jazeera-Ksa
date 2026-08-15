@@ -1,0 +1,476 @@
+﻿/*==========================================================
+  AL JAZEERA SERVICE CONTRACTING CO. (Al Jazeera Service Contracting Co.)
+  Right-to-left overrides — Arabic site (/ar/)
+
+  Loaded ONLY on the Arabic pages, AFTER style.css and
+  responsive.css so these rules win on source order without
+  needing !important.
+
+  Scope: every rule is prefixed [dir="rtl"] (or html[dir="rtl"]
+  where it must out-specify a two-part selector). Nothing here
+  can leak into the English pages even if the file is linked
+  by mistake.
+
+  Bootstrap's own RTL build (bootstrap.rtl.min.css) handles the
+  grid, offcanvas placement and the ms-*/me-*/text-start
+  utilities. This file only mirrors Al Jazeera Service Contracting Co.'s own components —
+  the ones written with physical left/right properties.
+
+  WHAT IS DELIBERATELY NOT MIRRORED
+  - Checkmark glyphs. A tick is a symbol, not directional UI;
+    RTL convention leaves it unmirrored. Only its position moves.
+  - .ajs-hero-figure, the drawn blueprint backdrop. It is a plant
+    elevation, not an interface. Mirroring an engineering drawing
+    conveys nothing and would reverse its dimension callouts.
+  - Centred elements (.ajs-scroll-cue, .nav-link::after) that use
+    left:50% + translateX(-50%). `left` is a physical property, so
+    those stay centred in both directions with no override.
+  - .ajs-eyebrow's leading gold rule. It is a flex ::before, and
+    direction:rtl reverses the flex main axis on its own.
+
+  CONTENTS
+  01. Scope, Tokens & Type
+  02. Accessibility Helpers
+  03. Navigation
+  04. Hero
+  05. Stat Band
+  06. Cards & Tick Lists
+  07. Split Feature Blocks
+  08. Timeline
+  09. Decorative Glows
+  10. Footer
+  11. Floating Controls
+  12. Page-Specific Blocks
+  13. Client Marquee
+  14. Breakpoint Overrides  (mirrors responsive.css)
+
+  Reduced motion needs no section here: style.css section 36
+  stops .ajs-marquee-track with `animation: none !important`,
+  which beats the RTL animation below regardless of file order.
+==========================================================*/
+
+
+/*==========================================================
+  01. SCOPE, TOKENS & TYPE
+==========================================================*/
+
+/* Retokenise the body font rather than restating font-family on
+   each component. --ajs-font is consumed by the base rules and by
+   --bs-body-font-family, so one swap carries Cairo everywhere.
+   html[dir="rtl"] (0,1,1) out-specifies :root (0,1,0), where the
+   original token is declared. */
+html[dir="rtl"] {
+  --ajs-font: var(--ajs-font-ar);
+}
+
+/* Latin letter-spacing damages Arabic. The script is cursive, and
+   positive tracking pulls joined glyphs apart so words read as
+   broken. Negative tracking on headings collides them. 25 separate
+   components set tracking in style.css; resetting them one by one
+   would drift the moment a new component is added, so this is a
+   blanket reset.
+
+   html[dir="rtl"] * scores (0,1,1) — enough to beat the two-part
+   selectors (.ajs-vendor-id strong, .ajs-stat-card span) that a
+   plain [dir="rtl"] * would lose to. */
+html[dir="rtl"] *,
+html[dir="rtl"] *::before,
+html[dir="rtl"] *::after {
+  letter-spacing: normal;
+}
+
+/* Latin runs inside Arabic copy: phone numbers, e-mail addresses,
+   "Al Jazeera Service Contracting Co.", ISO codes. Without an isolate, the bidi algorithm drags
+   trailing punctuation to the wrong end of the number — +966 13 842
+   2350 renders as 2350 842 13 966+. This is the /ar/ counterpart of
+   .ajs-ar on the English pages, and it restores the tracking the
+   blanket reset above removed. */
+[dir="rtl"] .ajs-en {
+  font-family: var(--ajs-font);
+  direction: ltr;
+  unicode-bidi: isolate;
+  letter-spacing: 0.02em;
+}
+
+/* Arabic has no letter case, so uppercasing is a no-op on Arabic
+   text but still fires on any Latin fragment inside the same label.
+   Left alone deliberately — .ajs-en spans should read as typed. */
+[dir="rtl"] .ajs-en {
+  text-transform: none;
+}
+
+
+/*==========================================================
+  02. ACCESSIBILITY HELPERS
+==========================================================*/
+
+/* Skip link enters from the inline-start edge, which is now right. */
+[dir="rtl"] .ajs-skip-link {
+  left: auto;
+  right: 1rem;
+}
+
+/* Honeypot. In LTR, left:-9999px overflows the inline-START edge,
+   which browsers treat as unreachable — no scrollbar. Flip the
+   direction and inline-start becomes the right edge, so the SAME
+   rule now overflows inline-END and creates a 9999px horizontal
+   scroll on every page carrying a form. Must be mirrored, not
+   inherited. Keeps !important to match the original declaration. */
+[dir="rtl"] .ajs-hp {
+  left: auto !important;
+  right: -9999px !important;
+}
+
+
+/*==========================================================
+  03. NAVIGATION
+==========================================================*/
+
+/* Brand pushes the nav to the far edge; that spacer swaps sides. */
+[dir="rtl"] .ajs-brand {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+[dir="rtl"] .ajs-navbar .navbar-nav {
+  margin-right: 0 !important;
+  margin-left: 1.25rem !important;
+}
+
+[dir="rtl"] .ajs-offcanvas-contact i {
+  margin-right: 0;
+  margin-left: 0.6rem;
+}
+
+/* Arrow links slide toward the reading direction, which is now
+   leftward. The icon glyph is directional too (bi-arrow-right), so
+   it is mirrored rather than swapped for a second icon class — that
+   keeps the markup identical between the two language builds.
+
+   scaleX(-1) is listed first, so the 5px hover translate resolves
+   inside the already-mirrored space and moves visually left. */
+[dir="rtl"] .ajs-link-arrow i {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .ajs-link-arrow:hover i {
+  transform: scaleX(-1) translateX(5px);
+}
+
+
+/*==========================================================
+  04. HERO
+==========================================================*/
+
+/* The overlay darkens the side the copy sits on so the headline
+   keeps contrast. Copy moves to the right, so the wash mirrors:
+   105deg → 255deg (360 − 105) reverses the sweep, and the green
+   radial accent moves from 85% to 15%. */
+[dir="rtl"] .ajs-hero-overlay {
+  background:
+    linear-gradient(255deg,
+      rgba(7, 27, 44, 0.85) 0%,
+      rgba(7, 27, 44, 0.55) 50%,
+      rgba(7, 27, 44, 0.18) 100%),
+    radial-gradient(circle at 15% 30%, rgba(11, 138, 107, 0.2), transparent 60%);
+}
+
+
+/*==========================================================
+  05. STAT BAND
+==========================================================*/
+
+/* Divider rules sit between cells. Reset the LTR border before
+   drawing the RTL one, or every cell carries two. */
+[dir="rtl"] .ajs-stat {
+  border-right: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[dir="rtl"] .ajs-stat:last-child {
+  border-left: 0;
+}
+
+
+/*==========================================================
+  06. CARDS & TICK LISTS
+==========================================================*/
+
+/* Hover wipe grows from the inline-start edge. The gradient is
+   reversed with it (90deg → 270deg) so green still leads and gold
+   still trails, matching the LTR reading order of the accent. */
+[dir="rtl"] .ajs-card::before {
+  left: auto;
+  right: 0;
+  background: linear-gradient(270deg, var(--ajs-green), var(--ajs-gold));
+}
+
+[dir="rtl"] .ajs-card-index {
+  right: auto;
+  left: 1.5rem;
+}
+
+[dir="rtl"] .ajs-card-list li {
+  padding-left: 0;
+  padding-right: 1.6rem;
+}
+
+/* Position moves; the tick shape does not. See header note. */
+[dir="rtl"] .ajs-card-list li::before {
+  left: auto;
+  right: 1px;
+}
+
+[dir="rtl"] .ajs-check-list li {
+  padding-left: 0;
+  padding-right: 2.1rem;
+}
+
+[dir="rtl"] .ajs-check-list li::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .ajs-check-list li::after {
+  left: auto;
+  right: 6px;
+}
+
+[dir="rtl"] .ajs-feature-list li {
+  padding-left: 0;
+  padding-right: 1.6rem;
+}
+
+[dir="rtl"] .ajs-feature-list li::before {
+  left: auto;
+  right: 1px;
+}
+
+
+/*==========================================================
+  07. SPLIT FEATURE BLOCKS
+==========================================================*/
+
+/* Offset gold frame sits outboard of the media, on the side away
+   from the copy. That side flips with the layout. */
+[dir="rtl"] .ajs-split-frame::before {
+  left: auto;
+  right: -22px;
+}
+
+
+/*==========================================================
+  08. TIMELINE
+==========================================================*/
+
+/* Rail, indent and node all hang off the inline-start edge. The
+   three values are coupled — the item node is pulled out by exactly
+   the list's padding, so if one changes the others must follow. */
+[dir="rtl"] .ajs-timeline {
+  padding-left: 0;
+  padding-right: 2.4rem;
+}
+
+[dir="rtl"] .ajs-timeline::before {
+  left: auto;
+  right: 7px;
+}
+
+[dir="rtl"] .ajs-timeline-item::before {
+  left: auto;
+  right: -2.4rem;
+}
+
+
+/*==========================================================
+  09. DECORATIVE GLOWS
+  Radial washes bled off one edge of a band. Mirrored purely so the
+  page's visual weight stays on the same side as its content.
+==========================================================*/
+
+[dir="rtl"] .ajs-cta::after {
+  left: auto;
+  right: -8%;
+}
+
+[dir="rtl"] .ajs-banner::after {
+  right: auto;
+  left: -6%;
+}
+
+[dir="rtl"] .ajs-vm-card::after {
+  right: auto;
+  left: -40px;
+}
+
+[dir="rtl"] .ajs-img-placeholder::after {
+  right: auto;
+  left: -15%;
+}
+
+
+/*==========================================================
+  10. FOOTER
+==========================================================*/
+
+/* Hover nudge follows the reading direction, so it inverts. */
+[dir="rtl"] .ajs-footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+
+/*==========================================================
+  11. FLOATING CONTROLS
+==========================================================*/
+
+/* Both float over the inline-end corner. Kept on the same corner
+   as each other so they never overlap when both are visible. */
+[dir="rtl"] .ajs-to-top {
+  right: auto;
+  left: 1.5rem;
+}
+
+[dir="rtl"] .ajs-quick-call {
+  right: auto;
+  left: 1.5rem;
+}
+
+/* Progress bar fills from the inline-start edge, and its gradient
+   reverses with it so gold still leads the fill. */
+[dir="rtl"] .ajs-scroll-progress {
+  left: auto;
+  right: 0;
+  background: linear-gradient(270deg, var(--ajs-gold), var(--ajs-green));
+}
+
+
+/*==========================================================
+  12. PAGE-SPECIFIC BLOCKS
+==========================================================*/
+
+/* --- Home: registered vendor band --- */
+[dir="rtl"] .ajs-vendor-band {
+  border-left: 0;
+  border-right: 4px solid var(--ajs-green);
+}
+
+/* --- Home / projects: featured project cards --- */
+[dir="rtl"] .ajs-fp-tag {
+  left: auto;
+  right: 1rem;
+}
+
+/* Label/value rows: the value is flush to the opposite edge from
+   its label, so its alignment inverts with the row. */
+[dir="rtl"] .ajs-fp-meta li span:last-child,
+[dir="rtl"] .ajs-project-meta-list li span:last-child {
+  text-align: left;
+}
+
+/* --- Services --- */
+[dir="rtl"] .ajs-service-icon {
+  left: auto;
+  right: 1.25rem;
+}
+
+[dir="rtl"] .ajs-service-detail .ajs-ghost-number {
+  right: auto;
+  left: 0;
+}
+
+/* --- Careers --- */
+[dir="rtl"] .ajs-career-card::before {
+  left: auto;
+  right: 0;
+  background: linear-gradient(270deg, var(--ajs-green), var(--ajs-gold));
+}
+
+/* --- Leadership --- */
+[dir="rtl"] .ajs-leader-media::after {
+  left: auto;
+  right: 0;
+}
+
+/* --- Contact: map marker ---
+   Position is left alone on purpose. The marker sets left, right AND
+   max-width so it can shrink on narrow screens; that is
+   over-constrained, and the spec resolves it by ignoring `left`
+   under direction:rtl, which pins it to the right edge already.
+   Dropping a side to force it would cost the responsive shrink. */
+[dir="rtl"] .ajs-map-marker {
+  border-left: 0;
+  border-right: 4px solid var(--ajs-gold);
+}
+
+
+/*==========================================================
+  13. CLIENT MARQUEE
+==========================================================*/
+
+/* Spacing is a trailing margin, not gap — see the note in style.css
+   section 28. The trailing edge is now the left, so the margin has
+   to move with it or the two halves of the track no longer measure
+   the same and translateX(50%) lands mid-tile. */
+[dir="rtl"] .ajs-client-chip {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* In RTL the track's right edge aligns with the container's right
+   edge and it overflows leftward, so the visible half is the first
+   set. Translating POSITIVE reveals the duplicate and scrolls the
+   tiles rightward — with the reading direction, matching how the
+   LTR marquee scrolls with its own. */
+@keyframes ajsMarqueeRtl {
+  from { transform: translateX(0); }
+  to   { transform: translateX(50%); }
+}
+
+[dir="rtl"] .ajs-marquee-track {
+  animation-name: ajsMarqueeRtl;
+}
+
+
+/*==========================================================
+  14. BREAKPOINT OVERRIDES
+  Mirrors of the directional rules in responsive.css. Breakpoints
+  are copied exactly from that file — if one moves there, it must
+  move here too.
+==========================================================*/
+
+@media (max-width: 1399.98px) {
+  [dir="rtl"] .ajs-split-frame::before {
+    left: auto;
+    right: -14px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  [dir="rtl"] .ajs-timeline {
+    padding-left: 0;
+    padding-right: 1.9rem;
+  }
+
+  [dir="rtl"] .ajs-timeline-item::before {
+    left: auto;
+    right: -1.9rem;
+  }
+
+  /* Footer columns stack and align to the inline-start edge. */
+  [dir="rtl"] .ajs-footer {
+    text-align: right;
+  }
+}
+
+@media (max-width: 575.98px) {
+  [dir="rtl"] .ajs-to-top {
+    right: auto;
+    left: 1rem;
+  }
+
+  [dir="rtl"] .ajs-quick-call {
+    right: auto;
+    left: 1rem;
+  }
+}
+

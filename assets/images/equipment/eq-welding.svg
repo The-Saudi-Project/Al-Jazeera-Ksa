@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img"
+     aria-label="Engine driven welding machine with torch and gas cylinders">
+  <!-- Equipment illustration — Welding & fabrication support -->
+  <defs>
+    <linearGradient id="eq7Body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A6C"/><stop offset="1" stop-color="#0C2538"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Welding set -->
+  <rect x="58" y="112" width="196" height="106" rx="9" fill="url(#eq7Body)"/>
+  <rect x="58" y="112" width="196" height="11" rx="5" fill="#C8A96A"/>
+  <!-- Control face -->
+  <rect x="76" y="138" width="80" height="60" rx="4" fill="#0B2537"/>
+  <circle cx="98"  cy="160" r="12" fill="#123B57"/><circle cx="98" cy="160" r="4" fill="#C8A96A"/>
+  <circle cx="134" cy="160" r="12" fill="#123B57"/><circle cx="134" cy="160" r="4" fill="#0B8A6B"/>
+  <g fill="#4C86AD" opacity=".7"><rect x="84" y="182" width="64" height="6" rx="3"/></g>
+  <!-- Louvres -->
+  <g fill="#8FBBD8" opacity=".3">
+    <rect x="176" y="140" width="62" height="7" rx="3"/><rect x="176" y="154" width="62" height="7" rx="3"/>
+    <rect x="176" y="168" width="62" height="7" rx="3"/><rect x="176" y="182" width="62" height="7" rx="3"/>
+  </g>
+  <!-- Handle -->
+  <path d="M84 112V98h144v14" fill="none" stroke="#C8A96A" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Cable and electrode holder -->
+  <path d="M254 168q56 6 62 48" fill="none" stroke="#0E2C43" stroke-width="7" stroke-linecap="round"/>
+  <g transform="rotate(28 316 216)">
+    <rect x="298" y="206" width="44" height="14" rx="5" fill="#123B57"/>
+    <rect x="340" y="209" width="26" height="8" rx="3" fill="#C8A96A"/>
+  </g>
+  <!-- Arc flash: the one bright note, signalling the machine in use -->
+  <g fill="#E2D2AE"><path d="m368 190 6 16 16 4-16 6-6 16-6-16-16-6 16-4Z"/></g>
+
+  <!-- Gas cylinders -->
+  <g>
+    <rect x="278" y="74" width="34" height="112" rx="17" fill="#0B8A6B"/>
+    <rect x="288" y="60" width="14" height="20" rx="5" fill="#0E2C43"/>
+    <rect x="320" y="90" width="30" height="96" rx="15" fill="#123B57"/>
+    <rect x="329" y="78" width="12" height="18" rx="5" fill="#0E2C43"/>
+  </g>
+
+  <!-- Trolley base and wheels -->
+  <rect x="46" y="218" width="320" height="16" rx="5" fill="#0E2C43"/>
+  <g fill="#0C2538"><circle cx="94" cy="244" r="16"/><circle cx="316" cy="244" r="16"/></g>
+  <g fill="#4C86AD" opacity=".85"><circle cx="94" cy="244" r="6"/><circle cx="316" cy="244" r="6"/></g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-hidden="true" focusable="false">
+  <!-- Sector mark — Petrochemical: process columns and a transfer line -->
+  <rect x="16" y="20" width="22" height="62" rx="5" fill="#071B2C"/>
+  <rect x="46" y="36" width="18" height="46" rx="4" fill="#071B2C" opacity=".75"/>
+  <rect x="70" y="48" width="14" height="34" rx="4" fill="#071B2C" opacity=".55"/>
+  <path d="M38 46h8v-8M64 60h6" stroke="#C8A96A" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <rect x="10" y="82" width="78" height="8" rx="4" fill="#0B8A6B"/>
+</svg>

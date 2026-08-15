@@ -1,0 +1,329 @@
+/*==========================================================
+  Al Jazeera Service Contracting Co. — Responsive Stylesheet
+
+  Loaded AFTER style.css. The design system is already fluid
+  (clamp() type, CSS grid/flex, Bootstrap columns), so this file
+  only carries the adjustments that fluid values cannot express:
+  layout reflows, decorative elements that must be removed on
+  small screens, and touch-target sizing.
+
+  Breakpoints follow Bootstrap 5.3 so the two never disagree:
+  xxl >=1400 | xl >=1200 | lg >=992 | md >=768 | sm >=576 | xs <576
+
+  CONTENTS
+  01. Large Desktop (>=1400px)
+  02. Desktop / Small Laptop (<=1399px)
+  03. Tablet Landscape (<=1199px)
+  04. Tablet Portrait & Collapsed Nav (<=991px)
+  05. Large Mobile (<=767px)
+  06. Small Mobile (<=575px)
+  07. Very Small Mobile (<=380px)
+  08. Landscape Phones (short viewports)
+  09. High-DPI & Hover-less Devices
+==========================================================*/
+
+
+/*==========================================================
+  01. LARGE DESKTOP (>=1400px)
+  Extra width is spent on breathing room, not bigger text.
+==========================================================*/
+@media (min-width: 1400px) {
+  .container,
+  .container-xl,
+  .container-lg { max-width: 1280px; }
+}
+
+
+/*==========================================================
+  02. DESKTOP / SMALL LAPTOP (<=1399px)
+==========================================================*/
+@media (max-width: 1399.98px) {
+  /* The offset gold frame needs room to sit outside the image;
+     pull it in so it never pushes against the viewport edge. */
+  .ajs-split-frame::before { left: -14px; top: 14px; }
+}
+
+
+/*==========================================================
+  03. TABLET LANDSCAPE (<=1199px)
+==========================================================*/
+@media (max-width: 1199.98px) {
+  .ajs-navbar .nav-link { padding: 0.45rem 0.55rem !important; font-size: 0.88rem; }
+
+  /* Arabic sub-labels crowd the nav at this width; the Arabic
+     wording remains available in the mobile menu and footer. */
+  .ajs-navbar .nav-link .ajs-ar { display: none; }
+
+  .ajs-stat { padding: 2.25rem 1rem; }
+}
+
+
+/*==========================================================
+  04. TABLET PORTRAIT & COLLAPSED NAV (<=991px)
+  Bootstrap collapses the navbar here, so the menu switches from
+  a horizontal bar to a stacked panel.
+==========================================================*/
+@media (max-width: 991.98px) {
+  /* --- Navigation panel --- */
+  .ajs-navbar .navbar-collapse {
+    background: #fff;
+    margin-top: 1rem;
+    padding: 0.75rem 0 1.25rem;
+    border-top: 1px solid var(--ajs-border);
+    /* Long menus must scroll rather than push the page height. */
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+  }
+
+  .ajs-navbar .nav-link {
+    padding: 0.85rem 0.25rem !important;
+    border-bottom: 1px solid var(--ajs-border);
+    font-size: 1rem;
+  }
+
+  /* Centre-out underline reads as broken when links are full
+     width; a left-aligned marker is clearer in the stacked menu. */
+  .ajs-navbar .nav-link::after { display: none; }
+
+  .ajs-navbar .nav-link.active { color: var(--ajs-green); }
+
+  /* Arabic labels return in the stacked menu, aligned right so the
+     bilingual pair reads correctly on each row. */
+  .ajs-navbar .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ajs-navbar .nav-link .ajs-ar {
+    display: inline-block;
+    margin-top: 0;
+    font-size: 0.88rem;
+  }
+
+  .ajs-navbar .navbar-nav + .btn,
+  .ajs-navbar .navbar-collapse .btn { width: 100%; margin-top: 1.25rem; }
+
+  /* --- Hero: content column goes full width once stacked --- */
+  /* Logo is still 66px here, so the header height is unchanged. */
+  .ajs-hero-content { padding-bottom: 6rem; }
+
+  /* --- Stat band: 2x2 grid needs inner borders on both axes --- */
+  .ajs-stat { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+  .ajs-stat--light { border-bottom-color: var(--ajs-border); }
+
+  /* --- Split blocks stack, so the offset frame loses its
+     purpose and only risks overflow. --- */
+  .ajs-split-frame::before { display: none; }
+  .ajs-split-media { margin-bottom: 2.5rem; }
+
+  /* Restore natural DOM order when a column was reordered for
+     desktop; stacked media should lead its copy. */
+  .ajs-split-reset { order: 0 !important; }
+
+  .ajs-section-head { margin-bottom: 2.75rem; }
+}
+
+
+/*==========================================================
+  05. LARGE MOBILE (<=767px)
+==========================================================*/
+@media (max-width: 767.98px) {
+  :root {
+    /* Compress the vertical rhythm so pages stay scannable. */
+    --ajs-section-y: clamp(3rem, 2rem + 4vw, 4.5rem);
+
+    /* Shorter logo and topbar here, so the header is shorter too.
+       Kept in step with .ajs-brand img below — the hero clearance
+       is calculated from this. */
+    --ajs-header-h: 128px;
+  }
+
+  /* Top bar keeps only the phone number; the rest is reachable
+     from the footer and contact page. */
+  .ajs-topbar { font-size: 0.78rem; }
+  .ajs-topbar-hide-sm { display: none !important; }
+
+  .ajs-brand img { height: 75px; }
+  .ajs-brand-text { display: none; }
+
+  .ajs-hero-actions .btn { width: 100%; }
+  .ajs-hero-trust { gap: 1rem 1.5rem; }
+  .ajs-hero-trust-item { font-size: 0.82rem; }
+
+  /* Coded backdrop on phones: the drawing is authored at 1600 wide,
+     so a narrow viewport slices out a busy middle section directly
+     behind the copy. Shrinking and fading it keeps the texture
+     without costing headline legibility. */
+  .ajs-hero--coded .ajs-hero-figure {
+    height: clamp(180px, 34vh, 260px);
+    opacity: 0.55;
+  }
+
+  /* The coarse grid is scaled down to suit the narrower viewport.
+     The fine grid deliberately keeps its 44px cell: the drift
+     animation translates by exactly one cell to loop seamlessly, so
+     changing the size here without changing the keyframe would make
+     the loop visibly jump. */
+  .ajs-hero-canvas::after { background-size: 150px 150px, 150px 150px, 100% 100%; }
+
+  .ajs-stat { padding: 1.9rem 0.75rem; }
+
+  .ajs-card { padding: 2rem 1.5rem; }
+  .ajs-card-index { font-size: 2.1rem; }
+
+  .ajs-project-media { aspect-ratio: 3 / 2; }
+  .ajs-project-overlay { padding: 1.35rem; }
+
+  .ajs-timeline { padding-left: 1.9rem; }
+  .ajs-timeline-item::before { left: -1.9rem; }
+
+  /* --- Part 2 home page components --- */
+  .ajs-vm-card { padding: 2rem 1.5rem; }
+  .ajs-service-body { padding: 2.25rem 1.35rem 1.5rem; }
+  .ajs-fp-media { aspect-ratio: 3 / 2; }
+
+  /* Reasons read better centred once they are one per row. */
+  .ajs-reason { gap: 1rem; }
+  .ajs-reason-icon { width: 50px; height: 50px; font-size: 1.35rem; }
+
+  /* A full-height map panel wastes most of a phone screen. */
+  .ajs-map-panel,
+  .ajs-map-panel img,
+  .ajs-map-panel iframe { min-height: 280px; }
+
+  .ajs-map-marker {
+    position: static;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid var(--ajs-border);
+  }
+
+  .ajs-footer { text-align: left; }
+  .ajs-footer-bottom { text-align: center; }
+  .ajs-footer-bottom p + p { margin-top: 0.5rem; }
+
+  /* Ghost numerals become noise at small sizes. */
+  .ajs-ghost-number { display: none; }
+
+  /* --- Part 3 inner-page components --- */
+  .ajs-feature-list { columns: 1; }
+  .ajs-img-placeholder { min-height: 240px; }
+  .ajs-action-row { flex-direction: column; }
+  .ajs-career-card { padding: 1.6rem 1.35rem; }
+  .ajs-project-detail-media { aspect-ratio: 3 / 2; }
+}
+
+
+/*==========================================================
+  06. SMALL MOBILE (<=575px)
+==========================================================*/
+@media (max-width: 575.98px) {
+  /* Full-bleed buttons are easier to hit than centred pills. */
+  .btn { width: 100%; padding: 0.9rem 1.25rem; }
+
+  /* ...except where buttons sit inside an inline group. */
+  .ajs-btn-inline .btn { width: auto; }
+
+  .ajs-filters { gap: 0.45rem; }
+  .ajs-filter-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
+
+  .ajs-logo-item { flex: 1 1 130px; height: 78px; padding: 0.9rem; }
+  .ajs-logo-item img { max-height: 34px; }
+
+  .ajs-accordion .accordion-button { font-size: 0.95rem; padding: 1.1rem 1.15rem; }
+  .ajs-accordion .accordion-body { padding: 0 1.15rem 1.25rem; }
+
+  .ajs-form-panel { padding: 1.5rem 1.25rem; }
+
+  /* Keep floating actions clear of the thumb zone and each other. */
+  .ajs-to-top { right: 1rem; bottom: 1rem; width: 42px; height: 42px; }
+  .ajs-quick-call { right: 1rem; bottom: 4.2rem; width: 42px; height: 42px; }
+
+  .ajs-spec-list li { font-size: 0.8rem; }
+
+  /* Marquee tiles shrink so more than one is visible at a time. */
+  .ajs-client-chip { min-width: 160px; height: 80px; padding: 0.85rem 1rem; }
+  .ajs-client-name { font-size: 0.86rem; }
+
+  .ajs-stat-card { padding: 1.4rem 0.9rem; }
+  .ajs-contact-lines i { width: 36px; height: 36px; font-size: 0.95rem; }
+}
+
+
+/*==========================================================
+  07. VERY SMALL MOBILE (<=380px)
+  Safety net for older/compact handsets.
+==========================================================*/
+@media (max-width: 380px) {
+  :root { --ajs-gutter: 1rem; }
+
+  .ajs-eyebrow { font-size: 0.7rem; letter-spacing: 0.14em; }
+  .ajs-eyebrow::before { width: 22px; }
+
+  .ajs-card { padding: 1.65rem 1.15rem; }
+  .ajs-card-icon { width: 54px; height: 54px; font-size: 1.45rem; }
+
+  .ajs-value-card { padding: 1.25rem 1rem; gap: 0.85rem; }
+
+  .ajs-hero-trust { flex-direction: column; gap: 0.85rem; }
+}
+
+
+/*==========================================================
+  08. LANDSCAPE PHONES (short viewports)
+  A phone held sideways has plenty of width but almost no height,
+  so tall padding is the problem, not narrow columns.
+==========================================================*/
+@media (max-height: 500px) and (orientation: landscape) {
+  :root { --ajs-section-y: 3rem; }
+
+  .ajs-hero { min-height: 0; }
+  .ajs-hero-content { padding-top: calc(var(--ajs-header-h) + 1rem); padding-bottom: 4rem; }
+  .ajs-scroll-cue { display: none; }
+
+  .ajs-navbar .navbar-collapse { max-height: calc(100vh - 90px); }
+
+  /* A fixed navbar would eat most of the visible area here.
+     Both header modes are released back into normal flow. */
+  .ajs-navbar.is-stuck { position: static; animation: none; }
+  .ajs-header--overlay.is-stuck { position: absolute; animation: none; }
+
+  .ajs-banner { padding-top: 3rem; padding-bottom: 2.5rem; }
+}
+
+
+/*==========================================================
+  09. HIGH-DPI & HOVER-LESS DEVICES
+==========================================================*/
+
+/* On touch screens there is no hover state to reveal content, so
+   interactive affordances are shown in their resting state and
+   lift effects are dropped (they only ever flash on tap). */
+@media (hover: none) {
+  .ajs-card:hover,
+  .ajs-equipment-card:hover,
+  .ajs-info-card:hover,
+  .ajs-value-card:hover { transform: none; }
+
+  .ajs-logo-item img { filter: grayscale(0); opacity: 0.85; }
+
+  .btn:hover,
+  .btn:focus { transform: none; }
+
+  /* Guarantee comfortable tap targets (WCAG 2.5.8). */
+  .ajs-footer-links a,
+  .ajs-topbar a { padding: 0.2rem 0; min-height: 32px; }
+}
+
+/* Hairline borders can disappear on retina panels; nudge the
+   colour instead of the width so layout is unaffected. */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .ajs-card,
+  .ajs-equipment-card,
+  .ajs-info-card,
+  .ajs-logo-item { border-color: #E9ECEF; }
+}
+
