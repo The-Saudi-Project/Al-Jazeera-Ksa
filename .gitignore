@@ -10,3 +10,9 @@ Desktop.ini
 # Logs
 npm-debug.log*
 *.log
+
+# Agent & LLM Assistant Files
+.claude/
+CLAUDE.md
+HANDOFF.md
+walkthrough.md
