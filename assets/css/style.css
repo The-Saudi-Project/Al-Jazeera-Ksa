@@ -694,77 +694,35 @@ a.ajs-value-card:active {
 .ajs-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0;
   flex-shrink: 0;
   margin-right: auto !important;
 }
 
-.ajs-brand img {
-  height: 90px;
+/* New wide logo image (logo-ai-cropped.jpg) — white background.
+   Height-based sizing keeps it proportional as the image is ~3.8:1 wide.
+   A height of 52px gives a natural nav-friendly size on solid header;
+   it will appear larger when the overlay header is transparent (unhidden topbar). */
+.ajs-logo-img {
+  height: 52px;
   width: auto;
-  /* filter is transitioned so the white edge fades out as the
-     header turns solid, rather than snapping off. */
+  display: block;
   transition: height var(--ajs-speed) var(--ajs-ease),
-              filter var(--ajs-speed) var(--ajs-ease);
+              mix-blend-mode var(--ajs-speed) var(--ajs-ease);
 }
 
-/* Logo on dark surfaces — white edge hugging the mark.
-
-   The mark is a teal tile inside a dark navy outline. On white that
-   outline defines the shape; on navy it is nearly the background
-   colour, so the logo loses its edge entirely.
-
-   A background on the element would put white behind the PNG's
-   whole box — including its transparent margin — producing a white
-   rectangle with the tile floating inside it. That reads as a
-   sticker stuck onto the header.
-
-   Chained drop-shadows instead. Each one operates on the alpha of
-   the previous result, so four axis-aligned passes grow a uniform
-   edge that follows the tile's actual rounded-square silhouette,
-   not its bounding box. White appears only where the mark is,
-   which is the same relationship it has to the white header when
-   scrolled. Nothing is measured, so this survives the logo being
-   re-exported at different proportions. */
-.ajs-header--overlay:not(.is-stuck) .ajs-brand img,
-.ajs-footer .ajs-brand img,
-.ajs-offcanvas .ajs-brand img {
-  filter:
-    drop-shadow(2px 0 0 var(--ajs-bg))
-    drop-shadow(-2px 0 0 var(--ajs-bg))
-    drop-shadow(0 2px 0 var(--ajs-bg))
-    drop-shadow(0 -2px 0 var(--ajs-bg));
+/* Header logo (JPEG white-bg) on the transparent overlay — multiply removes the white.
+   Footer and offcanvas now use the transparent PNG icon (ajs-logo-icon) instead. */
+.ajs-header--overlay:not(.is-stuck) .ajs-logo-img {
+  mix-blend-mode: multiply;
+  filter: brightness(1.08);
 }
 
-.is-stuck .ajs-brand img { height: 72px; }
-
-.ajs-brand-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 1.2;
-}
-
-.ajs-brand-ar,
-.ajs-brand-name {
-  font-family: var(--ajs-font-ar), "Cairo", sans-serif;
-  font-size: 1.44rem;
-  font-weight: 700;
-  color: var(--ajs-navy);
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-}
-
-.ajs-brand-en,
-.ajs-brand-tag {
-  font-family: 'Orbitron', var(--ajs-font), sans-serif;
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: var(--ajs-navy);
-  text-transform: lowercase;
-  letter-spacing: 0.04em;
-  line-height: 1.25;
-  margin-top: 2px;
+/* Solid-header (scrolled) state: normal blend, slightly smaller */
+.is-stuck .ajs-logo-img {
+  height: 44px;
+  mix-blend-mode: normal;
+  filter: none;
 }
 
 /* The link row is pushed to the right by .ajs-brand's auto margin,
@@ -859,13 +817,9 @@ a.ajs-value-card:active {
 
 /*----------------------------------------------------------
   08a. OVERLAY HEADER  (home page only)
-  On pages that open with a full-viewport hero the header sits
-  ON the hero rather than above it, so the photograph starts at
-  the very top of the screen. Once the visitor scrolls past the
-  hero the same header becomes a solid white fixed bar.
-
-  Inner pages keep the default solid header and are unaffected —
-  they simply never receive the .ajs-header--overlay class.
+  Always renders as a solid white bar — the same appearance as
+  the scrolled (is-stuck) state. The transparent-over-hero look
+  has been removed so the header is consistently white at all times.
 ----------------------------------------------------------*/
 .ajs-header--overlay {
   position: absolute;
@@ -873,43 +827,27 @@ a.ajs-value-card:active {
   left: 0;
   right: 0;
   z-index: 1030;
-}
-
-/* Transparent state: the hero's own dark overlay provides contrast,
-   so the bar only needs a hairline to separate it from the image. */
-.ajs-header--overlay .ajs-topbar {
-  background: transparent;
-  border-bottom-color: rgba(255, 255, 255, 0.12);
+  background: #F8F6F2;
+  box-shadow: 0 2px 12px rgba(7, 27, 44, 0.08);
 }
 
 .ajs-header--overlay .ajs-navbar {
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 3px solid var(--ajs-green);
 }
 
-.ajs-header--overlay .ajs-brand-ar,
-.ajs-header--overlay .ajs-brand-name { color: #fff; }
-.ajs-header--overlay .ajs-brand-en,
-.ajs-header--overlay .ajs-brand-tag { color: #fff; }
-.ajs-header--overlay .ajs-navbar .nav-link { color: #fff; }
-.ajs-header--overlay .ajs-navbar .nav-link .ajs-ar { color: rgba(255, 255, 255, 0.6); }
+.ajs-header--overlay .ajs-logo-img { height: 52px; mix-blend-mode: normal; filter: none; }
+.ajs-header--overlay .ajs-navbar .nav-link { color: var(--ajs-navy); }
+.ajs-header--overlay .ajs-navbar .nav-link .ajs-ar { color: var(--ajs-muted); }
 .ajs-header--overlay .ajs-navbar .nav-link:hover,
-.ajs-header--overlay .ajs-navbar .nav-link.active { color: var(--ajs-gold); }
+.ajs-header--overlay .ajs-navbar .nav-link.active { color: var(--ajs-green); }
 .ajs-header--overlay .ajs-navbar .nav-link:hover .ajs-ar,
-.ajs-header--overlay .ajs-navbar .nav-link.active .ajs-ar { color: var(--ajs-gold); }
-
-.ajs-header--overlay .ajs-toggler {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.ajs-header--overlay .ajs-toggler span { background: #fff; }
+.ajs-header--overlay .ajs-navbar .nav-link.active .ajs-ar { color: var(--ajs-green); }
 
 /* Scrolled state: JS adds .is-stuck once the hero is behind us. */
 .ajs-header--overlay.is-stuck {
   position: fixed;
-  background: #fff;
-  box-shadow: var(--ajs-shadow-sm);
+  background: #F8F6F2;
+  box-shadow: 0 2px 12px rgba(7, 27, 44, 0.08);
   animation: ajsNavDrop 0.4s var(--ajs-ease);
 }
 
@@ -919,14 +857,10 @@ a.ajs-value-card:active {
 
 .ajs-header--overlay.is-stuck .ajs-navbar {
   padding: 0.7rem 0;
-  border-bottom-color: var(--ajs-border);
+  border-bottom: 3px solid var(--ajs-green);
 }
 
-.ajs-header--overlay.is-stuck .ajs-brand img { height: 54px; }
-.ajs-header--overlay.is-stuck .ajs-brand-ar,
-.ajs-header--overlay.is-stuck .ajs-brand-name { color: var(--ajs-navy); }
-.ajs-header--overlay.is-stuck .ajs-brand-en,
-.ajs-header--overlay.is-stuck .ajs-brand-tag { color: var(--ajs-navy); }
+.ajs-header--overlay.is-stuck .ajs-logo-img { height: 44px; mix-blend-mode: normal; filter: none; }
 .ajs-header--overlay.is-stuck .ajs-navbar .nav-link { color: var(--ajs-navy); }
 .ajs-header--overlay.is-stuck .ajs-navbar .nav-link .ajs-ar { color: var(--ajs-muted); }
 .ajs-header--overlay.is-stuck .ajs-navbar .nav-link:hover,
@@ -952,11 +886,15 @@ a.ajs-value-card:active {
   padding: 1.25rem 1.5rem;
 }
 
-.ajs-offcanvas .ajs-brand-ar,
-.ajs-offcanvas .ajs-brand-name { color: #fff; }
-.ajs-offcanvas .ajs-brand-en,
-.ajs-offcanvas .ajs-brand-tag { color: rgba(255, 255, 255, 0.9); }
-.ajs-offcanvas .ajs-brand-text { display: flex; }
+.ajs-offcanvas .ajs-logo-img { height: 48px; }
+/* Offcanvas uses the transparent PNG icon — no blend-mode needed on dark navy */
+.ajs-offcanvas .ajs-logo-icon {
+  height: 52px;
+  width: 52px;
+  object-fit: contain;
+  mix-blend-mode: normal;
+  filter: none;
+}
 
 /* Bootstrap's default close button is a dark SVG; invert it so it
    is visible against the navy panel. */
@@ -2223,15 +2161,20 @@ a.ajs-value-card:active {
 .ajs-footer a { color: var(--ajs-on-dark-muted); }
 .ajs-footer a:hover { color: var(--ajs-gold); }
 
-/* Footer reuses the header's brand lockup with reversed colours
-   rather than shipping a second set of markup. */
+/* Footer uses the full logo-ai-cropped.jpg on a white rounded card
+   so the white-bg JPEG looks intentional against the dark navy */
 .ajs-footer .ajs-brand { margin-bottom: 1.5rem; }
-.ajs-footer .ajs-brand img { height: 80px; }
-.ajs-footer .ajs-brand-ar,
-.ajs-footer .ajs-brand-name { color: #fff; }
-.ajs-footer .ajs-brand-en,
-.ajs-footer .ajs-brand-tag { color: rgba(255, 255, 255, 0.9); }
-.ajs-footer .ajs-brand-text { display: flex; }
+.ajs-footer-logo {
+  height: 56px;
+  width: auto;
+  display: block;
+  mix-blend-mode: normal;
+  filter: none;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
 
 .ajs-footer-links {
   list-style: none;
