@@ -1,4 +1,4 @@
-﻿/*==========================================================
+/*==========================================================
   Al Jazeera Service Contracting Co. — Main Script
 
   Vanilla JavaScript only. Every feature is written to be
@@ -452,7 +452,14 @@
           function (i) { i.setCustomValidity(""); }
         );
 
-        if (!form.checkValidity()) {
+        var isValid = false;
+        try {
+          isValid = form.checkValidity();
+        } catch (e) {
+          isValid = true;
+        }
+
+        if (!isValid) {
           form.classList.add("was-validated");
           var firstInvalid = form.querySelector(":invalid");
           if (firstInvalid) firstInvalid.focus();
@@ -543,15 +550,26 @@
         if (response.ok) {
           form.reset();
           showFormStatus(form, "success");
+        } else if (response.status === 403) {
+          /* Formspree has reCAPTCHA enabled on this form, which blocks AJAX.
+             Fall back to standard form submission so the visitor can complete
+             verification and successfully send the message. */
+          restoreButton();
+          form.submit();
+          return;
         } else {
-          /* Surface Formspree's own message where it gives one —
-             it names the actual problem, e.g. an upload over the
-             plan's size cap. */
           return response.json().then(function (data) {
-            var detail = data && data.errors && data.errors.length
-              ? data.errors.map(function (e) { return e.message; }).join(" ")
-              : "";
+            var detail = "";
+            if (data) {
+              if (data.errors && data.errors.length) {
+                detail = data.errors.map(function (e) { return e.message; }).join(" ");
+              } else if (data.error) {
+                detail = data.error;
+              }
+            }
             showFormStatus(form, "error", detail);
+          }).catch(function () {
+            showFormStatus(form, "error", "");
           });
         }
       })

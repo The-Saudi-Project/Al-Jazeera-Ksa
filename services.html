@@ -139,9 +139,9 @@
             <!-- Language switch hidden for now. Markup and the hreflang alternates
                  in the document head stay in place; remove the two d-none
                  classes below to bring the control back. -->
-            <span class="ajs-topbar-divider ajs-topbar-hide-sm d-none" aria-hidden="true"></span>
-            <a class="ajs-lang-switch d-none" href="#" aria-label="Switch to Arabic — التبديل إلى العربية">
-              EN | <span class="ajs-ar">العربية</span>
+            <span class="ajs-topbar-divider ajs-topbar-hide-sm" aria-hidden="true"></span>
+            <a class="ajs-lang-switch" href="ar/services.html" aria-label="Switch to Arabic — التبديل إلى العربية">
+              <i class="bi bi-globe2 me-1" aria-hidden="true"></i> EN | <span class="ajs-ar">العربية</span>
             </a>
           </div>
         </div>
@@ -198,6 +198,12 @@
                     بنا</span></a></li>
             </ul>
             <a class="btn btn-ajs-primary w-100 mt-4" href="contact.html#quote">Request a Quote</a>
+
+            <div class="mt-3 text-center">
+              <a class="ajs-lang-switch d-inline-block px-3 py-1" href="ar/services.html" aria-label="Switch to Arabic — التبديل إلى العربية">
+                <i class="bi bi-globe2 me-1" aria-hidden="true"></i> EN | <span class="ajs-ar">العربية</span>
+              </a>
+            </div>
             <div class="ajs-offcanvas-contact">
               <p class="mb-2"><i class="bi bi-telephone-fill" aria-hidden="true"></i><a href="tel:+966138422350">+966 13
                   842 2350</a></p>
@@ -483,51 +489,7 @@
 
 
     <!-- ==========================================
-         Service 05: Equipment Rental
-         Image Left / Content Right
-         ========================================== -->
-    <section class="ajs-section bg-surface ajs-service-detail" id="rental" aria-labelledby="srv-rental-heading">
-      <div class="container">
-        <div class="row align-items-center g-5">
-
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="ajs-split-frame">
-              <div class="ajs-split-media">
-                <img src="assets/images/services/service-rental.jpg"
-                  alt="Al Jazeera Service Contracting Co. Heavy Equipment Rental fleet in Dammam" width="1200"
-                  height="800" loading="lazy" class="ajs-img-cover">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left">
-            <span class="ajs-eyebrow">Service 05</span>
-            <h2 id="srv-rental-heading">Equipment Rental</h2>
-            <p class="ajs-lead">
-              A company owned fleet of cranes, earthmoving equipment, power generators, lifting
-              platforms and transportation vehicles available for short term and long term hire.
-            </p>
-            <h4>Key Features</h4>
-            <ul class="ajs-feature-list">
-              <li>Mobile and tower cranes</li>
-              <li>Excavators and backhoe loaders</li>
-              <li>Generators and compressors</li>
-              <li>Man lifts and boom trucks</li>
-              <li>Trailers and transport vehicles</li>
-              <li>Operators and maintenance included</li>
-            </ul>
-            <div class="mt-4">
-              <a class="btn btn-ajs-primary" href="#fleet">View Equipment Fleet <i class="bi bi-arrow-down"
-                  aria-hidden="true"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         Service 06: Electrical Works
+         Service 05: Electrical Works
          Image Left / Content Right
          ========================================== -->
     <section class="ajs-section bg-surface ajs-service-detail" id="electrical" aria-labelledby="srv-elec-heading">
@@ -537,7 +499,7 @@
           <div class="col-lg-6" data-aos="fade-right">
             <div class="ajs-split-frame">
               <div class="ajs-split-media">
-                <img src="assets/images/projects/project-02.jpg"
+                <img src="assets/images/services/service-electrical.png"
                   alt="Al Jazeera Service Contracting Co. Electrical Works industrial plant" width="1200" height="800"
                   loading="lazy" class="ajs-img-cover">
               </div>
@@ -545,7 +507,7 @@
           </div>
 
           <div class="col-lg-6" data-aos="fade-left">
-            <span class="ajs-eyebrow">Service 06</span>
+            <span class="ajs-eyebrow">Service 05</span>
             <h2 id="srv-elec-heading">Electrical Works</h2>
             <p class="ajs-lead">
               Electrical installation, cable laying, panel erection and termination services for
@@ -553,12 +515,12 @@
             </p>
             <h4>Key Features</h4>
             <ul class="ajs-feature-list">
-              <li>Cable tray and conduit installation</li>
-              <li>LV/MV cable laying and termination</li>
-              <li>Panel and switchgear erection</li>
-              <li>Earthing and lightning protection</li>
-              <li>Lighting and small power systems</li>
-              <li>Testing and commissioning support</li>
+              <li>Cable tray, trunking and conduit installation</li>
+              <li>LV/MV cable pulling, splicing and high-voltage terminations</li>
+              <li>Panel, switchgear and motor control centre (MCC) erection</li>
+              <li>Earthing grids, lightning protection and bonding systems</li>
+              <li>Plant lighting, high-bay illumination and small power systems</li>
+              <li>Electrical insulation testing, HIPOT and commissioning support</li>
             </ul>
             <div class="mt-4">
               <a class="btn btn-ajs-primary" href="contact.html#quote">Request Quote <i class="bi bi-arrow-right"
@@ -570,25 +532,74 @@
       </div>
     </section>
 
-
     <!-- ==========================================
-         Service 07: Building Maintenance &amp; AMC
+         Service 06: Instrumentation Works
          Content Left / Image Right (alternating)
-
-         This section exists because the anchor did not. General
-         Maintenance is claimed in the page title, the meta
-         description, the offer catalogue and the footer of all
-         seven pages, and every one of those footers linked to
-         services.html#maintenance — an id that was never on the
-         page. The link was resolving to the top of the document.
-
-         Plain background: Service 06 above is bg-surface.
          ========================================== -->
-    <section class="ajs-section ajs-service-detail" id="maintenance" aria-labelledby="srv-maint-heading">
+    <section class="ajs-section ajs-service-detail" id="instrumentation" aria-labelledby="srv-inst-heading">
       <div class="container">
         <div class="row align-items-center g-5">
 
           <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+            <div class="ajs-split-frame">
+              <div class="ajs-split-media">
+                <img src="assets/images/services/service-instrumentation.png"
+                  alt="Al Jazeera Service Contracting Co. Instrumentation Works and Process Automation" width="1200" height="800"
+                  loading="lazy" class="ajs-img-cover">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+            <span class="ajs-eyebrow">Service 06</span>
+            <h2 id="srv-inst-heading">Instrumentation Works</h2>
+            <p class="ajs-lead">
+              Precision process instrumentation, calibration, control valve servicing, loop checking
+              and automated systems installation for industrial, oil &amp; gas and petrochemical facilities across Saudi Arabia.
+            </p>
+            <h4>Key Features</h4>
+            <ul class="ajs-feature-list">
+              <li>Field transmitter installation, mounting &amp; calibration (pressure, flow, level, temperature)</li>
+              <li>Control valve overhaul, stroke checking, actuator setup &amp; smart positioner calibration</li>
+              <li>SS 316 / 316L instrument tubing, impulse line fabrication and pressure decay testing</li>
+              <li>Marshalling cabinets, local control panels (LCP) and junction box wiring</li>
+              <li>Distributed Control Systems (DCS), PLC &amp; SCADA loop checking &amp; point verification</li>
+              <li>Fire &amp; Gas (F&amp;G) detection systems, flame sensors and ESD interlock testing</li>
+              <li>Hazardous area certified installations (ATEX, IECEx, Class 1 Div 1/2)</li>
+            </ul>
+
+            <h4 class="mt-4">Disciplines &amp; Trades</h4>
+            <div class="ajs-tag-list">
+              <span class="ajs-tag"><i class="bi bi-dot" aria-hidden="true"></i> Instrument Engineers</span>
+              <span class="ajs-tag"><i class="bi bi-dot" aria-hidden="true"></i> Calibration Technicians</span>
+              <span class="ajs-tag"><i class="bi bi-dot" aria-hidden="true"></i> Tubing Fitters</span>
+              <span class="ajs-tag"><i class="bi bi-dot" aria-hidden="true"></i> Loop Checkers</span>
+              <span class="ajs-tag"><i class="bi bi-dot" aria-hidden="true"></i> PLC &amp; DCS Specialists</span>
+              <span class="ajs-tag"><i class="bi bi-dot" aria-hidden="true"></i> Control Valve Techs</span>
+              <span class="ajs-tag"><i class="bi bi-dot" aria-hidden="true"></i> QA/QC Inspectors</span>
+            </div>
+
+            <div class="mt-4 d-flex flex-wrap gap-3">
+              <a class="btn btn-ajs-primary" href="contact.html#quote">Request Quote <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+              <a class="btn btn-ajs-outline" href="instrumentation.html">View Dedicated Page <i class="bi bi-arrow-up-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Service 07: Building Maintenance &amp; AMC
+         Image Left / Content Right (alternating)
+         ========================================== -->
+    <section class="ajs-section bg-surface ajs-service-detail" id="maintenance" aria-labelledby="srv-maint-heading">
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-6" data-aos="fade-right">
             <div class="ajs-split-frame">
               <div class="ajs-split-media">
                 <img src="assets/images/services/service-maintenance.png"
@@ -598,7 +609,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+          <div class="col-lg-6" data-aos="fade-left">
             <span class="ajs-eyebrow">Service 07</span>
             <h2 id="srv-maint-heading">Building Maintenance &amp; Annual Contracts (AMC)</h2>
             <p class="ajs-lead">
@@ -637,33 +648,15 @@
       </div>
     </section>
 
-
     <!-- ==========================================
          Service 08: IT & Digital Services
-         Image Left / Content Right
-
-         bg-surface: Service 07 above is plain, and the Equipment
-         Fleet block below is plain, so this band separates them.
-
-         This block is a CAPABILITY statement, deliberately. The
-         team's prior delivery record was earned outside this
-         company, so nothing here claims a project count, a client
-         name or a years figure — those would be borrowed
-         credentials on a page whose entire job is credibility that
-         survives a procurement check.
-
-         REVIEW BEFORE LAUNCH — CCTV: installing security and
-         surveillance systems is a licensed activity in the Kingdom.
-         Confirm the company holds the relevant licence. If it does
-         not, delete the two CCTV items in the feature list and the
-         "IP CCTV" / "NVR & Recording" tags, and keep this service
-         line to cabling, connectivity and software.
+         Content Left / Image Right (alternating)
          ========================================== -->
-    <section class="ajs-section bg-surface ajs-service-detail" id="it-services" aria-labelledby="srv-it-heading">
+    <section class="ajs-section ajs-service-detail" id="it-services" aria-labelledby="srv-it-heading">
       <div class="container">
         <div class="row align-items-center g-5">
 
-          <div class="col-lg-6" data-aos="fade-right">
+          <div class="col-lg-6 order-lg-2" data-aos="fade-left">
             <div class="ajs-split-frame">
               <div class="ajs-split-media">
                 <img src="assets/images/services/service-it.png"
@@ -673,7 +666,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-left">
+          <div class="col-lg-6 order-lg-1" data-aos="fade-right">
             <span class="ajs-eyebrow">Service 08</span>
             <h2 id="srv-it-heading">IT &amp; Digital Services</h2>
             <p class="ajs-lead">
@@ -692,10 +685,6 @@
               <li>Backup, patching and endpoint management</li>
             </ul>
 
-            <!-- Same reasoning as the trades list under Service 01:
-                 naming the actual disciplines is what lets a buyer
-                 match this against a scope line. "IT services" tells
-                 them nothing. -->
             <h4 class="mt-4">Capabilities</h4>
             <div class="ajs-tag-list">
               <span class="ajs-tag"><i class="bi bi-dot" aria-hidden="true"></i> Web Applications</span>
@@ -714,6 +703,50 @@
 
             <div class="mt-4">
               <a class="btn btn-ajs-primary" href="contact.html#quote">Request Quote <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Service 09: Equipment Rental
+         Image Left / Content Right (alternating)
+         ========================================== -->
+    <section class="ajs-section bg-surface ajs-service-detail" id="rental" aria-labelledby="srv-rental-heading">
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="ajs-split-frame">
+              <div class="ajs-split-media">
+                <img src="assets/images/services/service-rental.jpg"
+                  alt="Al Jazeera Service Contracting Co. Heavy Equipment Rental fleet in Dammam" width="1200"
+                  height="800" loading="lazy" class="ajs-img-cover">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <span class="ajs-eyebrow">Service 09</span>
+            <h2 id="srv-rental-heading">Equipment Rental</h2>
+            <p class="ajs-lead">
+              A company owned fleet of cranes, earthmoving equipment, power generators, lifting
+              platforms and transportation vehicles available for short term and long term hire across the Kingdom.
+            </p>
+            <h4>Key Features</h4>
+            <ul class="ajs-feature-list">
+              <li>Mobile and tower cranes</li>
+              <li>Excavators and backhoe loaders</li>
+              <li>Generators and compressors</li>
+              <li>Man lifts and boom trucks</li>
+              <li>Trailers and transport vehicles</li>
+              <li>Certified operators and maintenance included</li>
+            </ul>
+            <div class="mt-4">
+              <a class="btn btn-ajs-primary" href="#fleet">View Equipment Fleet <i class="bi bi-arrow-down"
                   aria-hidden="true"></i></a>
             </div>
           </div>
@@ -1186,8 +1219,8 @@
           </a>
           <p>
             A Saudi contracting and industrial support company established in 2010, delivering
-            human resource support, construction, mechanical works, equipment rental and maintenance services
-            across the Kingdom.
+            human resource support, civil and industrial construction, mechanical, electrical and instrumentation works,
+            maintenance services and equipment rental across the Kingdom.
           </p>
           <form class="ajs-newsletter" action="https://formspree.io/f/maewykjb" method="post" novalidate data-validate>
             <!-- Honeypot: bots fill this, humans never see it. -->
@@ -1201,7 +1234,7 @@
             <label class="visually-hidden" for="newsletterEmail">Email address</label>
             <div class="input-group">
               <input class="form-control" type="email" id="newsletterEmail" name="newsletterEmail"
-                placeholder="Your email address" autocomplete="email" pattern="[^@s]+@[^@s]+.[A-Za-z]{2,}"
+                placeholder="Your email address" autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                 title="Enter a complete email address, for example name@company.com" required>
               <button class="btn btn-ajs-gold" type="submit" aria-label="Subscribe to updates">
                 <i class="bi bi-send" aria-hidden="true"></i>
@@ -1229,12 +1262,14 @@
           <h4>Services</h4>
           <ul class="ajs-footer-links">
             <li><a href="services.html#hr-support">Human Resource Support</a></li>
-            <li><a href="services.html#construction">Industrial Construction</a></li>
+            <li><a href="services.html#industrial">Industrial Construction</a></li>
             <li><a href="services.html#construction">Civil Construction</a></li>
-            <li><a href="services.html#mechanical">Mechanical Construction</a></li>
-            <li><a href="services.html#rental">Equipment Rental</a></li>
+            <li><a href="services.html#mechanical">Mechanical Works</a></li>
+            <li><a href="services.html#electrical">Electrical Works</a></li>
+            <li><a href="services.html#instrumentation">Instrumentation Works</a></li>
             <li><a href="services.html#maintenance">Building Maintenance &amp; AMC</a></li>
             <li><a href="services.html#it-services">IT &amp; Digital Services</a></li>
+            <li><a href="services.html#rental">Equipment Rental</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -1288,7 +1323,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"
     integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu"
     crossorigin="anonymous"></script>
-  <script src="assets/js/main.js?v=24"></script>
+  <script src="assets/js/main.js?v=25"></script>
 
 </body>
 

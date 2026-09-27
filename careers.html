@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
   Al Jazeera Service Contracting Co.
   Careers page — open positions and application form.
@@ -84,8 +84,10 @@
             <!-- Language switch hidden for now. Markup and the hreflang alternates
                  in the document head stay in place; remove the two d-none
                  classes below to bring the control back. -->
-            <span class="ajs-topbar-divider ajs-topbar-hide-sm d-none" aria-hidden="true"></span>
-            <a class="ajs-lang-switch d-none" href="#" aria-label="Switch to Arabic — التبديل إلى العربية">EN | <span class="ajs-ar">العربية</span></a>
+            <span class="ajs-topbar-divider ajs-topbar-hide-sm" aria-hidden="true"></span>
+            <a class="ajs-lang-switch" href="ar/careers.html" aria-label="Switch to Arabic — التبديل إلى العربية">
+              <i class="bi bi-globe2 me-1" aria-hidden="true"></i> EN | <span class="ajs-ar">العربية</span>
+            </a>
           </div>
         </div>
       </div>
@@ -118,6 +120,12 @@
               <li class="nav-item"><a class="nav-link" href="contact.html">Contact <span class="ajs-ar">اتصل بنا</span></a></li>
             </ul>
             <a class="btn btn-ajs-primary w-100 mt-4" href="contact.html#quote">Request a Quote</a>
+
+            <div class="mt-3 text-center">
+              <a class="ajs-lang-switch d-inline-block px-3 py-1" href="ar/careers.html" aria-label="Switch to Arabic — التبديل إلى العربية">
+                <i class="bi bi-globe2 me-1" aria-hidden="true"></i> EN | <span class="ajs-ar">العربية</span>
+              </a>
+            </div>
             <div class="ajs-offcanvas-contact"><p class="mb-2"><i class="bi bi-telephone-fill" aria-hidden="true"></i><a href="tel:+966138422350">+966 13 842 2350</a></p><p class="mb-2"><i class="bi bi-envelope-fill" aria-hidden="true"></i><a href="mailto:info@aljazeeraksa.com">info@aljazeeraksa.com</a></p><p class="mb-0"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i>Dammam, Eastern Province</p></div>
           </div>
         </div>
@@ -346,7 +354,7 @@
                   <div class="col-md-6">
                     <label class="form-label" for="careerEmail">Email <span class="ajs-required" aria-hidden="true">*</span></label>
                     <input class="form-control" type="email" id="careerEmail" name="careerEmail"
-                           placeholder="you@example.com" autocomplete="email" pattern="[^@s]+@[^@s]+.[A-Za-z]{2,}" title="Enter a complete email address, for example name@company.com" required>
+                           placeholder="you@example.com" autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Enter a complete email address, for example name@company.com" required>
                     <div class="invalid-feedback">Please enter a valid email address.</div>
                   </div>
 
@@ -354,7 +362,7 @@
                   <div class="col-md-6">
                     <label class="form-label" for="careerPhone">Phone <span class="ajs-required" aria-hidden="true">*</span></label>
                     <input class="form-control" type="tel" id="careerPhone" name="careerPhone"
-                           placeholder="+966 5X XXX XXXX" autocomplete="tel" pattern="[+]?[0-9][0-9s()-]{7,17}" inputmode="tel" title="Enter a phone number of 9 to 15 digits, for example +966 13 842 2350" required>
+                           placeholder="+966 5X XXX XXXX" autocomplete="tel" pattern="[+]?[0-9\s\-\(\)]{7,20}" inputmode="tel" title="Enter a phone number of 9 to 15 digits, for example +966 13 842 2350" required>
                     <div class="invalid-feedback">Please enter your phone number.</div>
                   </div>
 
@@ -446,7 +454,7 @@
       <div class="row g-5">
         <div class="col-lg-4 col-md-6">
           <a class="ajs-brand" href="index.html"><img src="assets/images/logos/logo-ai-cropped.jpg" alt="Al Jazeera Service Contracting Co." class="ajs-logo-img ajs-footer-logo"></a>
-          <p>A Saudi contracting and industrial support company established in 2010, delivering human resource support, construction, mechanical works, equipment rental and maintenance services across the Kingdom.</p>
+          <p>A Saudi contracting and industrial support company established in 2010, delivering human resource support, civil and industrial construction, mechanical, electrical and instrumentation works, maintenance services and equipment rental across the Kingdom.</p>
           <form class="ajs-newsletter" action="https://formspree.io/f/maewykjb" method="post" novalidate data-validate>
             <!-- Honeypot: bots fill this, humans never see it. -->
             <input class="ajs-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -454,7 +462,7 @@
             <input type="hidden" name="Form" value="Newsletter">
             <div class="ajs-form-status ajs-form-status--success" data-form-status role="status" aria-live="polite"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Thank you — you have been added to our list.</span></div>
             <label class="visually-hidden" for="newsletterEmail">Email address</label>
-            <div class="input-group"><input class="form-control" type="email" id="newsletterEmail" name="newsletterEmail" placeholder="Your email address" autocomplete="email" pattern="[^@s]+@[^@s]+.[A-Za-z]{2,}" title="Enter a complete email address, for example name@company.com" required><button class="btn btn-ajs-gold" type="submit" aria-label="Subscribe to updates"><i class="bi bi-send" aria-hidden="true"></i></button></div>
+            <div class="input-group"><input class="form-control" type="email" id="newsletterEmail" name="newsletterEmail" placeholder="Your email address" autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Enter a complete email address, for example name@company.com" required><button class="btn btn-ajs-gold" type="submit" aria-label="Subscribe to updates"><i class="bi bi-send" aria-hidden="true"></i></button></div>
             <span class="ajs-newsletter-note">Occasional company and project updates. No spam. See our <a href="privacy.html">Privacy Policy</a>.</span>
           </form>
           <div class="ajs-social">
@@ -463,7 +471,7 @@
           </div>
         </div>
         <div class="col-lg-2 col-md-6 col-6"><h4>Quick Links</h4><ul class="ajs-footer-links"><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li class="d-none"><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="col-lg-3 col-md-6 col-6"><h4>Services</h4><ul class="ajs-footer-links"><li><a href="services.html#hr-support">Human Resource Support</a></li><li><a href="services.html#construction">Industrial Construction</a></li><li><a href="services.html#construction">Civil Construction</a></li><li><a href="services.html#mechanical">Mechanical Construction</a></li><li><a href="services.html#rental">Equipment Rental</a></li><li><a href="services.html#maintenance">Building Maintenance &amp; AMC</a></li><li><a href="services.html#it-services">IT &amp; Digital Services</a></li></ul></div>
+        <div class="col-lg-3 col-md-6 col-6"><h4>Services</h4><ul class="ajs-footer-links"><li><a href="services.html#hr-support">Human Resource Support</a></li><li><a href="services.html#industrial">Industrial Construction</a></li><li><a href="services.html#construction">Civil Construction</a></li><li><a href="services.html#mechanical">Mechanical Works</a></li><li><a href="services.html#electrical">Electrical Works</a></li><li><a href="services.html#instrumentation">Instrumentation Works</a></li><li><a href="services.html#maintenance">Building Maintenance &amp; AMC</a></li><li><a href="services.html#it-services">IT &amp; Digital Services</a></li><li><a href="services.html#rental">Equipment Rental</a></li></ul></div>
         <div class="col-lg-3 col-md-6"><h4>Contact</h4><ul class="ajs-footer-contact"><li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i><span>P.O. Box 6716<br>King Fahd bin Abdul Aziz Road<br>Dammam 32242<br>Kingdom of Saudi Arabia</span></li><li><i class="bi bi-telephone-fill" aria-hidden="true"></i><span><a href="tel:+966138422350">+966 13 842 2350</a><br><a href="tel:+966592334678">+966 59 233 4678</a></span></li><li><i class="bi bi-envelope-fill" aria-hidden="true"></i><span><a href="mailto:info@aljazeeraksa.com">info@aljazeeraksa.com</a></span></li><li><i class="bi bi-clock-fill" aria-hidden="true"></i><span>Sunday – Thursday<br>8:00 AM – 5:00 PM</span></li></ul></div>
       </div>
       <div class="ajs-footer-bottom"><div class="row align-items-center g-3"><div class="col-md-6"><p>&copy; <span data-current-year>2026</span> Al Jazeera Service Contracting Co. All rights reserved.</p></div><div class="col-md-6 text-md-end"><a href="privacy.html">Privacy Policy</a><span class="mx-2" aria-hidden="true">&middot;</span><a href="#" aria-label="Switch to Arabic — التبديل إلى العربية">EN | <span class="ajs-ar">العربية</span></a></div></div></div>
@@ -475,7 +483,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu" crossorigin="anonymous"></script>
-  <script src="assets/js/main.js?v=24"></script>
+  <script src="assets/js/main.js?v=25"></script>
 
 </body>
 </html>
