@@ -271,10 +271,12 @@ img { max-width: 100%; height: auto; }
   text-transform: uppercase;
   color: var(--ajs-green);
   margin-bottom: 1.1rem;
+  line-height: 1.2;
 }
 
 .ajs-eyebrow::before {
   content: "";
+  display: inline-block;
   width: 34px;
   height: 2px;
   background: var(--ajs-gold);
@@ -282,7 +284,15 @@ img { max-width: 100%; height: auto; }
 }
 
 .ajs-eyebrow--light { color: var(--ajs-gold); }
-.ajs-eyebrow--center { justify-content: center; }
+.ajs-eyebrow--center { justify-content: center; text-align: center; }
+.ajs-eyebrow--center::after {
+  content: "";
+  display: inline-block;
+  width: 34px;
+  height: 2px;
+  background: var(--ajs-gold);
+  flex: 0 0 auto;
+}
 
 /* Colour helpers */
 .text-navy  { color: var(--ajs-navy) !important; }
@@ -373,6 +383,20 @@ textarea:focus-visible,
 /* Constrains long-form copy to a comfortable measure (~65ch). */
 .ajs-measure { max-width: 62ch; }
 .ajs-measure-lg { max-width: 78ch; }
+
+.ajs-section .ajs-lead {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.ajs-section p {
+  max-width: 68ch;
+}
+
+.ajs-section-head--center p,
+.ajs-section-head--center .ajs-lead {
+  margin-inline: auto;
+}
 
 /* --- Small reusable utilities ---
    These replace inline style attributes that had accumulated across

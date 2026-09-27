@@ -1,4 +1,4 @@
-﻿/*==========================================================
+/*==========================================================
   AL JAZEERA SERVICE CONTRACTING CO. (Al Jazeera Service Contracting Co.)
   Right-to-left overrides — Arabic site (/ar/)
 
@@ -462,7 +462,7 @@ html[dir="rtl"] *::after {
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   [dir="rtl"] .ajs-to-top {
     right: auto;
     left: 1rem;
@@ -471,6 +471,18 @@ html[dir="rtl"] *::after {
   [dir="rtl"] .ajs-quick-call {
     right: auto;
     left: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  [dir="rtl"] .ajs-to-top {
+    right: auto;
+    left: 0.85rem;
+  }
+
+  [dir="rtl"] .ajs-quick-call {
+    right: auto;
+    left: 0.85rem;
   }
 }
 

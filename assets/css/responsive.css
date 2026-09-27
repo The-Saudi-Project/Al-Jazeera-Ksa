@@ -30,7 +30,19 @@
 @media (min-width: 1400px) {
   .container,
   .container-xl,
-  .container-lg { max-width: 1280px; }
+  .container-lg { max-width: 1320px; }
+}
+
+@media (min-width: 1600px) {
+  .container,
+  .container-xl,
+  .container-lg { max-width: 1400px; }
+}
+
+@media (min-width: 1920px) {
+  .container,
+  .container-xl,
+  .container-lg { max-width: 1480px; }
 }
 
 
@@ -115,7 +127,9 @@
   /* --- Split blocks stack, so the offset frame loses its
      purpose and only risks overflow. --- */
   .ajs-split-frame::before { display: none; }
-  .ajs-split-media { margin-bottom: 2.5rem; }
+  .ajs-split-media { margin-bottom: 0; }
+  .ajs-quick-call { right: 1rem; width: 42px; height: 42px; font-size: 1.05rem; }
+  .ajs-to-top { right: 1rem; width: 42px; height: 42px; }
 
   /* Restore natural DOM order when a column was reordered for
      desktop; stacked media should lead its copy. */
@@ -239,8 +253,8 @@
   .ajs-form-panel { padding: 1.5rem 1.25rem; }
 
   /* Keep floating actions clear of the thumb zone and each other. */
-  .ajs-to-top { right: 1rem; bottom: 1rem; width: 42px; height: 42px; }
-  .ajs-quick-call { right: 1rem; bottom: 4.2rem; width: 42px; height: 42px; }
+  .ajs-to-top { right: 0.85rem; bottom: 0.85rem; width: 40px; height: 40px; }
+  .ajs-quick-call { right: 0.85rem; bottom: 3.85rem; width: 40px; height: 40px; }
 
   .ajs-spec-list li { font-size: 0.8rem; }
 
