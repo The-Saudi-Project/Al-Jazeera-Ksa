@@ -14,9 +14,8 @@
   fleet catalogue is in one place. The Equipment Rental service
   card in the Services grid still links through to it.
 
-  dir="ltr" is declared explicitly (rather than relied on as the
-  default) so a future Arabic build only has to flip this attribute
-  and swap the stylesheet, not restructure the document.
+  dir="ltr" is declared explicitly for alignment with the
+  Arabic edition located at /ar/.
 -->
 <html lang="en" dir="ltr">
 
@@ -39,9 +38,7 @@
   <link rel="canonical" href="https://www.aljazeeraksa.com/">
 
   <!-- ==========================================
-       Open Graph / Twitter placeholders
-       Image paths point at a share card that should be exported
-       at 1200x630 before launch.
+       Open Graph & Social Share Meta
        ========================================== -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Al Jazeera Service Contracting Co.">
@@ -50,7 +47,7 @@
   <meta property="og:title"
     content="Al Jazeera Service Contracting Co. | Contracting, Human Resources &amp; Industrial Support in Saudi Arabia">
   <meta property="og:description"
-    content="Building Saudi Arabia's industrial future — integrated contracting, human resource and equipment solutions delivered across the Kingdom since 2010.">
+    content="Powering Saudi Arabia's industrial future — integrated contracting, human resource and equipment solutions delivered across the Kingdom since 2010.">
   <meta property="og:url" content="https://www.aljazeeraksa.com/">
   <meta property="og:image" content="https://www.aljazeeraksa.com/assets/images/landing.png">
   <meta property="og:image:alt" content="Al Jazeera Service Contracting Co.">
@@ -59,7 +56,7 @@
   <meta name="twitter:title"
     content="Al Jazeera Service Contracting Co. | Contracting, Human Resources &amp; Industrial Support in Saudi Arabia">
   <meta name="twitter:description"
-    content="Building Saudi Arabia's industrial future — integrated contracting, human resource and equipment solutions delivered across the Kingdom since 2010.">
+    content="Powering Saudi Arabia's industrial future — integrated contracting, human resource and equipment solutions delivered across the Kingdom since 2010.">
   <meta name="twitter:image" content="https://www.aljazeeraksa.com/assets/images/landing.png">
 
   <meta name="theme-color" content="#071B2C">
@@ -84,7 +81,7 @@
     integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous">
 
   <!-- Project styles load last so they win over framework defaults -->
-  <link href="assets/css/style.css?v=24" rel="stylesheet">
+  <link href="assets/css/style.css?v=26" rel="stylesheet">
   <link href="assets/css/responsive.css?v=24" rel="stylesheet">
 
   <!-- ==========================================
@@ -180,14 +177,12 @@
           </div>
 
           <div class="d-flex align-items-center gap-3">
-            <!-- SOCIAL PLACEHOLDERS — point at the live company profiles -->
+            <!-- Social Profiles -->
             <a class="ajs-topbar-hide-sm" href="https://www.linkedin.com/company/al-jazeera-dammam/" target="_blank" rel="noopener noreferrer" aria-label="Al Jazeera Service Contracting Co. on LinkedIn"><i
                 class="bi bi-linkedin" aria-hidden="true"></i></a>
             <a class="ajs-topbar-hide-sm" href="https://wa.me/966592334678" target="_blank" rel="noopener noreferrer" aria-label="Contact Al Jazeera Service Contracting Co. on WhatsApp"><i
                 class="bi bi-whatsapp" aria-hidden="true"></i></a>
-            <!-- Language switch hidden for now. Markup and the hreflang alternates
-                 in the document head stay in place; remove the two d-none
-                 classes below to bring the control back. -->
+            <!-- Language Switcher -->
             <span class="ajs-topbar-divider ajs-topbar-hide-sm" aria-hidden="true"></span>
             <a class="ajs-lang-switch" href="ar/index.html" aria-label="Switch to Arabic — التبديل إلى العربية">
               <i class="bi bi-globe2 me-1" aria-hidden="true"></i> EN | <span class="ajs-ar">العربية</span>
@@ -429,7 +424,7 @@
           <div class="col-lg-7">
             <span class="ajs-eyebrow ajs-eyebrow--light">Al Jazeera Service Contracting Co. &middot; Dammam</span>
 
-            <h1 id="hero-heading">Building Saudi Arabia's <span class="ajs-hero-accent">Industrial Future</span></h1>
+            <h1 id="hero-heading">Powering Saudi Arabia's <span class="ajs-hero-accent">Industrial Future</span></h1>
 
             <p class="ajs-hero-sub">
               Delivering integrated contracting, industrial support, human resource services, civil,
@@ -536,12 +531,7 @@
         </div>
 
         <!-- ==========================================
-             Statistic Cards
-             PLACEHOLDER FIGURES. "15+" and "Kingdom-wide" are
-             derived from the founding year and stated coverage and
-             are safe to publish. The two marked XX+ are NOT — they
-             must be replaced with verified company numbers before
-             this page goes live.
+             Key Highlights & Statistics
              ========================================== -->
         <div class="row g-4 mt-5">
 
@@ -572,7 +562,6 @@
           <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="180">
             <div class="ajs-stat-card">
               <i class="bi bi-building" aria-hidden="true"></i>
-              <!-- PLACEHOLDER — insert verified industrial client count -->
               <strong>50+</strong>
               <span>Industrial Clients</span>
             </div>
@@ -1229,12 +1218,8 @@
     </section>
 
     <!-- ==========================================
-         Leadership Section
-         Deliberately minimal: portrait, name, title. Portraits are
-         placeholders — replace with official photographs at 640x640
-         or larger, saved into assets/images/team/.
+         Leadership Section (Hidden pending executive photo confirmation)
          ========================================== -->
-    <!-- TEMPORARILY HIDDEN LEADERSHIP SECTION -->
     <section class="ajs-section" aria-labelledby="leadership-heading" style="display: none !important;">
       <div class="container">
 
@@ -1461,6 +1446,105 @@
     </section>
 
     <!-- ==========================================
+         Accreditations & Vendor Approvals Section
+         ========================================== -->
+    <section class="ajs-section ajs-credentials-section" id="accreditations" aria-labelledby="accreditations-heading">
+      <div class="container">
+
+        <!-- Accreditations Header -->
+        <div class="ajs-section-head ajs-section-head--center" data-aos="fade-up">
+          <span class="ajs-eyebrow ajs-eyebrow--center">Quality &amp; Standards</span>
+          <h2 id="accreditations-heading">Accreditations &amp; Certifications</h2>
+          <p class="ajs-section-intro mx-auto text-center ajs-measure-lg text-muted">
+            Committed to international standards of excellence, safety, and quality management across all contracting and industrial support operations.
+          </p>
+        </div>
+
+        <!-- Accreditations Cards Grid -->
+        <div class="ajs-accred-grid" data-aos="fade-up" data-aos-delay="60">
+
+          <!-- ANS ISO Card -->
+          <div class="ajs-accred-card">
+            <div class="ajs-accred-logo-wrap">
+              <img src="assets/images/accreditions/ans-iso.png?v=2" alt="ANS ISO Certification" loading="lazy">
+            </div>
+            <h3 class="ajs-accred-title">ISO Certified System</h3>
+            <p class="ajs-accred-desc">Certified Integrated Management System adhering to rigorous global quality, safety, and environmental standards.</p>
+            <span class="ajs-accred-badge"><i class="bi bi-shield-check" aria-hidden="true"></i> ISO 9001 · 14001 · 45001</span>
+          </div>
+
+          <!-- IAF Card -->
+          <div class="ajs-accred-card">
+            <div class="ajs-accred-logo-wrap">
+              <img src="assets/images/accreditions/iaf-logo.png?v=2" alt="International Accreditation Forum (IAF)" loading="lazy">
+            </div>
+            <h3 class="ajs-accred-title">IAF Member Recognition</h3>
+            <p class="ajs-accred-desc">International Accreditation Forum multilateral recognition ensuring technical competency and global compliance.</p>
+            <span class="ajs-accred-badge"><i class="bi bi-patch-check" aria-hidden="true"></i> Global Equivalence (MLA)</span>
+          </div>
+
+          <!-- UAF Card -->
+          <div class="ajs-accred-card">
+            <div class="ajs-accred-logo-wrap">
+              <img src="assets/images/accreditions/uaf-logo.png?v=2" alt="United Accreditation Foundation (UAF)" loading="lazy">
+            </div>
+            <h3 class="ajs-accred-title">UAF Full Accreditation</h3>
+            <p class="ajs-accred-desc">United Accreditation Foundation internationally recognized institutional assessment and certification integrity.</p>
+            <span class="ajs-accred-badge"><i class="bi bi-award" aria-hidden="true"></i> International Standard</span>
+          </div>
+
+        </div>
+
+        <!-- Registered Vendor Band -->
+        <div class="ajs-vendor-band mt-4" data-aos="fade-up" data-aos-delay="120">
+          <div class="ajs-vendor-intro">
+            <span class="ajs-eyebrow mb-1">Pre-Qualifications</span>
+            <h3 class="h4 mb-2">Approved Vendor Registrations</h3>
+            <p>
+              Pre-qualified and officially registered with the Kingdom's premier national energy, infrastructure, and security authorities.
+            </p>
+          </div>
+
+          <ul class="ajs-vendor-list">
+            <!-- Saudi Aramco -->
+            <li class="ajs-vendor-card">
+              <div class="ajs-vendor-logo">
+                <img src="assets/images/logos/clients/saudi-aramco.webp" alt="Saudi Aramco" loading="lazy">
+              </div>
+              <div class="ajs-vendor-text">
+                <span class="ajs-vendor-name">Saudi Aramco</span>
+                <span class="ajs-vendor-id">Vendor Code: <strong>10048607</strong></span>
+              </div>
+            </li>
+
+            <!-- Saudi Energy -->
+            <li class="ajs-vendor-card">
+              <div class="ajs-vendor-logo">
+                <img src="assets/images/logos/clients/saudi-energy.svg" alt="Saudi Energy" loading="lazy">
+              </div>
+              <div class="ajs-vendor-text">
+                <span class="ajs-vendor-name">Saudi Energy</span>
+                <span class="ajs-vendor-id">Vendor Code: <strong>5014538</strong></span>
+              </div>
+            </li>
+
+            <!-- Zawil (Border Guard Port Pass Portal) -->
+            <li class="ajs-vendor-card">
+              <div class="ajs-vendor-logo">
+                <img src="assets/images/logos/clients/zawil.svg" alt="Zawil Portal" loading="lazy">
+              </div>
+              <div class="ajs-vendor-text">
+                <span class="ajs-vendor-name">Zawil Portal</span>
+                <span class="ajs-vendor-id">Vendor Code: <strong>15222</strong></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
          Call To Action Section
          Full-width conversion banner on deep navy.
          ========================================== -->
@@ -1605,9 +1689,7 @@
             maintenance services and equipment rental across the Kingdom.
           </p>
 
-          <!-- Newsletter is a placeholder: it uses the same
-               client-side handler as the contact forms and is not
-               yet connected to a mailing provider. -->
+          <!-- Newsletter Subscription Form -->
           <form class="ajs-newsletter" action="https://formspree.io/f/maewykjb" method="post" novalidate data-validate>
             <!-- Honeypot: bots fill this, humans never see it. -->
             <input class="ajs-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1683,6 +1765,11 @@
               <span>Sunday – Thursday<br>8:00 AM – 5:00 PM</span>
             </li>
           </ul>
+          <div class="ajs-footer-vision">
+            <a class="ajs-footer-vision-link" href="https://www.vision2030.gov.sa" target="_blank" rel="noopener noreferrer" aria-label="Saudi Vision 2030">
+              <img src="assets/images/logos/vision-2030-white.png" alt="Saudi Vision 2030 - رؤية المملكة 2030" class="ajs-footer-vision-logo" loading="lazy" width="135" height="90">
+            </a>
+          </div>
         </div>
 
       </div>
@@ -1693,10 +1780,9 @@
             <p>&copy; <span data-current-year>2026</span> Al Jazeera Service Contracting Co. All rights reserved.</p>
           </div>
           <div class="col-md-6 text-md-end">
-            <!-- PLACEHOLDER — link to the privacy policy page once written -->
             <a href="privacy.html">Privacy Policy</a>
             <span class="mx-2" aria-hidden="true">&middot;</span>
-            <a href="#" aria-label="Switch to Arabic — التبديل إلى العربية">EN | <span class="ajs-ar">العربية</span></a>
+            <a href="ar/index.html" aria-label="Switch to Arabic — التبديل إلى العربية">EN | <span class="ajs-ar">العربية</span></a>
           </div>
         </div>
       </div>

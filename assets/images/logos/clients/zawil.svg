@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" fill="none" width="200" height="64">
+  <!-- Symbol / Emblem -->
+  <g transform="translate(4, 6)">
+    <!-- Hexagonal shield badge -->
+    <path d="M26 2L48 14V34C48 45 38 51 26 54C14 51 4 45 4 34V14L26 2Z" fill="#0B3C5D" />
+    <path d="M26 5L45 15.5V33.5C45 42.5 36.5 48 26 50.8C15.5 48 7 42.5 7 33.5V15.5L26 5Z" stroke="#C5A859" stroke-width="1.5" fill="#0E2F44" />
+    <!-- Center keyhole / security anchor mark -->
+    <path d="M26 15C22.686 15 20 17.686 20 21C20 23.314 21.314 25.314 23.2 26.3L22 37H30L28.8 26.3C30.686 25.314 32 23.314 32 21C32 17.686 29.314 15 26 15Z" fill="#C5A859"/>
+    <!-- Security check dot -->
+    <circle cx="26" cy="21" r="2.5" fill="#0E2F44" />
+    <!-- Horizontal security beam -->
+    <path d="M16 41H36" stroke="#0B8A6B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Typography: ZAWIL | زاول -->
+  <!-- Arabic: زاول -->
+  <text x="62" y="30" font-family="'Cairo', 'Segoe UI', Arial, sans-serif" font-weight="800" font-size="24" fill="#0B3C5D" letter-spacing="1">زاول</text>
+  <!-- Latin: ZAWIL -->
+  <text x="124" y="29" font-family="'Poppins', 'Segoe UI', Arial, sans-serif" font-weight="700" font-size="19" fill="#0B8A6B" letter-spacing="1.5">ZAWIL</text>
+  <!-- Divider -->
+  <line x1="116" y1="12" x2="116" y2="34" stroke="#D1D5DB" stroke-width="1.5" />
+  <!-- Subtitle -->
+  <text x="63" y="47" font-family="'Poppins', 'Segoe UI', Arial, sans-serif" font-weight="500" font-size="9.5" fill="#6B7280" letter-spacing="0.5">PORT SECURITY PASS PORTAL</text>
+</svg>

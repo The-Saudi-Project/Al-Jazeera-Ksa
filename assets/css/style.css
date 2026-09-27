@@ -637,7 +637,7 @@ a.ajs-value-card:active {
   background: rgba(255, 255, 255, 0.18);
 }
 
-/* Language switch — a placeholder until the Arabic build exists. */
+/* Language switcher control */
 .ajs-lang-switch {
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: var(--ajs-radius);
@@ -2215,6 +2215,37 @@ a.ajs-value-card:active {
   margin-top: 3px;
 }
 
+/* Saudi Vision 2030 logo under Contact column in footer */
+.ajs-footer-vision {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ajs-footer-vision-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity var(--ajs-transition-ui), transform var(--ajs-transition-ui);
+}
+
+.ajs-footer-vision-link:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+.ajs-footer-vision-logo {
+  height: auto;
+  width: 135px;
+  max-width: 100%;
+  display: block;
+  opacity: 0.88;
+  transition: opacity var(--ajs-transition-ui);
+}
+
+.ajs-footer-vision-link:hover .ajs-footer-vision-logo {
+  opacity: 1;
+}
+
 .ajs-social {
   display: flex;
   gap: 0.6rem;
@@ -3540,30 +3571,107 @@ a.ajs-value-card:active {
 
 
 /*==========================================================
-  35. REGISTERED VENDOR BAND
+  35. ACCREDITATIONS & REGISTERED VENDOR BAND
 
-  A verifiable credential outranks a claimed one: a procurement
-  officer can check a vendor number against their own system in
-  seconds, which no logo or testimonial allows. This band is
-  therefore given more weight than the client strip beneath it.
-
-  Built to scale: the list is a flex row, so additional
-  registrations are added by duplicating one <li>.
+  Verifiable credentials: ISO & international accreditation
+  certificates, alongside registered vendor pre-qualifications
+  with major Saudi operators.
 ==========================================================*/
+.ajs-credentials-section {
+  background: var(--ajs-surface);
+  border-top: 1px solid var(--ajs-border);
+  border-bottom: 1px solid var(--ajs-border);
+}
+
+.ajs-accred-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 991px) {
+  .ajs-accred-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+.ajs-accred-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.25rem 1.75rem;
+  background: #fff;
+  border: 1px solid var(--ajs-border);
+  border-radius: var(--ajs-radius);
+  box-shadow: var(--ajs-shadow-sm);
+  transition: var(--ajs-transition-ui);
+}
+
+.ajs-accred-card:hover {
+  border-color: var(--ajs-gold);
+  box-shadow: var(--ajs-shadow);
+  transform: translateY(-4px);
+}
+
+.ajs-accred-logo-wrap {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  padding: 0.5rem;
+}
+
+.ajs-accred-logo-wrap img {
+  max-height: 85px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.ajs-accred-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ajs-navy);
+  margin-bottom: 0.35rem;
+}
+
+.ajs-accred-desc {
+  font-size: 0.85rem;
+  color: var(--ajs-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.ajs-accred-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ajs-green);
+  background: rgba(11, 138, 107, 0.08);
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  margin-top: 0.85rem;
+}
+
 .ajs-vendor-band {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: clamp(1.75rem, 1rem + 3vw, 4rem);
   padding: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
-  background: var(--ajs-surface);
+  background: #fff;
   border: 1px solid var(--ajs-border);
   border-left: 4px solid var(--ajs-green);
   border-radius: var(--ajs-radius-lg);
+  box-shadow: var(--ajs-shadow-sm);
 }
 
-/* Copy column takes the slack so the credential cards keep their
-   natural width however many there are. */
 .ajs-vendor-intro {
   flex: 1 1 320px;
   min-width: 0;
@@ -3572,6 +3680,7 @@ a.ajs-value-card:active {
 .ajs-vendor-intro h2 {
   font-size: var(--ajs-h3);
   margin-bottom: 0.6rem;
+  color: var(--ajs-navy);
 }
 
 .ajs-vendor-intro p {
@@ -3583,27 +3692,49 @@ a.ajs-value-card:active {
 .ajs-vendor-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.15rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  flex: 2 1 500px;
 }
 
 .ajs-vendor-card {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1rem;
   padding: 1.1rem 1.4rem;
-  background: #fff;
+  background: var(--ajs-surface);
   border: 1px solid var(--ajs-border);
   border-radius: var(--ajs-radius);
   transition: var(--ajs-transition-ui);
+  flex: 1 1 240px;
 }
 
 .ajs-vendor-card:hover {
   border-color: var(--ajs-gold);
   box-shadow: var(--ajs-shadow-sm);
   transform: translateY(-3px);
+  background: #fff;
+}
+
+.ajs-vendor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 52px;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid var(--ajs-border-strong);
+  border-radius: var(--ajs-radius);
+  flex: 0 0 auto;
+}
+
+.ajs-vendor-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .ajs-vendor-card > i {
@@ -3620,24 +3751,24 @@ a.ajs-value-card:active {
 }
 
 .ajs-vendor-name {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
   color: var(--ajs-navy);
+  margin-bottom: 0.2rem;
 }
 
 .ajs-vendor-id {
   font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ajs-muted);
 }
 
-/* The number itself is the payload, so it is set apart from its
-   label in weight and colour. */
 .ajs-vendor-id strong {
   color: var(--ajs-navy);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
 }
 
 
