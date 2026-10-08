@@ -81,8 +81,8 @@
     integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous">
 
   <!-- Project styles load last so they win over framework defaults -->
-  <link href="assets/css/style.css?v=27" rel="stylesheet">
-  <link href="assets/css/responsive.css?v=25" rel="stylesheet">
+  <link href="assets/css/style.css?v=31" rel="stylesheet">
+  <link href="assets/css/responsive.css?v=29" rel="stylesheet">
 
   <!-- ==========================================
        Structured data
@@ -202,7 +202,7 @@
       <div class="container">
 
         <a class="ajs-brand" href="index.html">
-          <img src="assets/images/logos/logo-ai-cropped.jpg" alt="Al Jazeera Service Contracting Co." class="ajs-logo-img">
+          <img src="assets/images/logos/logo-ai-cropped.png" alt="Al Jazeera Service Contracting Co." class="ajs-logo-img">
         </a>
 
         <!-- Right-aligned Desktop Navigation & CTA Button -->
@@ -234,9 +234,9 @@
         <div class="offcanvas offcanvas-end ajs-offcanvas" tabindex="-1" id="ajsMenu" aria-labelledby="ajsMenuLabel">
 
           <div class="offcanvas-header">
-            <span class="ajs-brand" id="ajsMenuLabel">
-              <img src="assets/images/logos/jazeera-logo.png" alt="Al Jazeera Service Contracting Co." class="ajs-logo-img ajs-logo-icon">
-            </span>
+            <a class="ajs-brand" href="index.html" id="ajsMenuLabel">
+              <img src="assets/images/logos/logo-ai-white.png" alt="Al Jazeera Service Contracting Co." class="ajs-logo-img ajs-offcanvas-logo">
+            </a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
           </div>
 
@@ -279,7 +279,7 @@
     <!-- ==========================================
          Hero Section
          Full-viewport opening screen. The background image is set
-         from the --ajs-hero-image token in style.css so a real
+         from the --ajs-hero-image token in style.css?v=31 so a real
          photograph can be swapped in without touching this markup.
          ========================================== -->
     <!-- BACKDROP A/B SWITCH
@@ -1664,12 +1664,24 @@
        ========================================== -->
   <footer class="ajs-footer">
     <div class="container">
+
+      <!-- Centered Corporate & Vision 2030 Brand Band -->
+      <div class="ajs-footer-brand-band">
+        <div class="ajs-footer-brand-group">
+          <a class="ajs-footer-brand-link" href="index.html" aria-label="Al Jazeera Service Contracting Co.">
+            <img src="assets/images/logos/logo-ai-white.png" alt="Al Jazeera Service Contracting Co." class="ajs-footer-logo">
+          </a>
+          <span class="ajs-footer-brand-divider" aria-hidden="true"></span>
+          <a class="ajs-footer-vision-link" href="https://www.vision2030.gov.sa" target="_blank" rel="noopener noreferrer" aria-label="Saudi Vision 2030">
+            <img src="assets/images/logos/vision-2030-white.png" alt="Saudi Vision 2030 - رؤية المملكة 2030" class="ajs-footer-vision-logo" loading="lazy" width="135" height="90">
+          </a>
+        </div>
+      </div>
+
       <div class="row g-5">
 
-        <div class="col-lg-4 col-md-6">
-          <a class="ajs-brand" href="index.html">
-            <img src="assets/images/logos/logo-ai-cropped.jpg" alt="Al Jazeera Service Contracting Co." class="ajs-logo-img ajs-footer-logo">
-          </a>
+        <div class="col-lg-4 col-md-6 col-12">
+          <h4>About Us</h4>
           <p>
             A Saudi contracting and industrial support company established in 2010, delivering
             human resource support, civil and industrial construction, mechanical, electrical and instrumentation works,
@@ -1705,7 +1717,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-6 col-6">
+        <div class="col-lg-2 col-md-6 col-12">
           <h4>Quick Links</h4>
           <ul class="ajs-footer-links">
             <li><a href="about.html">About Us</a></li>
@@ -1716,7 +1728,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-6">
+        <div class="col-lg-3 col-md-6 col-12">
           <h4>Services</h4>
           <ul class="ajs-footer-links">
             <li><a href="services.html#hr-support">Human Resource Support</a></li>
@@ -1731,7 +1743,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 col-12">
           <h4>Contact</h4>
           <ul class="ajs-footer-contact">
             <li>
@@ -1752,11 +1764,6 @@
               <span>Sunday – Thursday<br>8:00 AM – 5:00 PM</span>
             </li>
           </ul>
-          <div class="ajs-footer-vision">
-            <a class="ajs-footer-vision-link" href="https://www.vision2030.gov.sa" target="_blank" rel="noopener noreferrer" aria-label="Saudi Vision 2030">
-              <img src="assets/images/logos/vision-2030-white.png" alt="Saudi Vision 2030 - رؤية المملكة 2030" class="ajs-footer-vision-logo" loading="lazy" width="135" height="90">
-            </a>
-          </div>
         </div>
 
       </div>

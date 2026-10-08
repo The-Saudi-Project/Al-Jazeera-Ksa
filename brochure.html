@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Al Jazeera Service Contracting Co. — Corporate Capability Brochure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cairo:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    /* =========================================================
+       PRINT & PAGE SETUP (A4 Portrait: 210mm x 297mm)
+       ========================================================= */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #e2e8f0;
+      color: #1e293b;
+      line-height: 1.45;
+      font-size: 9.5pt;
+      margin: 0;
+      padding: 0;
+    }
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 10mm auto;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    @media print {
+      body { background: transparent; }
+      .page {
+        margin: 0 !important;
+        box-shadow: none !important;
+        page-break-after: always !important;
+      }
+    }
+
+    /* COLOR TOKENS */
+    :root {
+      --navy: #071B2C;
+      --navy-light: #0d263d;
+      --green: #008450;
+      --gold: #C49A45;
+      --gold-light: #f7edd7;
+      --surface: #F8FAFC;
+      --surface-alt: #F1F5F9;
+      --border: #E2E8F0;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+    }
+
+    /* SHARED HEADER & FOOTER ON INNER PAGES */
+    .page-header {
+      height: 20mm;
+      padding: 5mm 15mm 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+      z-index: 10;
+    }
+    .page-header .brand-sm {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .page-header .brand-sm img {
+      height: 28px;
+    }
+    .page-header .brand-name {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+      text-transform: uppercase;
+    }
+    .page-header .doc-label {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .page-footer {
+      height: 14mm;
+      padding: 0 15mm 4mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+      background: #ffffff;
+      z-index: 10;
+    }
+    .page-footer .footer-left {
+      display: flex;
+      gap: 12px;
+    }
+    .page-footer .badge-inline {
+      color: var(--green);
+      font-weight: 600;
+    }
+    .page-footer .page-number {
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--surface-alt);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .page-body {
+      flex: 1;
+      padding: 8mm 15mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* TYPOGRAPHY */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 3mm;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .eyebrow-light {
+      color: var(--gold);
+    }
+    .eyebrow-light::before {
+      background: var(--green);
+    }
+    h2.section-title {
+      font-size: 17pt;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 4mm;
+      letter-spacing: -0.02em;
+    }
+    h2.section-title.light {
+      color: #ffffff;
+    }
+    p.lead-text {
+      font-size: 9.5pt;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 5mm;
+    }
+    p.lead-text.light {
+      color: #cbd5e1;
+    }
+
+    /* CARDS & CONTAINERS */
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+    }
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4mm;
+    }
+    .card-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3.5mm;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4mm 5mm;
+    }
+    .card-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-title i {
+      color: var(--green);
+      font-size: 12pt;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 2mm 0 0;
+    }
+    .feature-list li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 8.5pt;
+      margin-bottom: 1.8mm;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 11pt;
+      line-height: 1;
+      top: -1px;
+    }
+
+    /* METRIC STATS */
+    .stat-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      border-radius: 6px;
+      padding: 4mm;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 19pt;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 1.5mm;
+    }
+    .stat-label {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* =========================================================
+       PAGE SPECIFIC STYLES
+       ========================================================= */
+
+    /* PAGE 1: COVER */
+    .page-1 {
+      background: radial-gradient(circle at 85% 15%, #0f3557 0%, var(--navy) 70%);
+      color: #ffffff;
+      padding: 18mm 18mm;
+      justify-content: space-between;
+    }
+    .page-1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 140mm;
+      height: 140mm;
+      background: radial-gradient(circle, rgba(196,154,69,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cover-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-bottom: 6mm;
+    }
+    .cover-logo img {
+      height: 52px;
+      background: #ffffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .cover-vision-logo img {
+      height: 48px;
+      filter: brightness(0) invert(1);
+      opacity: 0.85;
+    }
+    .cover-middle {
+      margin: auto 0;
+    }
+    .cover-pill {
+      display: inline-block;
+      padding: 3px 12px;
+      background: rgba(0, 132, 80, 0.2);
+      border: 1px solid var(--green);
+      color: #4ade80;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 30px;
+      margin-bottom: 6mm;
+    }
+    .cover-title {
+      font-size: 30pt;
+      font-weight: 800;
+      line-height: 1.12;
+      color: #ffffff;
+      margin-bottom: 5mm;
+      letter-spacing: -0.03em;
+    }
+    .cover-title span {
+      color: var(--gold);
+    }
+    .cover-sub {
+      font-size: 11pt;
+      color: #94a3b8;
+      max-width: 145mm;
+      line-height: 1.6;
+      margin-bottom: 6mm;
+    }
+    .cover-ar-sub {
+      font-family: 'Cairo', sans-serif;
+      font-size: 12pt;
+      color: #e2e8f0;
+      direction: rtl;
+      font-weight: 600;
+      border-right: 3px solid var(--gold);
+      padding-right: 10px;
+      margin-bottom: 8mm;
+    }
+    .cover-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 6mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .cover-vendor-strip {
+      display: flex;
+      gap: 12px;
+    }
+    .cover-vendor-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 3mm 4mm;
+      border-radius: 4px;
+      font-size: 7.5pt;
+    }
+    .cover-vendor-item strong {
+      color: var(--gold);
+      display: block;
+      font-size: 9pt;
+    }
+    .cover-year {
+      font-size: 9pt;
+      color: #94a3b8;
+      text-align: right;
+    }
+
+    /* SPLIT FEATURE IMAGES IN INNER PAGES */
+    .split-hero-img {
+      width: 100%;
+      height: 52mm;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 5mm;
+      border: 1px solid var(--border);
+    }
+
+    /* ACCREDITATION BADGES */
+    .accred-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4mm;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .accred-box img {
+      height: 38px;
+      object-fit: contain;
+      margin-bottom: 2mm;
+    }
+    .accred-box h4 {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1mm;
+    }
+    .accred-box p {
+      font-size: 7pt;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    /* TABLES */
+    .brochure-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+      margin-top: 3mm;
+    }
+    .brochure-table th {
+      background: var(--navy);
+      color: #ffffff;
+      padding: 6px 10px;
+      text-align: left;
+      font-size: 8pt;
+      font-weight: 600;
+      border: 1px solid var(--navy);
+    }
+    .brochure-table td {
+      padding: 5.5px 10px;
+      border: 1px solid var(--border);
+      color: #334155;
+    }
+    .brochure-table tr:nth-child(even) td {
+      background: var(--surface);
+    }
+    .brochure-table .tag-td {
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    /* FLEET GRID TILES */
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+    }
+    .fleet-tile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 3mm;
+      text-align: center;
+    }
+    .fleet-tile i {
+      font-size: 16pt;
+      color: var(--green);
+      margin-bottom: 1.5mm;
+      display: block;
+    }
+    .fleet-tile h5 {
+      font-size: 8pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1mm;
+    }
+    .fleet-tile p {
+      font-size: 6.8pt;
+      color: var(--text-muted);
+      line-height: 1.25;
+    }
+
+    /* PAGE 12: BACK COVER */
+    .page-12 {
+      background: var(--navy);
+      color: #ffffff;
+      padding: 16mm 16mm;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .back-logo {
+      margin-bottom: 4mm;
+    }
+    .back-logo img {
+      height: 60px;
+      background: #ffffff;
+      padding: 6px 16px;
+      border-radius: 6px;
+    }
+    .back-title {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 2mm;
+    }
+    .back-sub {
+      font-size: 9.5pt;
+      color: #94a3b8;
+      max-width: 140mm;
+      margin: 0 auto 8mm;
+    }
+    .contact-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+      text-align: left;
+      margin-bottom: 8mm;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 4mm 5mm;
+    }
+    .contact-card h4 {
+      font-size: 8.5pt;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .contact-card p {
+      font-size: 8pt;
+      color: #e2e8f0;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .back-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      padding-top: 6mm;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .back-badge-item {
+      font-size: 7.5pt;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.04);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       PAGE 01 — FRONT COVER
+       ========================================================= -->
+  <div class="page page-1">
+    <div class="cover-top">
+      <div class="cover-logo">
+        <img src="assets/images/logos/logo-ai-white.png" alt="Al Jazeera Service Contracting Co.">
+      </div>
+      <div class="cover-vision-logo">
+        <img src="assets/images/logos/vision2030.png" alt="Saudi Vision 2030">
+      </div>
+    </div>
+
+    <div class="cover-middle">
+      <span class="cover-pill">Official Capability Profile · 2026 Edition</span>
+      <h1 class="cover-title">
+        Powering Industrial Excellence &amp; Turnkey Contracting In <span>Saudi Arabia</span>
+      </h1>
+      <p class="cover-sub">
+        Integrated human resource mobilization, industrial &amp; civil construction, mechanical, electrical, instrumentation, facility maintenance, and heavy equipment rental.
+      </p>
+      <div class="cover-ar-sub">
+        شركة خدمة الجزيرة للمقاولات — حلول المقاولات المتكاملة والدعم الصناعي المعتمد
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <div class="cover-vendor-strip">
+        <div class="cover-vendor-item">
+          Saudi Aramco Vendor
+          <strong>ID: 10048607</strong>
+        </div>
+        <div class="cover-vendor-item">
+          Saudi Energy Vendor
+          <strong>ID: 5014538</strong>
+        </div>
+        <div class="cover-vendor-item">
+          Zawil Port Pass
+          <strong>ID: 15222</strong>
+        </div>
+      </div>
+      <div class="cover-year">
+        Established 2010<br>
+        <strong>Dammam, KSA</strong>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 02 — ABOUT US & EXECUTIVE PROFILE
+       ========================================================= -->
+  <div class="page page-2">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Corporate Profile · Page 02</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Company Profile</span>
+      <h2 class="section-title">Built On 15+ Years Of Saudi Industrial Dedication</h2>
+      
+      <img src="assets/images/about-operations.jpg" class="split-hero-img" alt="Al Jazeera Industrial Operations">
+
+      <p class="lead-text">
+        Al Jazeera Service Contracting Co. is a Saudi-based contracting and industrial support company established in 2010. Headquartered in Dammam, Eastern Province, we deliver integrated engineering and workforce solutions across the Kingdom of Saudi Arabia.
+      </p>
+
+      <div class="card-grid-4" style="margin-bottom: 5mm;">
+        <div class="stat-box">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years In Business</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Delivered Scopes</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">03</div>
+          <div class="stat-label">Vendor Codes</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Safety Record</div>
+        </div>
+      </div>
+
+      <div class="card" style="background: var(--surface-alt); border-left: 4px solid var(--green);">
+        <h4 style="font-size: 9.5pt; font-weight: 700; color: var(--navy); margin-bottom: 1.5mm;">
+          <i class="bi bi-chat-quote-fill" style="color: var(--green); margin-right: 5px;"></i> Executive Statement
+        </h4>
+        <p style="font-size: 8.5pt; color: #334155; line-height: 1.5; font-style: italic; margin: 0;">
+          "From regional roots to Kingdom-wide turnkey execution, our growth is powered by single-point accountability, uncompromised quality, and strict adherence to international safety regimes. We proudly support Saudi Arabia’s industrial transformation, delivering dependability on every project site."
+        </p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>Headquarters: Dammam, Saudi Arabia</span>
+        <span>•</span>
+        <span class="badge-inline">ISO 9001 · 14001 · 45001 Certified</span>
+      </div>
+      <div class="page-number">02</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 03 — VISION, MISSION & SAUDI VISION 2030
+       ========================================================= -->
+  <div class="page page-3">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Strategic Direction · Page 03</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Strategic Direction</span>
+      <h2 class="section-title">Vision, Mission &amp; National Alignment</h2>
+      <p class="lead-text">
+        Our corporate roadmap aligns with Saudi Arabia's industrial expansion, combining localized operational agility with global engineering rigor.
+      </p>
+
+      <div class="card-grid-2" style="margin-bottom: 5mm;">
+        <div class="card" style="border-top: 3px solid var(--green);">
+          <div class="card-title"><i class="bi bi-compass"></i> Our Vision</div>
+          <p style="font-size: 8.5pt; color: #475569; line-height: 1.5;">
+            To be recognized as the premier multi-disciplinary industrial contractor and workforce solutions partner in the Kingdom of Saudi Arabia, trusted by global energy majors and industrial leaders for unmatched execution safety, technical competence, and reliability.
+          </p>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--gold);">
+          <div class="card-title"><i class="bi bi-bullseye"></i> Our Mission</div>
+          <p style="font-size: 8.5pt; color: #475569; line-height: 1.5;">
+            To deliver complete, single-contract engineering and industrial support—from manpower mobilization and construction to electrical, instrumentation, and maintenance services—enabling clients to reduce contractor interfaces and execute projects seamlessly.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 11pt; font-weight: 700; color: var(--navy); margin-bottom: 3mm;">Core Operating Values</h3>
+      <div class="card-grid-4" style="margin-bottom: 5mm;">
+        <div class="card" style="padding: 3mm;">
+          <h4 style="font-size: 8.5pt; font-weight: 700; color: var(--navy);"><i class="bi bi-shield-check" style="color: var(--green);"></i> Quality First</h4>
+          <p style="font-size: 7.5pt; color: var(--text-muted); margin-top: 1mm;">Zero tolerance for substandard workmanship. Strict QA/QC protocols.</p>
+        </div>
+        <div class="card" style="padding: 3mm;">
+          <h4 style="font-size: 8.5pt; font-weight: 700; color: var(--navy);"><i class="bi bi-heart-pulse" style="color: var(--gold);"></i> Safety Always</h4>
+          <p style="font-size: 7.5pt; color: var(--text-muted); margin-top: 1mm;">Zero-Harm culture, daily toolbox meetings, and full SASO/OSHA adherence.</p>
+        </div>
+        <div class="card" style="padding: 3mm;">
+          <h4 style="font-size: 8.5pt; font-weight: 700; color: var(--navy);"><i class="bi bi-link-45deg" style="color: var(--green);"></i> Accountability</h4>
+          <p style="font-size: 7.5pt; color: var(--text-muted); margin-top: 1mm;">A single responsible contract eliminating sub-tier coordination failures.</p>
+        </div>
+        <div class="card" style="padding: 3mm;">
+          <h4 style="font-size: 8.5pt; font-weight: 700; color: var(--navy);"><i class="bi bi-people" style="color: var(--gold);"></i> Client Trust</h4>
+          <p style="font-size: 7.5pt; color: var(--text-muted); margin-top: 1mm;">Long-term partnerships built on transparent pricing and timely delivery.</p>
+        </div>
+      </div>
+
+      <div class="card" style="background: var(--navy); color: #ffffff; border: none; display: flex; flex-direction: row; gap: 15px; align-items: center;">
+        <img src="assets/images/logos/vision2030.png" style="height: 48px; filter: brightness(0) invert(1);" alt="Vision 2030">
+        <div>
+          <h4 style="font-size: 9.5pt; font-weight: 700; color: var(--gold); margin-bottom: 1mm;">Committed to Saudi Vision 2030</h4>
+          <p style="font-size: 7.8pt; color: #cbd5e1; line-height: 1.4; margin: 0;">
+            Actively supporting national industrial localization, sustainable infrastructure diversification, workforce saudization, and local supply chain resilience across the Kingdom's mega-developments.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>www.aljazeeraksa.com</span>
+        <span>•</span>
+        <span>Aramco Vendor 10048607</span>
+      </div>
+      <div class="page-number">03</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 04 — ACCREDITATIONS & VENDOR REGISTRATIONS
+       ========================================================= -->
+  <div class="page page-4">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Credentials &amp; Standards · Page 04</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Pre-Qualifications</span>
+      <h2 class="section-title">Accreditations &amp; Approved Vendor Codes</h2>
+      <p class="lead-text">
+        Our quality management systems and technical competency are validated by international auditing bodies and accredited by premier national infrastructure authorities.
+      </p>
+
+      <h3 style="font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 2mm; text-transform: uppercase; letter-spacing: 0.05em;">
+        Approved Vendor Registrations
+      </h3>
+      <div class="card-grid-3" style="margin-bottom: 6mm;">
+        <div class="card" style="border-top: 3px solid #008450; text-align: center;">
+          <img src="assets/images/logos/clients/saudi-aramco.webp" style="height: 32px; object-fit: contain; margin-bottom: 2mm;" alt="Saudi Aramco">
+          <h4 style="font-size: 9pt; font-weight: 700; color: var(--navy); margin-bottom: 1mm;">Saudi Aramco</h4>
+          <p style="font-size: 7.5pt; color: var(--text-muted); margin-bottom: 1.5mm;">National Petroleum &amp; Gas Major</p>
+          <div style="background: var(--surface-alt); padding: 3px 6px; border-radius: 4px; font-weight: 700; font-size: 8pt; color: var(--navy);">
+            Vendor Code: <span style="color: var(--green);">10048607</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-top: 3px solid #008450; text-align: center;">
+          <img src="assets/images/logos/clients/saudi-energy.svg" style="height: 32px; object-fit: contain; margin-bottom: 2mm;" alt="Saudi Energy">
+          <h4 style="font-size: 9pt; font-weight: 700; color: var(--navy); margin-bottom: 1mm;">Saudi Energy (SECO)</h4>
+          <p style="font-size: 7.5pt; color: var(--text-muted); margin-bottom: 1.5mm;">Power Generation &amp; Grid Utilities</p>
+          <div style="background: var(--surface-alt); padding: 3px 6px; border-radius: 4px; font-weight: 700; font-size: 8pt; color: var(--navy);">
+            Vendor Code: <span style="color: var(--green);">5014538</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-top: 3px solid #008450; text-align: center;">
+          <img src="assets/images/logos/clients/zawil.svg" style="height: 32px; object-fit: contain; margin-bottom: 2mm;" alt="Zawil Portal">
+          <h4 style="font-size: 9pt; font-weight: 700; color: var(--navy); margin-bottom: 1mm;">Zawil Port Pass Portal</h4>
+          <p style="font-size: 7.5pt; color: var(--text-muted); margin-bottom: 1.5mm;">Border Guard &amp; Seaport Facilities</p>
+          <div style="background: var(--surface-alt); padding: 3px 6px; border-radius: 4px; font-weight: 700; font-size: 8pt; color: var(--navy);">
+            Vendor Code: <span style="color: var(--green);">15222</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 2mm; text-transform: uppercase; letter-spacing: 0.05em;">
+        International Management System Accreditations
+      </h3>
+      <div class="card-grid-3">
+        <div class="accred-box">
+          <img src="assets/images/accreditions/ans-iso.png" alt="ANS ISO">
+          <h4>ISO 9001 · 14001 · 45001</h4>
+          <p>Integrated Management System covering Quality Assurance, Environmental Protection, and Occupational Health &amp; Safety.</p>
+        </div>
+
+        <div class="accred-box">
+          <img src="assets/images/accreditions/iaf-logo.png" alt="IAF">
+          <h4>IAF MLA Recognition</h4>
+          <p>International Accreditation Forum Multilateral Recognition Arrangement ensuring global technical equivalence.</p>
+        </div>
+
+        <div class="accred-box">
+          <img src="assets/images/accreditions/uaf-logo.png" alt="UAF">
+          <h4>UAF Full Accreditation</h4>
+          <p>United Accreditation Foundation international assessment affirming high standard operational integrity.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>Dammam, Eastern Province, KSA</span>
+        <span>•</span>
+        <span>+966 13 842 2350</span>
+      </div>
+      <div class="page-number">04</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 05 — SERVICES 01 & 02: HR SUPPORT & INDUSTRIAL CONSTRUCTION
+       ========================================================= -->
+  <div class="page page-5">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Service Portfolio · Page 05</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Service Lines 01 &amp; 02</span>
+      <h2 class="section-title">Human Resource Support &amp; Industrial Construction</h2>
+
+      <div class="card-grid-2" style="height: 100%;">
+        <!-- HR Support -->
+        <div class="card" style="display: flex; flex-direction: column;">
+          <img src="assets/images/services/service-hr-support.jpg" style="height: 40mm; object-fit: cover; border-radius: 4px; margin-bottom: 3mm;" alt="HR Support">
+          <div class="card-title">01. Human Resource Support</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.45; margin-bottom: 2mm;">
+            Rapid deployment of multi-disciplinary skilled, technical, and general workforce for construction sites, shutdowns, and long-term industrial operations.
+          </p>
+          <ul class="feature-list" style="margin-bottom: 3mm;">
+            <li>Fast-track mobilization on short notice</li>
+            <li>100% compliance with Saudi labour regulations &amp; Qiwa</li>
+            <li>On-site supervision, camp housing, and daily logistics</li>
+            <li>Rigorous safety orientation &amp; trade testing</li>
+          </ul>
+          <div style="background: var(--surface-alt); padding: 3mm; border-radius: 4px; margin-top: auto;">
+            <strong style="font-size: 7.5pt; color: var(--navy); display: block; margin-bottom: 1.5mm;">Key Trades Supplied:</strong>
+            <p style="font-size: 7pt; color: #475569; line-height: 1.4; margin: 0;">
+              Project Managers, QA/QC &amp; Safety Officers, 6G Welders, Pipe Fitters, Millwrights, Electricians, Instrument Technicians, Certified Riggers, Scaffolders &amp; Heavy Operators.
+            </p>
+          </div>
+        </div>
+
+        <!-- Industrial Construction -->
+        <div class="card" style="display: flex; flex-direction: column;">
+          <img src="assets/images/services/service-civil.jpg" style="height: 40mm; object-fit: cover; border-radius: 4px; margin-bottom: 3mm;" alt="Industrial Construction">
+          <div class="card-title">02. Industrial Construction</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.45; margin-bottom: 2mm;">
+            Turnkey construction of heavy manufacturing plants, industrial warehouses, pre-engineered buildings (PEB), and specialized support facilities.
+          </p>
+          <ul class="feature-list" style="margin-bottom: 3mm;">
+            <li>Heavy structural steel fabrication &amp; safe erection</li>
+            <li>Specialized heavy machinery foundations &amp; slabs</li>
+            <li>Industrial warehouse cladding, roofing &amp; insulation</li>
+            <li>Fire-rated walls, acoustic enclosures &amp; ventilation</li>
+          </ul>
+          <div style="background: var(--surface-alt); padding: 3mm; border-radius: 4px; margin-top: auto;">
+            <strong style="font-size: 7.5pt; color: var(--navy); display: block; margin-bottom: 1.5mm;">Typical Sectors Served:</strong>
+            <p style="font-size: 7pt; color: #475569; line-height: 1.4; margin: 0;">
+              Petrochemical processing units, logistics distribution hubs, steel rolling mills, fabrication workshops, and utility transfer complexes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>info@aljazeeraksa.com</span>
+        <span>•</span>
+        <span>Aramco Vendor 10048607</span>
+      </div>
+      <div class="page-number">05</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 06 — SERVICES 03 & 04: CIVIL & MECHANICAL ENGINEERING
+       ========================================================= -->
+  <div class="page page-6">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Service Portfolio · Page 06</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Service Lines 03 &amp; 04</span>
+      <h2 class="section-title">Civil Construction &amp; Mechanical Engineering</h2>
+
+      <div class="card-grid-2" style="height: 100%;">
+        <!-- Civil Construction -->
+        <div class="card" style="display: flex; flex-direction: column;">
+          <img src="assets/images/services/service-civil-works.jpg" style="height: 40mm; object-fit: cover; border-radius: 4px; margin-bottom: 3mm;" alt="Civil Construction">
+          <div class="card-title">03. Civil Construction</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.45; margin-bottom: 2mm;">
+            Complete ground-up civil engineering works for commercial compounds, industrial infrastructure, underground utilities, and road paving.
+          </p>
+          <ul class="feature-list">
+            <li>Earthworks: bulk excavation, backfilling &amp; grading</li>
+            <li>Reinforced concrete substructures, raft foundations &amp; plinths</li>
+            <li>Stormwater networks, sewer drainage &amp; culverts</li>
+            <li>Internal asphalt road works &amp; heavy duty paving</li>
+            <li>Perimeter security fencing &amp; boundary walls</li>
+          </ul>
+          <div style="background: var(--surface-alt); padding: 3mm; border-radius: 4px; margin-top: auto;">
+            <p style="font-size: 7.2pt; color: #475569; margin: 0;">
+              <strong>Standards Compliance:</strong> ACI, SASO, and MOT road engineering specifications.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mechanical Construction -->
+        <div class="card" style="display: flex; flex-direction: column;">
+          <img src="assets/images/services/service-mechanical.jpg" style="height: 40mm; object-fit: cover; border-radius: 4px; margin-bottom: 3mm;" alt="Mechanical Construction">
+          <div class="card-title">04. Mechanical Works &amp; Piping</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.45; margin-bottom: 2mm;">
+            Industrial piping fabrication, static and rotating equipment erection, and structural mechanical integration for plant environments.
+          </p>
+          <ul class="feature-list">
+            <li>CS, SS &amp; Alloy pipe spool fabrication &amp; site welding</li>
+            <li>Hydrostatic pressure testing &amp; pneumatic lines</li>
+            <li>Static equipment erection: pressure vessels &amp; tanks</li>
+            <li>Rotating machinery precision alignment &amp; torqueing</li>
+            <li>Sandblasting, industrial painting &amp; thermal insulation</li>
+          </ul>
+          <div style="background: var(--surface-alt); padding: 3mm; border-radius: 4px; margin-top: auto;">
+            <p style="font-size: 7.2pt; color: #475569; margin: 0;">
+              <strong>Welding Quality:</strong> ASME IX qualified welders, NDT radiography, and visual inspection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>www.aljazeeraksa.com</span>
+        <span>•</span>
+        <span>SECO Vendor 5014538</span>
+      </div>
+      <div class="page-number">06</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 07 — SERVICES 05 & 06: ELECTRICAL & INSTRUMENTATION
+       ========================================================= -->
+  <div class="page page-7">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Service Portfolio · Page 07</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Service Lines 05 &amp; 06</span>
+      <h2 class="section-title">Electrical Works &amp; Process Instrumentation</h2>
+
+      <div class="card-grid-2" style="height: 100%;">
+        <!-- Electrical Works -->
+        <div class="card" style="display: flex; flex-direction: column;">
+          <img src="assets/images/services/service-electrical.jpg" style="height: 40mm; object-fit: cover; border-radius: 4px; margin-bottom: 3mm;" alt="Electrical Works">
+          <div class="card-title">05. Electrical Engineering</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.45; margin-bottom: 2mm;">
+            Turnkey medium-voltage (MV) and low-voltage (LV) electrical distribution systems, substations, and plant electrification.
+          </p>
+          <ul class="feature-list">
+            <li>Substation equipment positioning &amp; transformer cabling</li>
+            <li>Cable tray containment fabrication &amp; conduit routing</li>
+            <li>Motor Control Centers (MCC), switchboards &amp; VFD panels</li>
+            <li>Plant earthing (grounding) grids &amp; lightning protection</li>
+            <li>Explosion-proof hazardous area lighting systems</li>
+          </ul>
+          <div style="background: var(--surface-alt); padding: 3mm; border-radius: 4px; margin-top: auto;">
+            <p style="font-size: 7.2pt; color: #475569; margin: 0;">
+              <strong>Testing Protocols:</strong> Insulation resistance, megger tests, hi-pot testing, and phase rotation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Instrumentation Works -->
+        <div class="card" style="display: flex; flex-direction: column;">
+          <img src="assets/images/services/service-instrumentation.jpg" style="height: 40mm; object-fit: cover; border-radius: 4px; margin-bottom: 3mm;" alt="Instrumentation Works">
+          <div class="card-title">06. Instrumentation &amp; Control</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.45; margin-bottom: 2mm;">
+            Precision calibration, loop checking, control room panel wiring, and field device commissioning for automated processing plants.
+          </p>
+          <ul class="feature-list">
+            <li>Pressure, temperature, level &amp; flow transmitter setup</li>
+            <li>Stainless steel impulse tubing &amp; manifold hookups</li>
+            <li>PLC, SCADA, and DCS marshalling cabinet integration</li>
+            <li>Emergency Shutdown (ESD) &amp; safety interlock testing</li>
+            <li>Cold &amp; hot loop checking with certified calibrators</li>
+          </ul>
+          <div style="background: var(--surface-alt); padding: 3mm; border-radius: 4px; margin-top: auto;">
+            <p style="font-size: 7.2pt; color: #475569; margin: 0;">
+              <strong>Calibration Accuracy:</strong> NIST traceable calibration standards and certified test logs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>+966 13 842 2350</span>
+        <span>•</span>
+        <span>Zawil Portal 15222</span>
+      </div>
+      <div class="page-number">07</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 08 — SERVICES 07 & 08: FACILITY MAINTENANCE & IT
+       ========================================================= -->
+  <div class="page page-8">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Service Portfolio · Page 08</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Service Lines 07 &amp; 08</span>
+      <h2 class="section-title">Facility Maintenance (AMC) &amp; IT Low Current</h2>
+
+      <div class="card-grid-2" style="height: 100%;">
+        <!-- Maintenance & AMC -->
+        <div class="card" style="display: flex; flex-direction: column;">
+          <img src="assets/images/services/service-maintenance.jpg" style="height: 40mm; object-fit: cover; border-radius: 4px; margin-bottom: 3mm;" alt="Facility Maintenance">
+          <div class="card-title">07. Maintenance &amp; AMC Services</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.45; margin-bottom: 2mm;">
+            Predictive, preventive, and emergency facility management and annual maintenance contracts tailored for continuous operational readiness.
+          </p>
+          <ul class="feature-list">
+            <li>Plant shutdown and planned turnaround maintenance</li>
+            <li>Commercial &amp; industrial HVAC chiller overhauls</li>
+            <li>MEP repairs, pump stations, plumbing &amp; water treatment</li>
+            <li>Building structural repairs, waterproofing &amp; civil repainting</li>
+            <li>24/7 emergency response teams with guaranteed SLA</li>
+          </ul>
+          <div style="background: var(--surface-alt); padding: 3mm; border-radius: 4px; margin-top: auto;">
+            <p style="font-size: 7.2pt; color: #475569; margin: 0;">
+              <strong>Asset Longevity:</strong> Computerized maintenance tracking and detailed logs.
+            </p>
+          </div>
+        </div>
+
+        <!-- IT & Low Current -->
+        <div class="card" style="display: flex; flex-direction: column;">
+          <img src="assets/images/services/service-it.jpg" style="height: 40mm; object-fit: cover; border-radius: 4px; margin-bottom: 3mm;" alt="IT & Low Current">
+          <div class="card-title">08. IT &amp; Low Current Systems</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.45; margin-bottom: 2mm;">
+            Enterprise structured cabling, security surveillance, access control, and low current network infrastructure for industrial plants and offices.
+          </p>
+          <ul class="feature-list">
+            <li>Fiber optic &amp; Cat6A / Cat7 structured network cabling</li>
+            <li>IP CCTV high-definition security camera systems</li>
+            <li>Biometric access control, speed gates &amp; barrier gates</li>
+            <li>Public address (PA) &amp; industrial intercom systems</li>
+            <li>Server room rack setup, clean power UPS &amp; cooling</li>
+          </ul>
+          <div style="background: var(--surface-alt); padding: 3mm; border-radius: 4px; margin-top: auto;">
+            <p style="font-size: 7.2pt; color: #475569; margin: 0;">
+              <strong>Certifications:</strong> Certified optical fiber splicing and OTDR network testing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>info@aljazeeraksa.com</span>
+        <span>•</span>
+        <span>Dammam, Eastern Province</span>
+      </div>
+      <div class="page-number">08</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 09 — SERVICE 09: HEAVY EQUIPMENT RENTAL FLEET
+       ========================================================= -->
+  <div class="page page-9">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Equipment Fleet · Page 09</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Service Line 09</span>
+      <h2 class="section-title">Heavy Equipment Rental &amp; Modern Fleet</h2>
+      <p class="lead-text">
+        Company-owned, certified equipment fleet available for short-term and long-term project hire across the Kingdom. All machinery is delivered with valid 3rd-party safety certification and optional licensed operators.
+      </p>
+
+      <div class="fleet-grid">
+        <div class="fleet-tile">
+          <i class="bi bi-truck-front"></i>
+          <h5>Mobile Cranes</h5>
+          <p>25 Ton to 100 Ton all-terrain &amp; rough terrain</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-building-up"></i>
+          <h5>Tower Cranes</h5>
+          <p>High-elevation lifting for major construction</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-truck"></i>
+          <h5>Boom Trucks</h5>
+          <p>7T to 15T with hydraulic crane boom</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-gear"></i>
+          <h5>Excavators</h5>
+          <p>Tracked heavy earthmoving &amp; rock breaking</p>
+        </div>
+
+        <div class="fleet-tile">
+          <i class="bi bi-front"></i>
+          <h5>Backhoe Loaders</h5>
+          <p>Versatile site trenching &amp; utility excavation</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-box-seam"></i>
+          <h5>Forklifts</h5>
+          <p>3T to 10T diesel &amp; electric material handlers</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-arrow-up-right-square"></i>
+          <h5>Man Lifts</h5>
+          <p>Telescopic &amp; scissor lifts up to 28m height</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-circle"></i>
+          <h5>Drum Rollers</h5>
+          <p>Soil &amp; asphalt heavy vibration compactors</p>
+        </div>
+
+        <div class="fleet-tile">
+          <i class="bi bi-lightning-charge"></i>
+          <h5>Power Generators</h5>
+          <p>50 kVA to 500 kVA silent diesel units</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-wind"></i>
+          <h5>Air Compressors</h5>
+          <p>185 to 750 CFM for blasting &amp; air tools</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-lamp"></i>
+          <h5>Tower Lights</h5>
+          <p>High-mast 4-lamp mobile night lighting</p>
+        </div>
+        <div class="fleet-tile">
+          <i class="bi bi-fire"></i>
+          <h5>Welding Machines</h5>
+          <p>Multi-operator diesel engine welding sets</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 5mm; background: var(--surface-alt); display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+        <div>
+          <strong style="color: var(--navy); font-size: 8.5pt;">Fleet Certification &amp; Safety:</strong>
+          <p style="font-size: 7.5pt; color: #475569; margin: 1mm 0 0;">
+            Periodic 3rd-party inspections (TUV / SGS / BV). All operators hold valid SAG and Aramco certification.
+          </p>
+        </div>
+        <div style="background: var(--navy); color: #ffffff; padding: 2mm 4mm; border-radius: 4px; font-size: 7.5pt; font-weight: 600; white-space: nowrap;">
+          24/7 Fleet Dispatch
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>Fleet Depot: Dammam &amp; Jubail</span>
+        <span>•</span>
+        <span>www.aljazeeraksa.com</span>
+      </div>
+      <div class="page-number">09</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 10 — HEALTH, SAFETY, ENVIRONMENT (HSE) & QA/QC
+       ========================================================= -->
+  <div class="page page-10">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Safety &amp; Quality · Page 10</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">HSEQ Commitment</span>
+      <h2 class="section-title">Health, Safety, Environment &amp; Quality</h2>
+      <p class="lead-text">
+        At Al Jazeera Service Contracting Co., the safety of our personnel and client worksites takes unconditional precedence over all operational demands.
+      </p>
+
+      <div class="card-grid-2" style="margin-bottom: 5mm;">
+        <!-- HSE Policy -->
+        <div class="card" style="border-left: 4px solid var(--green);">
+          <div class="card-title"><i class="bi bi-shield-shaded"></i> Our Zero-Harm Safety Policy</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.5; margin-bottom: 2mm;">
+            We operate under a clear mandate: every worker returns home safely every single day. Our safety protocols match the demanding standards of Saudi Aramco and SABIC.
+          </p>
+          <ul class="feature-list">
+            <li>Mandatory daily morning Toolbox Talks (TBT)</li>
+            <li>Formal Task Risk Assessment (TRA) before work begins</li>
+            <li>Strict Permit-To-Work (PTW) protocols &amp; audits</li>
+            <li>Mandatory certified PPE on all workfronts</li>
+            <li>Continuous safety refresher training for crews</li>
+          </ul>
+        </div>
+
+        <!-- QA/QC Framework -->
+        <div class="card" style="border-left: 4px solid var(--gold);">
+          <div class="card-title"><i class="bi bi-patch-check"></i> Quality Assurance &amp; Control</div>
+          <p style="font-size: 8pt; color: #475569; line-height: 1.5; margin-bottom: 2mm;">
+            Certified under ISO 9001:2015, our comprehensive Project Quality Plans (PQP) enforce inspection benchmarks at every project milestone.
+          </p>
+          <ul class="feature-list">
+            <li>Material receiving inspection &amp; Mill Test Reports</li>
+            <li>Stage-wise Inspection and Test Plans (ITP)</li>
+            <li>Third-party Non-Destructive Testing (NDT)</li>
+            <li>Certified hydro-testing and megger dielectric logs</li>
+            <li>Comprehensive client-approved handover dossiers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card-grid-3">
+        <div class="stat-box" style="border-top-color: var(--green);">
+          <div class="stat-number" style="color: var(--green);">0.00</div>
+          <div class="stat-label">Lost Time Injury Target</div>
+        </div>
+        <div class="stat-box" style="border-top-color: var(--navy);">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Permit Compliance</div>
+        </div>
+        <div class="stat-box" style="border-top-color: var(--gold);">
+          <div class="stat-number" style="color: var(--gold);">ISO</div>
+          <div class="stat-label">45001 &amp; 14001 Audited</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>Zero-Harm Policy</span>
+        <span>•</span>
+        <span>ISO 45001:2018 Certified</span>
+      </div>
+      <div class="page-number">10</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 11 — MAJOR PROJECT PORTFOLIO & REFERENCES
+       ========================================================= -->
+  <div class="page page-11">
+    <div class="page-header">
+      <div class="brand-sm">
+        <img src="assets/images/logos/jazeera-logo.png" alt="Logo">
+        <span class="brand-name">Al Jazeera Service Contracting Co.</span>
+      </div>
+      <span class="doc-label">Track Record · Page 11</span>
+    </div>
+
+    <div class="page-body">
+      <span class="eyebrow">Project References</span>
+      <h2 class="section-title">Major Contracts Delivered Across The Kingdom</h2>
+      <p class="lead-text" style="margin-bottom: 3mm;">
+        A proven track record spanning industrial construction, labour compounds, commercial hubs, and healthcare facilities.
+      </p>
+
+      <table class="brochure-table">
+        <thead>
+          <tr>
+            <th>Project Scope / Facility</th>
+            <th>Client Organization</th>
+            <th>Discipline</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Construction of Metal Factory</strong></td>
+            <td>Metal Fasteners Co.</td>
+            <td class="tag-td">Industrial</td>
+            <td>2nd Industrial, Dammam</td>
+          </tr>
+          <tr>
+            <td><strong>Construction of Labour Camp - IPS</strong></td>
+            <td>International Port Services</td>
+            <td class="tag-td">Accommodation</td>
+            <td>Mina Dammam</td>
+          </tr>
+          <tr>
+            <td><strong>Labour Camp for Al Suwaidi Group</strong></td>
+            <td>Al Suwaidi</td>
+            <td class="tag-td">Accommodation</td>
+            <td>Jubail Industrial City</td>
+          </tr>
+          <tr>
+            <td><strong>King Fahad University Hospital Works</strong></td>
+            <td>KFH University Hospital</td>
+            <td class="tag-td">Institutional</td>
+            <td>Dammam</td>
+          </tr>
+          <tr>
+            <td><strong>Giant Commercial Store</strong></td>
+            <td>AK - Al Muhaidib Group</td>
+            <td class="tag-td">Commercial</td>
+            <td>1st Industrial, Dammam</td>
+          </tr>
+          <tr>
+            <td><strong>M J Ghulam Industrial Building</strong></td>
+            <td>Mr. Mohd. Jameel H Ghulam</td>
+            <td class="tag-td">Commercial</td>
+            <td>1st Industrial, Dammam</td>
+          </tr>
+          <tr>
+            <td><strong>Commercial &amp; Residential Building</strong></td>
+            <td>M/S. Al Muhaidib Group</td>
+            <td class="tag-td">Mixed Use</td>
+            <td>Dammam</td>
+          </tr>
+          <tr>
+            <td><strong>Al Rajhi Banking Corporation Facilities</strong></td>
+            <td>Al Rajhi Bank</td>
+            <td class="tag-td">Commercial</td>
+            <td>Khobar, Hofuf &amp; Doha</td>
+          </tr>
+          <tr>
+            <td><strong>Residential Compound for SAFCO</strong></td>
+            <td>SAFCO (SABIC Affiliate)</td>
+            <td class="tag-td">Residential</td>
+            <td>Jubail</td>
+          </tr>
+          <tr>
+            <td><strong>Al Bassam Commercial Complex</strong></td>
+            <td>Mr. Saleh Al-Bassam</td>
+            <td class="tag-td">Commercial</td>
+            <td>Dammam Auction Market</td>
+          </tr>
+          <tr>
+            <td><strong>Private Luxury Villa Project</strong></td>
+            <td>Mr. Nasir Al-Mulhim</td>
+            <td class="tag-td">Residential</td>
+            <td>Dammam &amp; Al Hassa</td>
+          </tr>
+          <tr>
+            <td><strong>Abdul Jaleel Bakhurji Compound</strong></td>
+            <td>Mr. Abdul Jaleel Bakhurji</td>
+            <td class="tag-td">Residential</td>
+            <td>Dammam</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-left">
+        <span>Portfolio Verification: info@aljazeeraksa.com</span>
+        <span>•</span>
+        <span>15+ Years Track Record</span>
+      </div>
+      <div class="page-number">11</div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       PAGE 12 — BACK COVER & CONTACT DIRECTORY
+       ========================================================= -->
+  <div class="page page-12">
+    <div class="back-logo">
+      <img src="assets/images/logos/logo-ai-white.png" alt="Al Jazeera Service Contracting Co.">
+    </div>
+
+    <div>
+      <h2 class="back-title">Partner With Us On Your Next Project</h2>
+      <p class="back-sub">
+        Discuss your upcoming industrial, construction, workforce, or equipment requirements with our technical estimation team.
+      </p>
+    </div>
+
+    <div class="contact-card-grid">
+      <div class="contact-card">
+        <h4><i class="bi bi-geo-alt-fill"></i> Head Office Location</h4>
+        <p>King Fahd bin Abdul Aziz Road<br>Dammam, Eastern Province<br>Kingdom of Saudi Arabia</p>
+      </div>
+
+      <div class="contact-card">
+        <h4><i class="bi bi-mailbox"></i> Postal &amp; Registration</h4>
+        <p>P.O. Box 6716, Postal Code: 32242<br>Kingdom of Saudi Arabia<br>Commercial Registration Active</p>
+      </div>
+
+      <div class="contact-card">
+        <h4><i class="bi bi-telephone-fill"></i> Central Telecommunications</h4>
+        <p>Direct Phone: <strong>+966 13 842 2350</strong><br>Working Hours: Sun – Thu 8:00 AM – 5:00 PM</p>
+      </div>
+
+      <div class="contact-card">
+        <h4><i class="bi bi-envelope-at-fill"></i> Inquiries &amp; Tenders</h4>
+        <p>General: <strong>info@aljazeeraksa.com</strong><br>Tendering: <strong>projects@aljazeeraksa.com</strong><br>Web: <strong>www.aljazeeraksa.com</strong></p>
+      </div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 3mm 4mm; display: flex; justify-content: space-around; align-items: center; margin-bottom: 6mm;">
+      <div>Saudi Aramco Vendor: <strong style="color: var(--gold);">10048607</strong></div>
+      <div style="color: rgba(255,255,255,0.2);">|</div>
+      <div>Saudi Energy Vendor: <strong style="color: var(--gold);">5014538</strong></div>
+      <div style="color: rgba(255,255,255,0.2);">|</div>
+      <div>Zawil Portal: <strong style="color: var(--gold);">15222</strong></div>
+    </div>
+
+    <div class="back-badges">
+      <div class="back-badge-item">ISO 9001:2015</div>
+      <div class="back-badge-item">ISO 14001:2015</div>
+      <div class="back-badge-item">ISO 45001:2018</div>
+      <div class="back-badge-item">IAF MLA</div>
+      <div class="back-badge-item">UAF Accredited</div>
+      <div class="back-badge-item" style="color: var(--gold); border-color: var(--gold);">Vision 2030 Aligned</div>
+    </div>
+
+    <div style="font-size: 7pt; color: #64748b; margin-top: 4mm;">
+      &copy; 2026 Al Jazeera Service Contracting Co. All rights reserved. Confidential corporate capability document.
+    </div>
+  </div>
+
+</body>
+</html>

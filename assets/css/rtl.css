@@ -142,6 +142,20 @@ html[dir="rtl"] *::after {
   margin-left: 0.6rem;
 }
 
+[dir="rtl"] .ajs-offcanvas .nav-link:hover,
+[dir="rtl"] .ajs-header .ajs-offcanvas .nav-link:hover,
+[dir="rtl"] .ajs-header--overlay .ajs-navbar .ajs-offcanvas .nav-link:hover {
+  padding-left: 1rem !important;
+  padding-right: 1.25rem !important;
+}
+
+[dir="rtl"] .ajs-offcanvas .nav-link.active,
+[dir="rtl"] .ajs-header .ajs-offcanvas .nav-link.active,
+[dir="rtl"] .ajs-header--overlay .ajs-navbar .ajs-offcanvas .nav-link.active {
+  border-left: none !important;
+  border-right: 3px solid var(--ajs-gold) !important;
+}
+
 /* Arrow links slide toward the reading direction, which is now
    leftward. The icon glyph is directional too (bi-arrow-right), so
    it is mirrored rather than swapped for a second icon class — that
@@ -316,6 +330,14 @@ html[dir="rtl"] *::after {
 /* Hover nudge follows the reading direction, so it inverts. */
 [dir="rtl"] .ajs-footer-links a:hover {
   transform: translateX(-4px);
+}
+
+[dir="rtl"] .ajs-newsletter .form-control {
+  border-radius: 0 var(--ajs-radius) var(--ajs-radius) 0 !important;
+}
+
+[dir="rtl"] .ajs-newsletter .btn {
+  border-radius: var(--ajs-radius) 0 0 var(--ajs-radius) !important;
 }
 
 

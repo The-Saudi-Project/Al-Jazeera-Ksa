@@ -150,7 +150,7 @@
     /* Shorter logo and topbar here, so the header is shorter too.
        Kept in step with .ajs-brand img below — the hero clearance
        is calculated from this. */
-    --ajs-header-h: 128px;
+    --ajs-header-h: 104px;
   }
 
   /* Top bar keeps only the phone number; the rest is reachable
@@ -158,7 +158,14 @@
   .ajs-topbar { font-size: 0.78rem; }
   .ajs-topbar-hide-sm { display: none !important; }
 
-  .ajs-brand img { height: 75px; }
+  .ajs-navbar { padding: 0.65rem 0 !important; }
+  .ajs-brand img,
+  .ajs-logo-img {
+    height: clamp(38px, 9.5vw, 46px) !important;
+    width: auto !important;
+    max-width: min(210px, 62vw) !important;
+    object-fit: contain !important;
+  }
   .ajs-brand-text { display: none; }
 
   .ajs-hero-actions .btn { width: 100%; }
@@ -219,6 +226,55 @@
   .ajs-footer-bottom { text-align: center; }
   .ajs-footer-bottom p + p { margin-top: 0.5rem; }
 
+  /* Centered footer brand band on mobile */
+  .ajs-footer-brand-band {
+    margin-bottom: 2.25rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .ajs-footer-brand-group {
+    gap: 1.25rem 2rem !important;
+    justify-content: center !important;
+  }
+  .ajs-footer-brand-band .ajs-footer-logo {
+    height: clamp(38px, 9vw, 44px) !important;
+    max-width: 200px !important;
+  }
+  .ajs-footer-brand-band .ajs-footer-vision-logo {
+    height: clamp(36px, 8.5vw, 42px) !important;
+    max-width: 120px !important;
+  }
+  .ajs-footer-brand-divider {
+    height: 34px !important;
+  }
+
+  /* Footer mobile stacking: Quick Links and Services stacked one-by-one */
+  .ajs-footer .row {
+    row-gap: 2.25rem !important;
+  }
+  .ajs-footer .col-6,
+  .ajs-footer .col-md-6,
+  .ajs-footer .col-lg-2,
+  .ajs-footer .col-lg-3,
+  .ajs-footer .col-lg-4,
+  .ajs-footer [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+  .ajs-footer h4 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+  }
+  .ajs-footer-links li { margin-bottom: 0.65rem; }
+  .ajs-footer-links a {
+    font-size: 0.92rem;
+    padding: 0.2rem 0;
+    display: inline-block;
+  }
+
   /* Ghost numerals become noise at small sizes. */
   .ajs-ghost-number { display: none; }
 
@@ -240,6 +296,26 @@
 
   /* ...except where buttons sit inside an inline group. */
   .ajs-btn-inline .btn { width: auto; }
+
+  /* Newsletter input-group must not break into separate rows */
+  .ajs-newsletter .input-group,
+  .input-group {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+  .ajs-newsletter .input-group .form-control,
+  .input-group .form-control {
+    flex: 1 1 auto !important;
+    width: 1% !important;
+    min-width: 0 !important;
+  }
+  .ajs-newsletter .input-group .btn,
+  .input-group .btn {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    padding: 0.75rem 1.25rem !important;
+  }
 
   .ajs-filters { gap: 0.45rem; }
   .ajs-filter-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
