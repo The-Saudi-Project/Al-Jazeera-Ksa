@@ -53,10 +53,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- careers.html is hidden for now: removed from the sitemap and
-       serving noindex. Restore this block and flip the robots meta
-       on that page back to "index, follow" to bring it back. -->
-
   <url>
     <loc>https://www.aljazeeraksa.com/privacy.html</loc>
     <lastmod>2026-09-27</lastmod>
