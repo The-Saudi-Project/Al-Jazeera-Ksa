@@ -63,6 +63,7 @@
 1. **Saudi Aramco:** Approved Vendor ID **10048607**
 2. **Saudi Energy (SECO):** Approved Vendor ID **5014538**
 3. **Zawil (Border Guard Port Pass Portal):** Approved Vendor ID **15222**
+4. **SPARK (Energy City Development Co.):** Approved Vendor ID **ECDC-VEN-000923**
 
 ### Certified Management Systems & Accreditations
 - **ISO 9001:2015:** Quality Management System (QMS)
@@ -89,7 +90,7 @@
   `شركة خدمة الجزيرة للمقاولات — ملف القدرات والخدمات المعتمدة`
 - **Credential Strip (Bottom):**
   - "Established 2010"
-  - "Approved Vendor: Saudi Aramco (10048607) · Saudi Energy (5014538) · Zawil (15222)"
+  - "Approved Vendor: Saudi Aramco (10048607) · Saudi Energy (5014538) · Zawil (15222) · SPARK (ECDC-VEN-000923)"
   - Saudi Vision 2030 official partner emblem
 
 ---
@@ -135,6 +136,7 @@
   - **Saudi Aramco:** Vendor Code **10048607** (Approved for contracting, workforce support, and industrial services)
   - **Saudi Energy / SECO:** Vendor Code **5014538** (Power infrastructure, substation maintenance, and electrical works)
   - **Zawil Portal (Border Guard):** Vendor Code **15222** (Seaport access, coastal industrial facilities, and restricted zone entry)
+  - **SPARK (Energy City Development Co.):** Vendor Code **ECDC-VEN-000923** (King Salman Energy Park mega-hub civil, industrial, & utilities vendor)
 - **Section B — Certified Management Systems:**
   - **ISO 9001:2015:** Quality Management System (Certified by ANS & accredited under IAF MLA)
   - **ISO 14001:2015:** Environmental Management System (Ensuring ecological safety & sustainable waste management)
@@ -313,7 +315,7 @@
   - **Tendering & Projects:** projects@aljazeeraksa.com
   - **Web Portal:** www.aljazeeraksa.com
 - **Vendor Registration Reminders (Badges):**
-  - Aramco: `10048607` | SECO: `5014538` | Zawil: `15222`
+  - Aramco: `10048607` | SECO: `5014538` | Zawil: `15222` | SPARK: `ECDC-VEN-000923`
 - **Accreditation Badges:** ISO 9001 · ISO 14001 · ISO 45001 · IAF · UAF · Saudi Vision 2030
 - **Legal Notice:**  
   © 2026 Al Jazeera Service Contracting Co. All rights reserved. Registered Commercial Entity, Kingdom of Saudi Arabia.
